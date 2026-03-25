@@ -1,12 +1,12 @@
-import Fundamentals from "../images/undraw_static-assets_di5m.svg"
-import design from "../images/istockphoto-839214570-1024x1024.jpg"
+import Fundamentals from "../images/undraw_web-developer_ggt0.svg"
+import design from "../images/undraw_web-developer_ggt0.svg"
 import design2 from "../images/3572691.jpg"
-import designVID from "../images/istockphoto-2257509268-640_adpp_is.mp4"
+//import designVID from "../images/istockphoto-2257509268-640_adpp_is.mp4"
 function Services() {
   return (
     <>
         <div className="cotainer-fluid border services " id="services">
-          <h3 className="h2 fw-bold text-center py-3">Our Services</h3>
+          <h3 className="h2 fw-bold text-center py-3 text-warning" >Our Services</h3>
           <section className="p-5">
             <div className="container-fluid">
               <div className="d-md-flex d-block  align-items-center justify-content-between g-4">
