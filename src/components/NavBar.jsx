@@ -1,10 +1,10 @@
 import React from 'react';
-import Logo from '../assets/Logo.png';
+import Logo from '../assets/Logo (2).png';
 function NavBar() {
     return (
         <nav className="navbar navbar-expand-sm navbar-light">
             <div className="container-fluid text-light d-flex flex-direction-row align-items-end justify-content-between">
-                <a className="navbar-brand text-primary fw-bold" href="#"><img src={Logo} height='30px' alt="logo" />softkhlome</a>
+                <a className="navbar-brand text-primary fw-bold" href="#"><img src={Logo} className='mx-3' height='30px' alt="logo" />softkhlome</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarID" aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>

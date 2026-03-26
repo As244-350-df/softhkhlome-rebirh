@@ -5,13 +5,98 @@
   height:80vh;
   display:block; 
 }
+.navbar{
+
+}
+.active {
+  color: #0d6efd !important;
+  font-weight: bold !important;
+}
 .hero{
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  height:70vh;
+  height:100%;
 }
-.contact-links>.card {
+.contact-link {
+  height:19rem !important;
+  border:0px solid brown;
+}
+.contact-link  div {
   background-color:#0d6efd !important;
+  height: 100% !important;
+}
+.contact-link  h1 {
+  background-color:#0d6efd !important;
+}
+.contact-link  i{
+  background-color:#0d6efd !important;
+}
+.contact-link  p {
+  background-color:#0d6efd !important;
+  height: 6rem !important;
+ text-align:middle; 
+ display:flex;
+ align-items: center;
+ justify-content: center;
+
+}
+.contact-link  h2 {
+  color:rgba(255, 193, 7, 1) !important;
+  background-color: transparent;
+}
+.contact-link .bi{
+  font-size: x-large !important;
+   color:rgba(255, 193, 7, 1) !important;
+}
+.about-us{
+  display:flex;
+  width: 100% !important;
+
+}
+.developer-img-cont{
+  display: flex;
+  border-radius: 50% !important;
+}
+.developer-Img{
+  height: 70%;
+  width:70%;
+  border-radius:50% !important;
+}
+.footer .brand-text{
+  font-size:x-small;
+}
+.footer div{
+  background-color: transparent;
+}
+.footer h4{
+  background-color: transparent;
+}
+.footer p{
+  background-color: transparent;
+}
+.footer ul{
+  background-color: transparent;
+}
+.footer div li{
+  background-color: transparent;
+}
+.brand-img{
+  height: 3rem !important;
+  width: 3rem !important ;
+  background-color: transparent !important;
+  color: whitesmoke !important;
+}
+.follow-us li{
+  font-size: x-large !important;
+  background-color: transparent !important;
+}
+.follow-us a{
+  font-size: x-large !important;
+  background-color: transparent !important;
+}
+.follow-us i{
+  font-size: x-large !important;
+  background-color: transparent !important;
 }

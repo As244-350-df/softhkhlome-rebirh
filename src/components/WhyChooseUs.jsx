@@ -3,9 +3,9 @@ import React from 'react'
 function WhyChooseUs() {
   return (
     <section className="why-choose-us p-5">
-        <h2 className="h2 fw-bold text-center text-warning py-4">Why Choose Us</h2>
-        <div className="container">
-            <div className="row g-4"> 
+        <h2 className="h2 fw-bold text-center text-lg-light text-primary py-4">Why Choose Us</h2>
+        <div className="container bg-md-primary">
+            <div className="row g-4 bg-md-primary"> 
                 <div className="col-md-4">
                     <div className="card h-100 bg-primary text-light">
                         <div className="card-body bg-primary text-light">

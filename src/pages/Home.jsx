@@ -4,6 +4,8 @@ import Introduction from '../components/Introduction'
 import Services from '../components/Services'
 import WhyChooseUs from '../components/WhyChooseUs'
 import Contact from '../components/Contact'
+import AboutUs from '../components/AboutUs'
+import Footer from '../components/Footer'
 function Home() {
   return (
     <>
@@ -14,6 +16,8 @@ function Home() {
     <Services />
     <WhyChooseUs />
     <Contact/>
+    <AboutUs/>
+    <Footer/>
     </>
   )
 }

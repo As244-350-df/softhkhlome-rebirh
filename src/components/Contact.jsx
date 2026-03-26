@@ -12,33 +12,33 @@ return (
                 <div className="col-md-6">
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3">
-                            <label htmlFor="name" className="form-label">Name</label>
-                            <input type="text" className="form-control" id="name" />
+                            <label htmlFor="name" className="form-label fw-bold ">Name</label>
+                            <input type="text" className="form-control border-primary " placeholder="your name..." id="name" />
                         </div>
                         <div className="mb-3">
-                            <label htmlFor="email" className="form-label">Email</label>
-                            <input type="email" className="form-control" id="email" />
+                            <label htmlFor="email" className="form-label fw-bold">Email</label>
+                            <input type="email" className="form-control border-primary" placeholder="example@gmail.com" id="email" />
                         </div>
                         <div className="mb-3">
-                            <label htmlFor="message" className="form-label">Message</label>
-                            <textarea className="form-control" id="message" ></textarea>
+                            <label htmlFor="message" className="form-label fw-bold">Message</label>
+                            <textarea className="form-control border-primary" id="message" placeholder="write your message here..." ></textarea>
                         </div>
                         <button type="submit" className="btn btn-primary">Send Message</button>
                     </form>
                 </div>
                 <div className="col-md-6">
                     <h3 className="h3 text-warning">Get in Touch</h3>
-                    <p className="lead">Have questions or want to learn more about our services? Feel free to reach out to us!</p>
+                    <p className=" py-2">Have questions or want to learn more about our services? Feel free to reach out to us!</p>
                     <ul className="list-unstyled">
-                        <li><i className="fas fa-map-marker-alt text-warning"></i> 123 Main Street, City, Country</li>
-                        <li><i className="fas fa-phone text-warning"></i> {"+1"} {'(123)'} {"456-7890"}</li>
-                        <li><i className="fas fa-envelope text-warning"></i> info@company.com</li>
+                        <li><i className="fas fa-map-marker-alt text-warning"></i>  26 Mitundu, Lilongwe, Malawi</li>
+                        <li><i className="fas fa-phone text-warning"></i> {"+265"} {'(886)'} {"522-243"}</li>
+                        <li><i className="fas fa-envelope text-warning"></i> softkhlome@gmail.com</li>
                     </ul>
                 </div>
             </div>
-            <div class="row text-center">
-                <div class="col-md ">
-                   <div class="card border  bg-dark text-light">
+            <div class="row py-4 text-center d-flex justify-content-center contact-links">
+                <div class="col-md contact-link">
+                   <div class="card  bg-primary text-light">
                      <div class="card-body text-center">
                          <h1 class="h1 mb-3">
                            <i class="bi bi-laptop"></i>
@@ -47,11 +47,11 @@ return (
                          <p class="card-text  mb-3">
                              message the developers via  email. 
                          </p>
-                         <a href="mailto:softkhlome@gmail.com" target="_blank" class="btn btn-primary">Mail</a>
+                         <a href="mailto:softkhlome@gmail.com" target="_blank" class="btn btn-outline-warning ">Mail us</a>
                      </div>
                    </div>
                </div>
-                <div class="col-md   my-md-0 my-2 mx-md-2">
+                <div class="col-md   my-md-0 my-2 mx-md-2  contact-link">
                    <div class="card  bg-secondary text-light">
                      <div class="card-body text-center">
                          <h1 class="h1 mb-3">
@@ -61,12 +61,11 @@ return (
                          <p class="card-text mb-3">
                                Talk with the developers in realtime through voice or video calls on whatsapp.
                          </p>
-                         <a href="https://api.whatsapp.com/send?phone=+265886522243&text=Hie Brian" class="btn btn-dark">contact</a>
+                         <a href="https://api.whatsapp.com/send?phone=+265886522243&text=Hie Brian" class="btn btn-outline-warning">contact</a>
                      </div>
                    </div>
               </div>
-                <div class="col-md  ">
-              
+                <div class="col-md contact-link ">
                    <div class="card bg-dark text-light">
                      <div class="card-body text-center">
                          <h1 class="h1 mb-3">
@@ -76,7 +75,7 @@ return (
                          <p class="card-text  mb-3">
                                Get in touch with the developers in person by suggesting an appointment
                          </p>
-                         <a href="https://calendar.google.com/calendar/u/0/r/week/2026/2/18" class="btn btn-primary">Appointment</a>
+                         <a href="https://calendar.google.com/calendar/u/0/r/week/2026/2/18" class="btn btn-outline-warning">Appointment</a>
                      </div>
                    </div>
              </div>
