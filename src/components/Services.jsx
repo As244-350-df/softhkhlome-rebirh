@@ -5,53 +5,51 @@ import design2 from "../images/3572691.jpg"
 function Services() {
   return (
     <>
-        <div className="cotainer-fluid border services " id="services">
-          <h3 className="h2 fw-bold text-center py-3 text-primary" >Our Services</h3>
+        <div className="container section-wrapper services " id="services">
+          <h3 className="h2 fw-bold text-center py-2 text-primary" >Our Services</h3>
           <section className="p-5">
-            <div className="container-fluid">
+            <div className="container">
               <div className="d-md-flex d-block  align-items-center justify-content-between g-4">
-                <div className="">
-                  <img className="img-fluid" src={design} alt="design and development" />
+                <div className=" mx-2">
+                  <img className="img img-fluid" src={design} alt="design and development" />
                 </div>
                 <div className="p-2 web-dev-serv">
-                  <h3 className="h3">Web Design and Development</h3>
-                  <p className="lead">
+                  <h3 className="h3 text-center">Web Design and Development</h3>
+                  <p className="p text-center">
                     Are you a new businness in town?Boost your connection with you customers by entering into the digital world  economy with us .
                   </p>
-                  <p className="lead">
+                  <p className="p text-center">
                     we offer proffessional designed website customized suitably for your business to get you in touch with your customers.
                   </p>
                 </div>
               </div>
             </div>
           </section>
-          <section className="p-5">
-            <div className="container-fluid">
+          <section className="py-5">
+            <div className="container">
               <div className="d-md-flex d-block  align-items-center justify-content-between g-2">
                 <div className="p-2 web-dev-serv">
-                  <h2 className="h3">Get professional graphic design</h2>
-                  <p className="lead">
+                  <h2 className="h3 text-center">Get professional graphic design</h2>
+                  <p className="p text-center">
                     we also offer stunning designs weather it is  business cards,social media posts,flylers and burners we are here for you. <span className="fw-bold">This service is not available currently</span>
                   </p>
                 </div>
-                <div>
-                  <img className="ing img-fluid" src={design2} alt="design" />
+                <div className="mx-2">
+                  <img className="img img-fluid" src={design2} alt="design" />
                 </div>
               </div>
             </div>
           </section>
-          <section className="p-5">
+          <section className="py-5">
             <div className="container-fluid">
               <div className="d-md-flex d-block  align-items-center justify-content-between g-2">
-                <div>
-                  <img className="img-fluid" src={Fundamentals} alt="Fundamentals" />
+                <div className="mx-2">
+                  <img className="img img-fluid" src={Fundamentals} alt="Fundamentals" />
                 </div>
                 <div className="p-2 web-dev-serv">
-                  <h2 className="h3">Learn Fundamentals</h2>
-                  <p className="lead">
+                  <h2 className="h3 text-center">Learn Fundamentals</h2>
+                  <p className="p text-center">
                     Want to develop a skill .learn the fundamentals of web design  with as using Html ,Css and javascript.
-                  </p>
-                  <p className="lead">
                     You will also lean backend web development using nodejs were by you be learn how to create serves for your website and how you can communicate with them using API's.
                   </p>
                 </div>

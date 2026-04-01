@@ -10,11 +10,11 @@ function NavBar() {
                 </button>
                 <div className="collapse text-light navbar-collapse  justify-content-end" id="navbarID">
                     <div className="navbar-nav px-4  text-light">
-                        <a className="nav-link active" aria-current="page" href="#">Home</a>
-                        <a href="#" className="nav-link">About</a>
-                        <a href="#" className="nav-link">Services</a>
-                        <a href="#" className="nav-link">Contact</a>
-                        <a href="#" className="nav-link">Profile</a>
+                        <a className="nav-link active " aria-current="page" href="#">Home</a>
+                        <a href="#" className="nav-link text-light">About</a>
+                        <a href="#" className="nav-link text-light">Services</a>
+                        <a href="#" className="nav-link text-light">Contact</a>
+                        <a href="#" className="nav-link text-light">Profile</a>
                     </div>
                 </div>
             </div>

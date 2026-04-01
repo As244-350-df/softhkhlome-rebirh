@@ -5,6 +5,7 @@ import heroImg from './assets/hero.png'
 import './App.css'
 import "bootstrap-icons/font/bootstrap-icons.css"
 import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap/dist/js/bootstrap.bundle.min.js"
 import Home from './pages/Home'
 function App() {
   const [count, setCount] = useState(0)

@@ -6,18 +6,24 @@ import WhyChooseUs from '../components/WhyChooseUs'
 import Contact from '../components/Contact'
 import AboutUs from '../components/AboutUs'
 import Footer from '../components/Footer'
+import ProjStackTest from '../components/ProjStackTest'
 function Home() {
   return (
     <>
     <div className="navbar-intro border bg-primary">
-      <NavBar />
-      <Introduction />
+      <div className="navbar-intro-cont">
+       <NavBar />
+       <Introduction />
+      </div>
     </div>
-    <Services />
-    <WhyChooseUs />
-    <Contact/>
-    <AboutUs/>
-    <Footer/>
+    <div className="d-flex flex-column align-items-center">
+        <Services />
+        <WhyChooseUs />
+        <Contact/>
+        <AboutUs/>
+        <ProjStackTest/>
+        <Footer/>
+    </div>
     </>
   )
 }

@@ -1,16 +1,17 @@
 import React from 'react'
-import brand from '../assets/logo (2).png'
+import brand from '../assets/brand.png'
 function Footer() {
   return (
-        <footer className="row footer pt-5 bg-primary px-3">
+        <footer className="row container-fluid footer pt-5 bg-primary px-3">
         <div className="col-md-4 brand d-flex flex-column align-items-center justify-content-center">
             <img src={brand} className='img img-fluid brand-img' alt="brand" />
             <p className="disabled text-light h3 text-center mt-1">SoftKhlome</p>
-            <p className="brand-text px-md-5 mx-lg-5 text-center py-lg-3 px-2 display-7 text-light ">Softkhlome is a newly established private institution dedicated to
+            <p className="brand-text mx-sm-5 px-sm-4  px-md-0 mx-lg-5 text-center py-lg-3 px-2 p text-light ">
+            Softkhlome is a newly established private institution dedicated to
             providing cutting-edge digital services tailored to meet the growing 
             needs of modern businesses and creative individuals. Founded on the principles of 
             innovation, quality, and customer satisfaction, Softkhlome strives to become a trusted
-                name in the digital solutions industry.
+            name in the digital solutions industry.
             </p>
         </div>
         <div className="col-md-4 my-2">
