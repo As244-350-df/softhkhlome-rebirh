@@ -10,8 +10,8 @@
 .navbar-intro {
   height:95vh;
   display:block;
-  background-image:url("images/4758689.jpg") !important; 
-  background-color:linear-gradient(180,rgba(0,0,0,.5),#0d6efd) !important;
+  background-image:url("assets/hero3.jpg") !important; 
+  background-color:linear-gradient(180,rgba(0,0,0,.7),#0d6efd) !important;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -21,7 +21,7 @@
 .navbar-intro-cont{
   margin:0 !important;
   height:100% !important;
-  background-color:rgba(0,0,2,.7) !important;
+  background-color:rgba(0,0,0,.7) !important ;
 }
 .navbar,.navbar *{
  background-color: transparent !important;
@@ -41,9 +41,22 @@
 .services *{
    background-color: transparent !important;
 }
+.services .img-cont{
+  height:100% !important;
+  width:100%!important;
+  border:0px solid red;
+  padding:0 !important;
+}
+.services img{
+  border-radius:5px;
+}
 .contact-link {
-  height:19rem !important;
+  height:20rem !important;
   border:0px solid brown;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .contact-link  div {
   background-color:#0d6efd !important;
@@ -62,7 +75,6 @@
  display:flex;
  align-items: center;
  justify-content: center;
-
 }
 .contact-link  h2 {
   color:rgba(255, 193, 7, 1) !important;
@@ -96,11 +108,11 @@
   border-radius:1%;
   box-shadow: 0px 0px 2px rgb(132, 126, 126);
   background-color:white !important;
-  margin:0px auto !important;
-  width:95% !important;
-  margin-top: 1.8rem !important;
+  width:97vw !important;
+  margin-top: .8rem !important;
 
 }
+
 .why-choose-us *{
   background-color: transparent;
 }
@@ -116,19 +128,31 @@
   margin:0px auto !important;
   width:95% !important;
   margin-top: 1.8rem !important;
-
+  border:1px solid red !important;
 }
 .section-wrapper-3{
   border-radius:1%;
   box-shadow: 0px 0px 2px rgb(132, 126, 126);
   background-color:white !important;
   margin:0px auto !important;
-  margin-top: 1.8rem !important;
+  margin-top: .8rem !important;
+}
+.section-wrapper-4{
+  border-radius:1%;
+  box-shadow: 0px 0px 2px rgb(132, 126, 126);
+  background-color:white !important;
+  margin:0px auto !important;
+  margin-top: .8rem !important;
+  width: 88% !important;
 }
 .carousel-item img{
   height:10rem !important;
   width:10rem !important;
   background-color: transparent !important;
+
+}
+.tech-text{
+  font-size: xx-small !important;
 }
 .footer{
   width:100vw !important ;
@@ -161,5 +185,18 @@
 }
 .follow-us i{
   font-size: x-large !important;
+  background-color: transparent !important;
+}
+.contact-info li{
+  list-style:none;
+  background-color: transparent !important;
+  color: whitesmoke !important;
+  font-size: smaller !important;
+}
+.contact-info h5{
+  background-color: transparent !important;
+  color: whitesmoke !important;
+}
+.contact-info{
   background-color: transparent !important;
 }

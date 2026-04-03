@@ -2,11 +2,11 @@ import React from 'react'
 import developerImg from "../images/Polish_20250526_113040107.png"
 function AboutUs() {
   return (
-    <div class="row container about-us section-wrapper d-flex justify-content-center my-2 ">
+    <div className="row container about-us section-wrapper d-flex justify-content-center my-2 ">
       <h3 className="h3 fw-bold text-center my-4 text-primary">About Us</h3>
         <div className="col-md-6 ml-5 d-flex align-items-center px-5 ">
           <div className="short-cont d-flex flex-column align-items-center mx-2 my-3">
-            <p className="p  text-center px-md-0 px-lg-5 p-0">
+            <p className="p about-fs-md text-center fs-200 px-md-0 px-lg-5 p-0">
               Softkhlome is a newly established private institution dedicated 
               to providing cutting-edge digital services tailored to meet the
               growing needs of modern businesses and creative individuals.

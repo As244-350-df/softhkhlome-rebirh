@@ -65,14 +65,14 @@ return (
                      </div>
                    </div>
               </div>
-                <div className="col-md contact-link ">
+                <div className="col-md contact-link py-0">
                    <div className="card bg-dark text-light">
                      <div className="card-body text-center">
                          <h1 className="h1 mb-3">
                            <i className="bi bi-people"></i>
                          </h1>
                          <h2 className="h2 mb-3">Personal</h2>
-                         <p className="card-text  mb-3">
+                         <p className="card-text  my-4">
                                Get in touch with the developers in person by suggesting an appointment
                          </p>
                          <a href="https://calendar.google.com/calendar/u/0/r/week/2026/2/18" className="btn btn-outline-warning">Appointment</a>
