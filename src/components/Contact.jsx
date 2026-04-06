@@ -1,4 +1,5 @@
 import React from "react"
+import { contactmethods } from "./contact.js";
 function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -36,49 +37,25 @@ return (
                     </ul>
                 </div>
             </div>
-            <div className="row py-4 text-center d-flex justify-content-center contact-links">
-                <div className="col-md contact-link">
-                   <div className="card  bg-primary text-light">
-                     <div className="card-body text-center">
-                         <h1 className="h1 mb-3">
-                           <i className="bi bi-laptop"></i>
-                         </h1>
-                         <h2 className="h2 mb-3">Email</h2>
-                         <p className="card-text  mb-3">
-                             message the developers via  email. 
-                         </p>
-                         <a href="mailto:softkhlome@gmail.com" target="_blank" className="btn btn-outline-warning ">Mail us</a>
-                     </div>
-                   </div>
-               </div>
-                <div className="col-md   my-md-0 my-2 mx-md-2  contact-link">
-                   <div className="card  bg-secondary text-light">
-                     <div className="card-body text-center">
-                         <h1 className="h1 mb-3">
-                           <i className="bi bi-person-square"></i>
-                         </h1>
-                         <h2 className="h2 mb-3">Message</h2>
-                         <p className="card-text mb-3">
-                               Talk with the developers in realtime through voice or video calls on whatsapp.
-                         </p>
-                         <a href="https://api.whatsapp.com/send?phone=+265886522243&text=Hie Brian" className="btn btn-outline-warning">contact</a>
-                     </div>
-                   </div>
-              </div>
-                <div className="col-md contact-link py-0">
-                   <div className="card bg-dark text-light">
-                     <div className="card-body text-center">
-                         <h1 className="h1 mb-3">
-                           <i className="bi bi-people"></i>
-                         </h1>
-                         <h2 className="h2 mb-3">Personal</h2>
+            <div className="row py-4 text-center d-flex justify-content-center contact-links g-1">
+                {contactmethods.map((method, index) => (
+                    <div className="col-md-4 my-2 contact-link px-5 " key={index}>
+                       <div className="card bg-dark text-light">
+                         <div className="card-body text-center ">
+                             <h1 className="h1 mb-3">
+                               <i className={method.icon}></i>
+                             </h1>
+                         <h2 className="h2 mb-3">{method.method}</h2>
                          <p className="card-text  my-4">
-                               Get in touch with the developers in person by suggesting an appointment
+                               {method.description}
                          </p>
-                         <a href="https://calendar.google.com/calendar/u/0/r/week/2026/2/18" className="btn btn-outline-warning">Appointment</a>
+                         <a href={method.link} className="btn btn-outline-warning" target="_blank" rel="noopener noreferrer">
+                           {method.method}
+                         </a>
                      </div>
                    </div>
              </div>
+                ))}
             </div>            
         </div>
     </div>

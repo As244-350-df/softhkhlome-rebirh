@@ -7,15 +7,7 @@ function AboutUs() {
         <div className="col-md-6 ml-5 d-flex align-items-center px-5 ">
           <div className="short-cont d-flex flex-column align-items-center mx-2 my-3">
             <p className="p about-fs-md text-center fs-200 px-md-0 px-lg-5 p-0">
-              Softkhlome is a newly established private institution dedicated 
-              to providing cutting-edge digital services tailored to meet the
-              growing needs of modern businesses and creative individuals.
-              Founded on the principles of innovation, quality, and customer
-              satisfaction, Softkhlome strives to become a trusted name in the
-              digital solutions industry. Though young in age, the company is 
-              driven by a team of passionate professionals who bring fresh
-              ideas, technical expertise, and a strong work ethic to every 
-              project.
+              softkhlome is newly enstablished company founded by <b>Brian Kamwera</b>.They offer website design, website development,graphic design and digital marketing services.
             </p>
             <button  className="btn btn-primary my-lg-2">learn More</button>
           </div>

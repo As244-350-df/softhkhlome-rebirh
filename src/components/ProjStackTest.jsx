@@ -1,148 +1,54 @@
-import React, { useRef, useLayoutEffect, useState } from 'react'
-import placeholder from '../assets/Logo.png'
-import { Carousel } from 'bootstrap'
-import  {techStack}  from './TechStack.js'
+import React from 'react';
+import placeholder from '../assets/Logo.png';
+import { techStack } from './TechStack.js';
+import { testimonials } from './testimonials.js';
+import { proejcts } from './projects.js';
 function ProjStackTest() {
-  const projectCarouselRef = useRef(null)
-  const techStackCarouselRef = useRef(null)
-  const [projectCarousel, setProjectCarousel] = useState(null)
-  const [techStackCarousel, setTechStackCarousel] = useState(null)
-
-  useLayoutEffect(() => {
-    // Initialize both carousels
-    if (projectCarouselRef.current && !projectCarousel) {
-      const carousel = new Carousel(projectCarouselRef.current, {
-        interval: 1000,
-        wrap: true
-      })
-      setProjectCarousel(carousel)
-    }
-
-    if (techStackCarouselRef.current && !techStackCarousel) {
-      const carousel = new Carousel(techStackCarouselRef.current, {
-        interval: false,
-        wrap: true
-      })
-      setTechStackCarousel(carousel)
-    }
-  }, [projectCarousel, techStackCarousel])
-
   return (
     <div className='row border container mb-2 section-wrapper-1'>
       <div className="col-md-6 mx-0 d-block section-wrapper-3 py-2">
-        <div className="Projects section-wrapper-3">
-          <h2 className="h2 py-2 text-center">Project</h2>
-          <div className="projects">
-            <div 
-              id="carouselExampleSlidesOnly" 
-              ref={projectCarouselRef} 
-              className="carousel slide" 
-              data-bs-ride="carousel"
-            >
-              <div className="carousel-inner">
-                <div className="carousel-item d-flex flex-column align-items-center justify-content-center active">
-                  <img src={placeholder} className="w-100" alt="Html Project"/>
-                  <h3 className="h3 text-center">Html</h3>
-                </div>
-                <div className="carousel-item d-flex flex-column align-items-center justify-content-center">
-                  <img src={placeholder} className="w-100" alt="Css Project"/>
-                  <h3 className="h3 text-center">Css</h3>
-                </div>
-                <div className="carousel-item d-flex flex-column align-items-center justify-content-center">
-                  <img src={placeholder} className="w-100 my-2" alt="JavaScript Project"/>
-                  <h3 className="h4 text-center my-4">JavaScript</h3>
-                </div>
+        <div className="Projects h-40 section-wrapper-3">
+          <h2 className="h2 py-2 text-center">Projects</h2>
+          <div className="projects py-2" style={{ overflowX: 'auto', display: 'flex', gap: '10px', padding: '10px', scrollSnapType: 'x mandatory' }}>
+            {proejcts.map((project, idx) => (
+              <div key={idx} className={`d-flex pt-4 tech flex-column align-items-center justify-content-center ${idx==0? "mx-2":""}`} style={{ minWidth: '200px', scrollSnapAlign: 'start' }}>
+                <img src={project.image} className="w-100" alt={project.name } style={{ maxWidth: '100px', minHeight: '150px', height: 'auto' }}/>
+                <h3 className="h3 text-center">{project.name}</h3>
+                <p className="tech-text text-center px-4">{project.description}</p>
               </div>
-              <button 
-                className="carousel-control-prev" 
-                type="button" 
-                data-bs-target="#carouselExampleSlidesOnly" 
-                data-bs-slide="prev"
-              >
-                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span className="visually-hidden">Previous</span>
-              </button>
-              <button 
-                className="carousel-control-next" 
-                type="button" 
-                data-bs-target="#carouselExampleSlidesOnly" 
-                data-bs-slide="next"
-              >
-                <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                <span className="visually-hidden">Next</span>
-              </button>
-            </div>
+            ))}
           </div>
         </div>
 
-        <div className="Tech_Stack section-wrapper-3">
+        <div className="Tech_Stack h-40 mt-4 section-wrapper-3">
           <h2 className="h3 py-2 text-center">Our Tech Stack</h2>
-          <div className="tech_stack">
-            <div 
-              id="carouselExampleCaptions" 
-              ref={techStackCarouselRef}
-              className="carousel slide bg-transparent"
-            >
-              <div className="carousel-indicators bg-transparent">
-                {techStack.map((_, idx) => (
-                  <button
-                    key={idx}
-                    type="button"
-                    onClick={() => techStackCarousel && techStackCarousel.to(idx)}
-                    className=""
-                    aria-current={idx === 0 ? "true" : undefined}
-                    aria-label={`Slide ${idx + 1}`}
-                  ></button>
-                ))}
+          <div className="tech_stack px-2" style={{ overflowX: 'auto', display: 'flex', gap: '10px', padding: '10px', scrollSnapType: 'x mandatory' }}>
+            {techStack.map((tech, idx) => (
+              <div key={idx} className="d-flex tech flex-column align-items-center w-100 justify-content-center" style={{ minWidth: '200px', scrollSnapAlign: 'start' }}>
+                <img src={tech.icon} className="d-block" alt={tech.name} style={{ maxWidth: '100px', height: 'auto' }} />
+                <h5 className='text-dark'>{tech.name}</h5>
+                <p className="text-center text-dark fw-normal tech-text px-3">{tech.description}</p>
               </div>
-              <div className="carousel-inner">
-                {techStack.map((tech, idx) => (
-                  <div key={idx} className={`carousel-item ${idx === 0 ? 'active' : ''} d-flex flex-column align-items-center justify-content-center`}>
-                    <img src={tech.icon} className="d-block w-100" alt={tech.name} />
-                    <h5 className='text-dark'>{tech.name}</h5>
-                    <p className="p text-center tech-text text-dark fw-normal px-3">{tech.description}</p>
-                  </div>
-                ))}
-              </div>
-              <button 
-                className="carousel-control-prev" 
-                type="button" 
-                onClick={() => techStackCarousel && techStackCarousel.prev()}
-              >
-                <span className="carousel-control-prev-icon bg-secondary" aria-hidden="true"></span>
-                <span className="visually-hidden">Previous</span>
-              </button>
-              <button 
-                className="carousel-control-next" 
-                type="button" 
-                onClick={() => techStackCarousel && techStackCarousel.next()}
-              >
-                <span className="carousel-control-next-icon bg-secondary" aria-hidden="true"></span>
-                <span className="visually-hidden">Next</span>
-              </button>
-            </div>                  
+            ))}
           </div>
         </div>
       </div>
       <div className="col-md-6 section-wrapper-3 py-2">
         <h2 className="h2 py-4 text-center">Testimonials</h2>
-        <div className="testimonials">
-          <div className="testimonial d-flex flex-column align-items-center justify-content-center">
-            <img src={placeholder} className="rounded-circle border mx-3 mb-3" alt="Testimonial 1" style={{ width: '100px', height: '100px' }}/>
-            <div className="comments px-2 d-flex flex-column align-items-center justify-content-center">
-              <h5 className="h5 border py-2">John Doe</h5>
-              <p className="p text-center px-4 py-2 border">"Softkhlome provided exceptional service and delivered a fantastic project on time. Highly recommended!"</p>
+        <div className="testimonials d-flex flex-column align-items-center justify-content-s" style={{ overflowY: 'scroll', maxHeight: '100%', padding: '10px' }}>
+          {testimonials.map((testimonial, idx) => (
+            <div key={idx} className="testimonial d-flex py-2 my-1 flex-column align-items-center justify-content-center">
+              <img src={testimonial.image} className=" img rounded-circle border mx-3 mb-3" alt={testimonial.name} style={{ width: '100px', height: '100px' }}/>
+              <div className="comments px-2 d-flex flex-column align-items-center justify-content-center">
+                <h5 className="h5 py-2">{testimonial.name}</h5>
+                <p className="text-center px-4 py-2 ">"{testimonial.comment}"</p>
+              </div>
             </div>
-          </div>
-          <div className="testimonial d-flex flex-column align-items-center justify-content-center">
-            <img src={placeholder} className="rounded-circle mb-3" alt="Testimonial 2" style={{ width: '100px', height: '100px' }}/>
-            <h5 className="h5">Jane Smith</h5>
-            <p className="p text-center">"The team at Softkhlome is professional, responsive, and highly skilled. They exceeded our expectations!"</p>
-          </div>
+          ))}
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default ProjStackTest
+export default ProjStackTest;
