@@ -7,7 +7,7 @@ export const contactmethods=[
     },
     {
         method:"Message",
-        description:"Talk with the developers in realtime through voice or video calls on whatsapp.",
+        description:"Talk with the developers in realtime on whatsapp.",
         icon:"bi bi-whatsapp",
         link:"https://api.whatsapp.com/send?phone=+265886522243&text=Hie Brian"
     },

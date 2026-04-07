@@ -8,14 +8,14 @@ function NavBar() {
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarID" aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="collapse text-light navbar-collapse  justify-content-end" id="navbarID">
-                    <div className="navbar-nav px-4  text-light">
-                        <a className="nav-link active " aria-current="page" href="#">Home</a>
-                        <a href="#" className="nav-link text-light">About</a>
-                        <a href="#" className="nav-link text-light">Services</a>
-                        <a href="#" className="nav-link text-light">Contact</a>
-                        <a href="#" className="nav-link text-light">Profile</a>
-                    </div>
+                <div className="collapse navbar-collapse text-light justify-content-end" id="navbarID">
+                    <ul className="navbar-nav px-4 text-light ms-auto">
+                        <li className="nav-item"><a className="nav-link active" aria-current="page" href="#">Home</a></li>
+                        <li className="nav-item"><a href="#" className="nav-link text-light">About</a></li>
+                        <li className="nav-item"><a href="#" className="nav-link text-light">Services</a></li>
+                        <li className="nav-item"><a href="#" className="nav-link text-light">Contact</a></li>
+                        <li className="nav-item"><a href="#" className="nav-link text-light">Profile</a></li>
+                    </ul>
                 </div>
             </div>
         </nav>

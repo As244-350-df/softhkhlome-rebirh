@@ -22,10 +22,21 @@
   margin:0 !important;
   height:100% !important;
   background-color:rgba(0,0,0,.7) !important ;
-  padding:0 2rem !important;
+  padding:.1rem !important;
 }
 .navbar,.navbar *{
  background-color: transparent !important;
+}
+.navbar-toggler {
+  background-color: transparent !important;
+  border-color: rgba(255, 255, 255, 0.55) !important;
+}
+.navbar-toggler-icon {
+  background-color: transparent !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.55)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25) !important;
 }
 .active {
   color: #0d6efd !important;
@@ -89,6 +100,11 @@
 .contact-link .bi{
   font-size: x-large !important;
    color:rgba(255, 193, 7, 1) !important;
+   width: 250px !important;
+   height: 400px !important;
+}
+.contact-link .card-text{
+  font-size: smaller !important;
 }
 .about-us{
   display:flex;
@@ -112,7 +128,7 @@
 }
 .section-wrapper{
   border-radius:1%;
-  box-shadow: 0px 0px 2px rgb(132, 126, 126);
+  box-shadow: 0px 0px 0px rgb(132, 126, 126);
   background-color:white !important;
   width:97vw !important;
   margin-top: .8rem !important;
@@ -145,7 +161,7 @@
 }
 .section-wrapper-4{
   border-radius:1%;
-  box-shadow: 0px 0px 2px rgb(132, 126, 126);
+  box-shadow: 0px 0px px rgb(132, 126, 126);
   background-color:white !important;
   margin:0px auto !important;
   margin-top: .8rem !important;
@@ -160,15 +176,19 @@
   border:0px solid red !important;
   border-radius:5px !important;
   background-color: transparent !important;
-  padding: auto 3rem !important;
+  padding: auto 0rem !important;
+}
+.tech_stack *{
+  background-color: transparent !important;
+  color:white !important;
 }
 .tech{
     border:0px solid red !important;
     border-radius:5px !important;
     background-color: transparent !important;
     width: inherit !important;
-    min-width: 19rem !important;
-    box-shadow: 0px 0px 2px rgb(132, 126, 126);
+    min-width: 19.7rem !important;
+    box-shadow: 0px 0px 0px rgb(132, 126, 126);
   }
 
 .tech-text{

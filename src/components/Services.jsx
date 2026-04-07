@@ -15,7 +15,7 @@ function Services() {
                   <img src={design} className="service-img img-fluid" alt="" />
                   <h4 className="h4 py-2">{service.name}</h4>
                   <p className="text-center desc px-2">{service.description}</p>
-                  <p className="p  fw-bold">Price Range: <span className="text-warning">${service.priceRange}</span></p>
+                  <p className="p  fw-bold">Price: <span className="text-warning">{service.priceRange}</span></p>
                 </div>
               ))}   
             </div>

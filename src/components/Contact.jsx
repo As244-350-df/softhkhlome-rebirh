@@ -1,12 +1,12 @@
 import React from "react"
-import { contactmethods } from "./contact.js";
+import {contactmethods } from "./contactUs.js";
 function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
 
 return (
-    <div className="contact container section-wrapper p-5 ">
+    <div className="contact container section-wrapper p-5 px-2 ">
         <h2 className="h2 fw-bold text-center text-primary py-4">Contact Us</h2>
         <div className="container">
             <div className="row my-4 g-4">
@@ -24,7 +24,7 @@ return (
                             <label htmlFor="message" className="form-label fw-bold">Message</label>
                             <textarea className="form-control border-primary" id="message" placeholder="write your message here..." ></textarea>
                         </div>
-                        <button type="submit" className="btn btn-primary">Send Message</button>
+                        <button type="submit" className="btn btn-primary bg-primary">Send Message</button>
                     </form>
                 </div>
                 <div className="col-md-6 d-flex flex-column align-items-center justify-content-center">
@@ -37,16 +37,16 @@ return (
                     </ul>
                 </div>
             </div>
-            <div className="row py-4 text-center d-flex justify-content-center contact-links g-1">
+            <div className="row py-4 text-center w-100 d-flex contact-links border">
                 {contactmethods.map((method, index) => (
-                    <div className="col-md-4 my-2 contact-link px-5 " key={index}>
+                    <div className={`col-md-4 my-2 mx-0 contact-link`} key={index}>
                        <div className="card bg-dark text-light">
                          <div className="card-body text-center ">
-                             <h1 className="h1 mb-3">
+                             <h1 className="h1 mb-1">
                                <i className={method.icon}></i>
                              </h1>
-                         <h2 className="h2 mb-3">{method.method}</h2>
-                         <p className="card-text  my-4">
+                         <h2 className="h2 mb-4">{method.method}</h2>
+                         <p className="card-text px-5 mb-5">
                                {method.description}
                          </p>
                          <a href={method.link} className="btn btn-outline-warning" target="_blank" rel="noopener noreferrer">

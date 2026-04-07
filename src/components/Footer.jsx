@@ -18,7 +18,7 @@ function Footer() {
             <div className="container-fluid ">
             <h4 className="display-7 text-center text-light">Navigate</h4>
             <ul className="nav d-flex justify-content-center">
-            <li className="nav-item text-light"><a href="#" className="nav-link active text-light text-center">Home</a></li>
+            <li className="nav-item text-light"><a href="#" className="nav-link active-f text-light text-center">Home</a></li>
             </ul>
             <ul className="nav d-flex justify-content-center">
             <li className="nav-item text-light"><a href="#services" className="nav-link text-light text-center">Services</a></li>
