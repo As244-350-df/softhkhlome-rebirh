@@ -6,6 +6,7 @@ import TeamImg from '../assets/Polish_20260407_171501920.png'
 import Contact from "../components/Contact"
 import Services from '../components/Services.jsx'
 import sampleImg from "../images/undraw_in-the-office_e7pg.svg"
+import ProfileProjects from '../components/ProfileProjects.jsx'
 function About() {
   const pageName="about"
   return (
@@ -45,6 +46,7 @@ function About() {
             <p className="p py-2 text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem rem quo tempora itaque, facere voluptates enim voluptatem dolore hic beatae? Perferendis, cumque. Quidem nisi repudiandae officiis saepe mollitia magnam quasi?</p>
           </div>
         </div>
+        <ProfileProjects/>
         <Services/>        
         <Contact/>
       <Footer />

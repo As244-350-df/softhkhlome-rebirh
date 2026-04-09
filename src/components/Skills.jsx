@@ -8,10 +8,10 @@ function Skills() {
           techStack.map((tech,idx)=>{
             return (
                 <div className="col-md-3">
-                    <div className="skill border border-warning h-100">
+                    <div className="skill border children-bg-transparent bg-primary border-warning py-1 d-flex flex-column align-items-center h-100">
                         <img src={tech.icon} alt="" className="img img fluid" />
-                        <h5 className="h5 text-center ">{tech.name}</h5>
-                        <p className="p tech-text px-1 text-center">{tech.description}</p>
+                        <h5 className="h5 text-center text-warning pt-1">{tech.name}</h5>
+                        <p className="p tech-text px-2 pt-2 text-center text-light">{tech.description}</p>
                     </div>
                 </div>
             )

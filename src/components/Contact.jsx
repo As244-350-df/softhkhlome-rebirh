@@ -6,10 +6,10 @@ function Contact() {
   };
 
 return (
-    <div className="contact container section-wrapper p-5 px-1 " id="contact">
+    <div className="contact container p-5 px-1 " id="contact">
         <h2 className="h2 fw-bold text-center text-primary py-4">Contact Us</h2>
         <div className="container">
-            <div className="row my-4 g-4">
+            <div className="row my-4 px-md-5 g-4">
                 <div className="col-md-6">
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3">

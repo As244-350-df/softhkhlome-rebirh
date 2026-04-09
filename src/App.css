@@ -267,4 +267,15 @@
 .skill{
   border-radius: 5px;
   margin-right: 0px !important;
+
+}
+.skill  .img,.profileprojects .img{
+  height: 5rem !important;
+  width: 5rem !important;
+}
+.children-bg-transparent *{
+  background-color: transparent !important;
+}
+.border-radius{
+  border-radius: 5px !important;
 }

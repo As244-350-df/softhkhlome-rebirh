@@ -5,6 +5,7 @@ import DevDesc from '../components/DevDesc'
 import Skills from '../components/Skills'
 import Experience from '../components/Experience'
 import Contact from '../components/Contact'
+import ProfileProjects from '../components/ProfileProjects'
 function Profile() {
   const pageName="Profile"
   return (
@@ -13,6 +14,7 @@ function Profile() {
       <DevDesc/>
       <Skills/>
       <Experience/>
+      <ProfileProjects/>
       <Contact/>
       <Footer/>
     </div>

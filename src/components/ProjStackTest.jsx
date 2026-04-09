@@ -2,7 +2,7 @@ import React from 'react';
 import placeholder from '../assets/Logo.png';
 import { techStack } from './TechStack.js';
 import { testimonials } from './testimonials.js';
-import { proejcts } from './projects.js';
+import { projects } from './projects.js';
 function ProjStackTest() {
   return (
     <div className='row container mb-2 section-wrapper-1'>
@@ -10,7 +10,7 @@ function ProjStackTest() {
         <div className="Projects h-40 section-wrapper-3">
           <h2 className="h2 py-2 text-center text-primary">Projects</h2>
           <div className="projects py-2  border" style={{ overflowX: 'auto', display: 'flex', gap: '10px', padding: '10px', scrollSnapType: 'x mandatory' }}>
-            {proejcts.map((project, idx) => (
+            {projects.map((project, idx) => (
               <div key={idx} className={`d-flex pt-4 tech flex-column align-items-center justify-content-center ${idx==0? "ml-2":""}`} style={{ minWidth: '200px', scrollSnapAlign: 'start' }}>
                 <img src={placeholder} className="w-100" alt={project.name } style={{ maxWidth: '100px', minHeight: '120px', height: 'auto' }}/>
                 <h3 className="h3 text-center">{project.name}</h3>
