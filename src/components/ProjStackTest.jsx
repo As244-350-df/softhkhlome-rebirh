@@ -25,7 +25,7 @@ function ProjStackTest() {
           <div className="tech_stack  border px-3" style={{ overflowX: 'auto', display: 'flex', gap: '10px', padding: '10px', scrollSnapType: 'x mandatory' }}>
             {techStack.map((tech, idx) => (
               <div key={idx} className="d-flex tech flex-column align-items-center w-100 justify-content-center" style={{ minWidth: '200px', scrollSnapAlign: 'start' }}>
-                <img src={tech.icon} className="d-block" alt={tech.name} style={{ maxWidth: '100px', height: 'auto' }} />
+                <img src={tech.icon} className="d-block " alt={tech.name} style={{ maxWidth: '100px', height: 'auto' }} />
                 <h5 className='text-warning pt-1'>{tech.name}</h5>
                 <p className="text-center text-dark fw-normal tech-text px-3">{tech.description}</p>
               </div>

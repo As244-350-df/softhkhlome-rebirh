@@ -14,7 +14,7 @@
   background-color:linear-gradient(180,rgba(0,0,0,.7),#0d6efd) !important;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size:cover;
   padding:0 !important;
   margin:0 !important;
 }
@@ -26,14 +26,18 @@
 }
 .navbar,.navbar *{
  background-color: transparent !important;
+
+}
+.navbar{
+   z-index: 100 !important;
 }
 .navbar-toggler {
   background-color: transparent !important;
-  border-color: rgba(255, 255, 255, 0.55) !important;
+  border-color:  #0d6efd !important;
 }
 .navbar-toggler-icon {
   background-color: transparent !important;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.55)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke=' #0d6efd' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 .navbar-toggler:focus {
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25) !important;
@@ -173,14 +177,14 @@
   background-color: transparent !important;
 }
 .tech_stack{
-  border:0px solid red !important;
+  border:0px solid red;
   border-radius:5px !important;
   background-color: transparent !important;
   padding: auto 0rem !important;
 }
 .tech_stack *{
   background-color: transparent !important;
-  color:white !important;
+  color:white;
 }
 .tech{
     border:0px solid red !important;
@@ -254,4 +258,13 @@
   height: 5px !important;
   width: 5px !important;
   margin: auto 4px !important;
+}
+/*about us page*/
+.about-intro{
+  width:100vw !important;
+}
+/*skills*/
+.skill{
+  border-radius: 5px;
+  margin-right: 0px !important;
 }

@@ -6,7 +6,7 @@ function Contact() {
   };
 
 return (
-    <div className="contact container section-wrapper p-5 px-2 ">
+    <div className="contact container section-wrapper p-5 px-1 " id="contact">
         <h2 className="h2 fw-bold text-center text-primary py-4">Contact Us</h2>
         <div className="container">
             <div className="row my-4 g-4">
@@ -24,7 +24,7 @@ return (
                             <label htmlFor="message" className="form-label fw-bold">Message</label>
                             <textarea className="form-control border-primary" id="message" placeholder="write your message here..." ></textarea>
                         </div>
-                        <button type="submit" className="btn btn-primary bg-primary">Send Message</button>
+                        <button type="submit" className="btn text-primary bg-warning">Send Message</button>
                     </form>
                 </div>
                 <div className="col-md-6 d-flex flex-column align-items-center justify-content-center">
@@ -37,7 +37,7 @@ return (
                     </ul>
                 </div>
             </div>
-            <div className="row py-4 text-center w-100 d-flex contact-links border">
+            <div className="row py-4 text-center w-100 d-flex contact-links">
                 {contactmethods.map((method, index) => (
                     <div className={`col-md-4 my-2 mx-0 contact-link`} key={index}>
                        <div className="card bg-dark text-light">

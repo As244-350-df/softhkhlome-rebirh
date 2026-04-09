@@ -7,7 +7,7 @@ function Services() {
   return (
     <>
         <div className="container section-wrapper services " id="services">
-          <h3 className="h2 fw-bold text-center py-2 text-primary" >Our Services</h3>
+          <h3 className="h2 fw-bold text-center py-4 text-primary" >Our Services</h3>
           <div className="services">
             <div className="row">
               {services.map((service, index) => (

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import brand from '../assets/brand.png'
 function Footer() {
   return (
@@ -18,19 +19,19 @@ function Footer() {
             <div className="container-fluid ">
             <h4 className="display-7 text-center text-light">Navigate</h4>
             <ul className="nav d-flex justify-content-center">
-            <li className="nav-item text-light"><a href="#" className="nav-link active-f text-light text-center">Home</a></li>
+            <li className="nav-item text-light"><Link to="/" className="nav-link active-f text-light text-center">Home</Link></li>
             </ul>
             <ul className="nav d-flex justify-content-center">
-            <li className="nav-item text-light"><a href="#services" className="nav-link text-light text-center">Services</a></li>
+            <li className="nav-item text-light"><a href="/#services" className="nav-link text-light text-center">Services</a></li>
             </ul>
                 <ul className="nav d-flex justify-content-center">
-            <li className="nav-item text-light text-center"><a href="About.html" className="nav-link text-light text-center">About</a></li>
+            <li className="nav-item text-light text-center"><Link to="/About" className="nav-link text-light text-center">About</Link></li>
             </ul>
             <ul className="nav d-flex justify-content-center">
-            <li className="nav-item text-light text-center"><a href="privacy.html" className="nav-link text-light text-center">privacy Policy</a></li>
+            <li className="nav-item text-light text-center"><Link to="/Policy" className="nav-link text-light text-center">privacy Policy</Link></li>
             </ul>
             <ul className="nav d-flex justify-content-center">
-            <li className="nav-item text-light text-center"><a href="#contacts" className="nav-link text-light text-center">Contact</a></li>
+            <li className="nav-item text-light text-center"><a href="/#contact" className="nav-link text-light text-center">Contact</a></li>
             </ul>
         </div>  
         </div>    

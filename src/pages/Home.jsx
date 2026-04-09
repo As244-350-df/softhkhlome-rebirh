@@ -8,11 +8,12 @@ import AboutUs from '../components/AboutUs'
 import Footer from '../components/Footer'
 import ProjStackTest from '../components/ProjStackTest'
 function Home() {
+  const pageName="home"
   return (
     <>
     <div className="navbar-intro border bg-primary">
       <div className="navbar-intro-cont">
-       <NavBar />
+       <NavBar pageName={pageName}/>
        <Introduction />
       </div>
     </div>
