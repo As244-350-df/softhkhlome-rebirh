@@ -11,25 +11,40 @@ function About() {
   const pageName="about"
   return (
     <>
+    <div className="Navbar-and-introd border">
       <NavBar pageName={pageName}/>
-
-      <div className="about-intro row container-fluid w-100 border-bottom border-primary px-5 py-0">
-        <div className="col-md-6 d-flex flex-column py-md-3 align-items-center justify-content-center">
-          <h1 className="display-2 fw-bolder text-primary  py-5 pb-2 mt-md-5 text-center">Learn More About Us</h1>
+      <div className="about-intro row container-fluid w-100 h-100 border-bottom border-primary px-5 py-0">
+        <div className="col-md-6 py-1 d-flex px-md-5 flex-column py-md-3 align-items-center justify-content-center">
+          <h1 className="display-3 fw-bolder text-primary  py-5 pb-2 mt-md-5 text-center">Learn More About Us</h1>
           <p className="text-center px-4 py-2">Get to know more about our Organization's Origin, Mission, and Team. </p>
           <div className="buttons"><button className="btn btn-warning text-primary">Get Started</button></div>
         </div>
-        <div className="col-md-6  d-flex flex-column align-items-end justify-content-center">
-          <img src={TeamImg} className="img-fluid w-100" style={{height:"100%",clipPath:"inset (0px 0px 0px 0px) !important"}} alt="about us" />
+        <div className="col-md-6 d-none  d-md-flex flex-column align-items-center justify-content-end">
+          <img src={TeamImg} className="img img-fluid border-primary w-100"  alt="about us" />
         </div>
       </div>
-        <div className="container-fluid section-wrapper p-3 py-3">
-            <h1 className="display-7 fw-bolder text-center text-primary bg-transparent py-4">Our Origin</h1>
-            <p className="text-center px-4 bg-transparent text-dark py-2">SoftKhlome is a software development company dedicated to providing innovative and reliable solutions to businesses of all sizes. With a team of skilled developers, designers, and project managers, we specialize in creating custom software applications that meet the unique needs of our clients. Our mission is to empower businesses with technology that drives growth and efficiency. We pride ourselves on delivering high-quality products and exceptional customer service, ensuring that our clients achieve their goals through our software solutions.</p>
+    </div>
+        <div className="container-fluid children-bg-transparent bg-primary p-3 py-3">
+          <div className="row">
+         
+            <div className="col-md-6">
+             <div className="content px-2">
+              <h3 className="display-7 pb-md-2 text-center text-warning">Our Origin</h3>
+              <p className="p py-2 text-center text-light">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem rem quo tempora itaque, facere voluptates enim voluptatem dolore hic beatae? Perferendis, cumque. Quidem nisi repudiandae officiis saepe mollitia magnam quasi?</p>
+             </div>
+            </div>
+        
+            <div className="col-md-6 px-2">
+             <div className="content">
+              <h3 className="display-7 pb-md-2 text-center text-warning">About us</h3>
+              <p className="p py-2 text-center text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum nemo quisquam est eos quis recusandae qui earum assumenda enim aliquam?</p>
+             </div>
+            </div>
+          </div>
         </div>
         <div className="row py-3 px-5 section-wrapper">
           <h3 className="display-7 pb-md-5 col-12 text-center text-primary">Our Mission</h3>
-          <div className="col-md-6">
+          <div className="col-md-6 d-flex flex-column align-items-center justify-content-center">
             <p className="p py-2 text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem rem quo tempora itaque, facere voluptates enim voluptatem dolore hic beatae? Perferendis, cumque. Quidem nisi repudiandae officiis saepe mollitia magnam quasi?</p>
             <p className="p text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum nemo quisquam est eos quis recusandae qui earum assumenda enim aliquam?</p>
           </div>
@@ -40,7 +55,7 @@ function About() {
         <div className="row py-3 px-5 section-wrapper">
           <h3 className="display-7 pb-md-5 col-12 text-center text-primary">Our Team</h3>
           <div className="col-md-6">
-            <img src={sampleImg} alt="" className="img img-fluid img-circle border" />
+            <img src={sampleImg} alt="" className="img img-fluid img-circle" />
           </div>          
           <div className="col-md-6 d-flex align-items-center">
             <p className="p py-2 text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem rem quo tempora itaque, facere voluptates enim voluptatem dolore hic beatae? Perferendis, cumque. Quidem nisi repudiandae officiis saepe mollitia magnam quasi?</p>

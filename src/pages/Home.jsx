@@ -1,4 +1,5 @@
 import React from 'react'
+import { Suspense } from 'react'
 import NavBar from '../components/NavBar'
 import Introduction from '../components/Introduction'
 import Services from '../components/Services.jsx'
@@ -7,24 +8,29 @@ import Contact from '../components/Contact'
 import AboutUs from '../components/AboutUs'
 import Footer from '../components/Footer'
 import ProjStackTest from '../components/ProjStackTest'
+import Loader from '../components/Loader.jsx'
+import TermsMod from '../components/TermsMod.jsx'
 function Home() {
   const pageName="home"
   return (
     <>
-    <div className="navbar-intro border bg-primary">
-      <div className="navbar-intro-cont">
-       <NavBar pageName={pageName}/>
-       <Introduction />
+    <Suspense fallback={ <Loader/>}>
+      <div className="navbar-intro border bg-primary">
+        <div className="navbar-intro-cont">
+        <NavBar pageName={pageName}/>
+        <Introduction />
+        </div>
       </div>
-    </div>
-    <div className="d-flex flex-column align-items-center">
-        <Services />
-        <WhyChooseUs />
-        <Contact/>
-        <AboutUs/>
-        <ProjStackTest/>
-        <Footer/>
-    </div>
+      <div className="d-flex flex-column align-items-center">
+          <Services />
+          <WhyChooseUs />
+          <Contact/>
+          <AboutUs/>
+          <ProjStackTest/>
+           <TermsMod/>
+          <Footer/>
+      </div>
+    </Suspense>
     </>
   )
 }

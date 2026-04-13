@@ -60,7 +60,7 @@ function Footer() {
         </div>
         </div>        
         <div className="col-12 d-flex my-2 justify-content-center">
-            <p id="copyright" className="disabled text-light text-center fs-md-5 fs-lg-3 my-2">SoftKhlome 2025,Alrights reserved ©</p>
+            <p id="copyright" className="disabled text-light text-center fs-md-5 fs-lg-3 my-2">SoftKhlome 2025. Alrights reserved © |<a href="#" className="terms text-light bg-transparent text-decoration-none"> Terms & conditions</a></p>
         </div>
         </footer>
   )
