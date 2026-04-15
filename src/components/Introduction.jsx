@@ -1,16 +1,74 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Introduction() {
   return (
-    <section className="hero px-5 d-flex flex-direction-row align-items-center  mb-sm-2 pb-5" >
-        <div className="hero-content bg-transparent">
-            <h1 className='h1 bg-transparent text-light text-center'>Build <span className="text-warning bg-transparent">Modern</span>, <span className="text-warning bg-transparent">Affordable </span>websites in Malawi</h1>
-            <p className='bg-transparent text-light text-center px-md-5'>We help businesses and individuals create fast, responsive, and professional websites that attract customers and grow your brand.</p>
-            <div className='buttons bg-transparent d-flex g-3 d-flex justify-content-center'>
-            <button className="btn btn-primary mx-2">Get Started</button>
-            <button className="btn btn-outline-primary">Learn More</button>
+    <section className="hero px-5 d-flex children-bg-transparent flex-direction-row align-items-center mb-sm-2 pb-5">
+      <div className="container-fluid">
+        <div className="row justify-content-center">
+          <div className="col-12 col-lg-10 col-xl-8">
+            <div className="text-center">
+              <div className="card bg-transparent border-0 shadow-lg">
+                <div className="card-body py-2">
+                  <h1 className='display-4 fw-bold text-light mb-4'>
+                    Build <span className="text-warning">Modern</span>, <span className="text-warning">Affordable</span> websites in Malawi
+                  </h1>
+                  <p className='lead small text-light mb-4 px-md-5'>
+                    We help businesses and individuals create fast, responsive, and professional websites that attract customers and grow your brand.
+                  </p>
+                  <div className='d-flex justify-content-center gap-3 flex-wrap'>
+                    <a href="#contact" className="btn btn-primary text-warning btn-lg px-4 py-2">
+                      <i className="bi bi-rocket-takeoff me-2"></i>
+                      Get Started
+                    </a>
+                    <Link to="/about" className="btn btn-outline-warning text-primary btn-lg px-4 py-2">
+                      <i className="bi bi-info-circle me-2"></i>
+                      Learn More
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              {/* Feature Highlights */}
+              <div className="row mt-2  mb-1 g-4">
+                <div className="col-md-4">
+                  <div className="card bg-white bg-opacity-10 border-light text-light h-100">
+                    <div className="card-body text-center">
+                      <div className="mb-3">
+                        <i className="bi bi-lightning-charge-fill fs-1 text-warning"></i>
+                      </div>
+                      <h5 className="card-title">Fast & Responsive</h5>
+                      <p className="card-text ">Lightning-fast loading times with mobile-first design</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-4">
+                  <div className="card bg-white bg-opacity-10 border-light text-light h-100">
+                    <div className="card-body text-center">
+                      <div className="mb-3">
+                        <i className="bi bi-shield-check fs-1 text-success"></i>
+                      </div>
+                      <h5 className="card-title">Secure & Reliable</h5>
+                      <p className="card-text">Built with security best practices and reliable hosting</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-4">
+                  <div className="card bg-white bg-opacity-10 border-light text-light h-100">
+                    <div className="card-body text-center">
+                      <div className="mb-3">
+                        <i className="bi bi-graph-up fs-1 text-info"></i>
+                      </div>
+                      <h5 className="card-title">Results Driven</h5>
+                      <p className="card-text">Increase conversions and grow your business online</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
   )
 }

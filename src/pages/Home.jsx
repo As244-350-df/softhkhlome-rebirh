@@ -15,8 +15,8 @@ function Home() {
   return (
     <>
     <Suspense fallback={ <Loader/>}>
-      <div className="navbar-intro border bg-primary">
-        <div className="navbar-intro-cont">
+      <div className="navbar-intro">
+        <div className="navbar-intro-cont border-primary ">
         <NavBar pageName={pageName}/>
         <Introduction />
         </div>
@@ -27,9 +27,8 @@ function Home() {
           <Contact/>
           <AboutUs/>
           <ProjStackTest/>
-           <TermsMod/>
-          <Footer/>
       </div>
+      <Footer/>
     </Suspense>
     </>
   )
