@@ -123,7 +123,7 @@ function ProjStackTest() {
                     scrollbarColor: '#6c757d transparent'
                   }}
                 >
-                  {testimonials.map((testimonial, idx) => (
+                  {testimonials.length>0?testimonials.map((testimonial, idx) => (
                     <div key={idx} className="card border-0 shadow-sm">
                       <div className="card-body text-center">
                         <div className="mb-3">
@@ -145,7 +145,15 @@ function ProjStackTest() {
                         </div>
                       </div>
                     </div>
-                  ))}
+                  ))
+                  :<div className="d-flex flex-column align-items-center gap-3 py-5">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2038/2038547.png" alt="No Testimonials" className="img-fluid" style={{ width: '100px', height: '100px' }} />
+                    <div className="text-center">
+                      <h5 className="text-muted">No Testimonials Yet</h5>
+                      <p className="small text-muted">Be the first to share your experience!</p>
+                    </div>
+                  </div>  
+                  }
                 </div>
               </div>
             </div>

@@ -76,7 +76,7 @@ function AboutUs() {
                       style={{ height: '100%', objectFit: 'cover' }}
                     />
                   </div>
-                  <div className="card-footer bg-primary text-light text-center">
+                  <div className="card-footer bkg-primary text-light text-center">
                     <h5 className="mb-1">Brian Kamwera</h5>
                     <p className="mb-0 small">Founder & Lead Developer</p>
                   </div>
@@ -90,7 +90,7 @@ function AboutUs() {
                 <div className="card">
                   <div className="card-body text-center p-4">
                     <div className="mb-3">
-                      <i className="bi bi-bullseye text-primary fs-1"></i>
+                      <i className="fas fa-bullseye text-primary fs-1"></i>
                     </div>
                     <h4 className="card-title text-primary fw-bold mb-3">Our Mission</h4>
                     <p className="card-text lead text-muted mb-4">
@@ -100,21 +100,21 @@ function AboutUs() {
                     <div className="row g-3">
                       <div className="col-md-4">
                         <div className="p-3">
-                          <i className="bi bi-lightning text-warning fs-2 mb-2"></i>
+                          <i className="fas fa-bolt text-warning fs-2 mb-2"></i>
                           <h6 className="fw-bold">Innovation</h6>
                           <p className="small text-muted">Staying ahead with cutting-edge technologies</p>
                         </div>
                       </div>
                       <div className="col-md-4">
                         <div className="p-3">
-                          <i className="bi bi-heart text-danger fs-2 mb-2"></i>
+                          <i className="fas fa-heart text-danger fs-2 mb-2"></i>
                           <h6 className="fw-bold">Quality</h6>
                           <p className="small text-muted">Delivering excellence in every project</p>
                         </div>
                       </div>
                       <div className="col-md-4">
                         <div className="p-3">
-                          <i className="bi bi-handshake text-success fs-2 mb-2"></i>
+                          <i className="fas fa-handshake text-success fs-2 mb-2"></i>
                           <h6 className="fw-bold">Partnership</h6>
                           <p className="small text-muted">Building lasting relationships with clients</p>
                         </div>

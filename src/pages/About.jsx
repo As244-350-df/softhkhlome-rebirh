@@ -8,7 +8,7 @@ import Services from '../components/Services.jsx'
 import sampleImg from "../images/undraw_in-the-office_e7pg.svg"
 import ProfileProjects from '../components/ProfileProjects.jsx'
 import webDevImg from "../assets/Web Development.png"
-
+import FounderImg from "../assets/Polish_20250527_105337925.png"
 function About() {
   const pageName = "about"
   return (
@@ -58,7 +58,7 @@ function About() {
                 </div>
                 <div className="card-body">
                   <p className="card-text text-muted">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem rem quo tempora itaque, facere voluptates enim voluptatem dolore hic beatae? Perferendis, cumque. Quidem nisi repudiandae officiis saepe mollitia magnam quasi?
+                    Softkhlome was founded in 2024 by its co-founder <strong>Brian Kamwera</strong>. Softkhlome itself was a project that we invented to showcase my development skills but it turned out to be more than just a project. It became a platform where I could share my passion for web development and connect with like-minded individuals. The name "Softkhlome" is a combination of "Software" and "Home," reflecting our vision of creating a welcoming space for software development and innovation. Since its inception, Softkhlome has evolved into a thriving community and a hub for developers, entrepreneurs, and tech enthusiasts to collaborate, learn, and grow together.  
                   </p>
                 </div>
               </div>
@@ -74,7 +74,9 @@ function About() {
                 </div>
                 <div className="card-body">
                   <p className="card-text text-muted">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum nemo quisquam est eos quis recusandae qui earum assumenda enim aliquam?
+                    Softkhlome is a newly established web development company founded in 2025 with a mission to deliver innovative and high-quality solutions to clients worldwide.
+                    Our journey began with one passionate developer who had a vision of creating impactful software that transforms businesses and enhances user experiences.
+                    Over the years, we have grown into a dynamic organization with a immense talent pool, serving clients across various industries and delivering successful projects that drive growth and success.                 
                   </p>
                 </div>
               </div>
@@ -99,10 +101,10 @@ function About() {
                     <i className="bi bi-bullseye text-primary fs-1"></i>
                   </div>
                   <p className="card-text text-muted mb-3">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem rem quo tempora itaque, facere voluptates enim voluptatem dolore hic beatae? Perferendis, cumque. Quidem nisi repudiandae officiis saepe mollitia magnam quasi?
+                    Our mission is to empower businesses and individuals through innovative web solutions that drive growth, enhance user experiences, and foster digital transformation. We are committed to delivering high-quality, scalable, and user-centric applications that meet the evolving needs of our clients and contribute to their success in the digital landscape.
                   </p>
                   <p className="card-text text-muted">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum nemo quisquam est eos quis recusandae qui earum assumenda enim aliquam?
+                   Our core values of integrity, innovation, and customer-centricity guide everything we do, ensuring that we not only meet but exceed our clients' expectations while fostering a collaborative and inclusive work environment for our team.
                   </p>
                 </div>
               </div>
@@ -127,7 +129,7 @@ function About() {
               <div className="card shadow-lg border-0">
                 <div className="card-body p-0">
                   <img
-                    src={sampleImg}
+                    src={FounderImg}
                     alt="Our dedicated team"
                     className="img-fluid rounded w-100"
                     style={{ height: '100%', objectFit: 'cover' }}
@@ -140,7 +142,7 @@ function About() {
                 <div className="card-body p-4">
                   <h4 className="card-title text-primary fw-bold mb-3">A Dedicated Team</h4>
                   <p className="card-text text-muted mb-3">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem rem quo tempora itaque, facere voluptates enim voluptatem dolore hic beatae? Perferendis, cumque. Quidem nisi repudiandae officiis saepe mollitia magnam quasi?
+                    Right now Softkhlome is at its early stages and we are a small team of passionate individuals who are dedicated to delivering exceptional web development services. Our team is made up of talented developers, designers, and project managers who work collaboratively to bring our clients' visions to life. We are committed to fostering a positive and inclusive work environment where creativity and innovation thrive, allowing us to deliver high-quality solutions that exceed our clients' expectations.
                   </p>
                   <div className="row g-3">
                     <div className="col-6">

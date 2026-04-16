@@ -34,11 +34,11 @@ function Services() {
                       <h5 className="card-title text-primary fw-bold mb-3">{service.name}</h5>
                       <p className="card-text text-muted flex-grow-1">{service.description}</p>
                       <div className="mt-auto">
-                        <div className="d-block w-100 d-md-flex justify-content-between align-items-center">
-                          <span className="badge bg-warning text-primary fw-bold px-3 py-2">
-                            {service.priceRange}
+                        <div className=" w-100 d-flex justify-content-between align-items-center">
+                          <span className=" badge bg-warning text-primary fw-bold px-3 py-2">
+                            {service.priceRange}/{service.unit}
                           </span>
-                          <button className="btn my-1 mx-1 btn-primary btn-sm">
+                          <button className="d-none btn my-1 mx-1 btn-primary btn-sm">
                             {service.unit}
                           </button>
                         </div>

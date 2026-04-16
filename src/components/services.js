@@ -8,7 +8,7 @@ export const services = [
         icon: "bi bi-code-slash",
         image: service1,
         priceRange: "MWK50,000 -MWK700,000",
-        unit:"per Project"
+        unit:"Project"
     },
     {
         name: "Graphic Design",
@@ -16,7 +16,7 @@ export const services = [
         icon: "bi bi-palette",
         image: service2,
         priceRange: "MWK10,000 - MWK15,000",
-        unit:"per Project"
+        unit:"Project"
     },
     {
         name: "Web Development Courses",
@@ -24,6 +24,6 @@ export const services = [
         icon: "bi bi-graph-up",
         image: service3,
         priceRange: "MWK10,000-MWK15,000",
-        unit:"per Tool"
+        unit:"Course"
     }
 ];
