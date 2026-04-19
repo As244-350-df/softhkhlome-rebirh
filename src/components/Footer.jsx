@@ -80,7 +80,7 @@ function Footer() {
                     </div>
                     <div className="d-flex align-items-center">
                       <i className="bi bi-telephone me-3 text-warning"></i>
-                      <span>+265 123 456 789</span>
+                      <span>+265 886 522 243</span>
                     </div>
                   </div>
                 </div>

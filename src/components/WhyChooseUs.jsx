@@ -10,7 +10,7 @@ function WhyChooseUs() {
             <div className="text-center mb-5">
               <h2 className="display-4 fw-bold text-warning mb-3">Why Choose Us</h2>
               <p className="lead text-light">
-                Discover what sets Softkhlome apart and why we're the perfect partner for your digital journey.
+                Find out what sets us apart with otherr digital companies.
               </p>
             </div>
 
@@ -57,6 +57,19 @@ function WhyChooseUs() {
                   </div>
                 </div>
               </div>
+              <div className="col-lg-4 col-md-6">
+                <div className="card shadow-sm h-100 border-0 bg-primary text-white">
+                  <div className="card-body text-center p-4">
+                    <div className="mb-4">
+                      <i className="bi bi-headset fs-1 text-warning"></i>
+                    </div>
+                    <h5 className="card-title text-warning fw-bold mb-3">Post Service support</h5>
+                    <p className="card-text">
+                       We are always available to help through out your journey even after project by helping you manage updates  and fix any technical issues.
+                    </p>
+                  </div>
+                </div>
+              </div>              
             </div>
 
             {/* Additional Benefits */}

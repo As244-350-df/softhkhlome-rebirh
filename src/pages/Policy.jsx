@@ -1,10 +1,24 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async'
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 
 function Policy() {
   return (
     <>
+      <Helmet>
+        <title>Privacy Policy - Softkhlome</title>
+        <meta name="description" content="Read Softkhlome's Privacy Policy to understand how we collect, use, and protect your personal information. Your privacy is our priority." />
+        <meta name="keywords" content="privacy policy, Softkhlome, data protection, personal information" />
+        <link rel="canonical" href="https://softklhome-v1.firebaseapp.com/Policy" />
+        <meta property="og:title" content="Privacy Policy - Softkhlome" />
+        <meta property="og:description" content="Read Softkhlome's Privacy Policy to understand how we collect, use, and protect your personal information." />
+        <meta property="og:url" content="https://softklhome-v1.firebaseapp.com/Policy" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Privacy Policy - Softkhlome" />
+        <meta name="twitter:description" content="Read Softkhlome's Privacy Policy to understand how we collect, use, and protect your personal information." />
+      </Helmet>
       <NavBar />
       <div className="container-fluid bg-light py-5">
         <div className="container">

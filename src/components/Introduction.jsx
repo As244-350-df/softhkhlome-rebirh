@@ -11,10 +11,10 @@ function Introduction() {
               <div className="card bg-transparent border-0 shadow-lg">
                 <div className="card-body py-2">
                   <h1 className='display-4 fw-bold text-light mb-4'>
-                    Build <span className="text-warning">Modern</span>, <span className="text-warning">Affordable</span> websites in Malawi
+                    <span className="text-warning">Build</span>, <span className="text-warning">Grow</span> and <span className="text-warning">develop</span> business with us.
                   </h1>
                   <p className='lead small text-light mb-4 px-md-5'>
-                    We help businesses and individuals create fast, responsive, and professional websites that attract customers and grow your brand.
+                    We provide mordern digitals solutions to bussineses helping to grow your brand and imrpove businesses digital presence. 
                   </p>
                   <div className='d-flex justify-content-center gap-3 flex-wrap'>
                     <a href="#contact" className="btn btn-primary text-warning btn-lg px-4 py-2">
@@ -32,7 +32,7 @@ function Introduction() {
               {/* Feature Highlights */}
               <div className="row mt-2  mb-1 g-4">
                 <div className="col-md-4">
-                  <div className="card bg-white bg-opacity-10 border-light text-light h-100">
+                  <div className="card bg-white bg-opacity-10 border-warning text-light h-100">
                     <div className="card-body text-center">
                       <div className="mb-3">
                         <i className="bi bi-lightning-charge-fill fs-1 text-warning"></i>
@@ -43,10 +43,10 @@ function Introduction() {
                   </div>
                 </div>
                 <div className="col-md-4">
-                  <div className="card bg-white bg-opacity-10 border-light text-light h-100">
+                  <div className="card bg-white bg-opacity-10 border-warning text-light h-100">
                     <div className="card-body text-center">
                       <div className="mb-3">
-                        <i className="bi bi-shield-check fs-1 text-success"></i>
+                        <i className="bi bi-shield-check fs-1 text-warning"></i>
                       </div>
                       <h5 className="card-title">Secure & Reliable</h5>
                       <p className="card-text">Built with security best practices and reliable hosting</p>
@@ -54,13 +54,13 @@ function Introduction() {
                   </div>
                 </div>
                 <div className="col-md-4">
-                  <div className="card bg-white bg-opacity-10 border-light text-light h-100">
+                  <div className="card bg-white bg-opacity-10 border-warning text-light h-100">
                     <div className="card-body text-center">
                       <div className="mb-3">
-                        <i className="bi bi-graph-up fs-1 text-info"></i>
+                        <i className="bi bi-graph-up fs-1 text-warning"></i>
                       </div>
                       <h5 className="card-title">Results Driven</h5>
-                      <p className="card-text">Increase conversions and grow your business online</p>
+                      <p className="card-text">Grow your brand and boost your business's online presence</p>
                     </div>
                   </div>
                 </div>

@@ -12,7 +12,7 @@ function AboutUs() {
             <div className="text-center mb-5">
               <h2 className="display-5 fw-bold text-primary mb-3">About Softkhlome</h2>
               <p className="lead text-muted">
-                Passionate about creating digital experiences that matter.
+                
               </p>
             </div>
 
@@ -28,25 +28,25 @@ function AboutUs() {
                     <p className="card-text text-muted mb-4">
                       Softkhlome is a newly established company founded by <strong>Brian Kamwera</strong>.
                       We specialize in delivering exceptional digital solutions that help businesses thrive
-                      in the modern world.
+                      in the modern world. We provide cutting edge website development ,design and graphic design to mention a few.
                     </p>
                     <div className="row g-3 mb-4">
                       <div className="col-6">
                         <div className="text-center">
-                          <i className="bi bi-code-slash text-success fs-2 mb-2"></i>
-                          <h6 className="text-success fw-bold">Web Development</h6>
+                          <i className="bi bi-code-slash text-primary fs-2 mb-2"></i>
+                          <h6 className="text-primary fw-bold">Web Development</h6>
                         </div>
                       </div>
                       <div className="col-6">
                         <div className="text-center">
-                          <i className="bi bi-palette text-info fs-2 mb-2"></i>
-                          <h6 className="text-info fw-bold">Graphic Design</h6>
+                          <i className="bi bi-palette text-primary fs-2 mb-2"></i>
+                          <h6 className="text-primary fw-bold">Graphic Design</h6>
                         </div>
                       </div>
                       <div className="col-6">
                         <div className="text-center">
-                          <i className="bi bi-search text-warning fs-2 mb-2"></i>
-                          <h6 className="text-warning fw-bold">Digital Marketing</h6>
+                          <i className="bi bi-search text-primary fs-2 mb-2"></i>
+                          <h6 className="text-primary fw-bold">Digital Marketing</h6>
                         </div>
                       </div>
                       <div className="col-6">

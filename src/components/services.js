@@ -4,7 +4,7 @@ import service3 from "../assets/colourful-illustration-programmer-working.png"
 export const services = [
     {
         name: "Web Development",
-        description: "We build responsive and modern websites tailored to your needs.",
+        description: "With our diverser caliber of technology help build responsive and fully function web application perfect to all devices and to your bussiness needs.",
         icon: "bi bi-code-slash",
         image: service1,
         priceRange: "MWK50,000 -MWK700,000",
@@ -12,7 +12,7 @@ export const services = [
     },
     {
         name: "Graphic Design",
-        description: "Our creative team designs stunning visuals for your brand.and marketing materials.",
+        description: "We help small businesses grow there brand with stunning designs.we also provide brand design, bunner and poster designs.",
         icon: "bi bi-palette",
         image: service2,
         priceRange: "MWK10,000 - MWK15,000",
@@ -20,7 +20,7 @@ export const services = [
     },
     {
         name: "Web Development Courses",
-        description: "Learn web development from scratch with our comprehensive courses, designed for beginners and professionals alike.",
+        description: "We provide fundermental and advanced courses, helping you to get good understanding of fundermentals of programmimg languages and web development tools such html, css , javaScript, wordPress and many more.",
         icon: "bi bi-graph-up",
         image: service3,
         priceRange: "MWK10,000-MWK15,000",

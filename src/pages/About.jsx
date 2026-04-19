@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet-async'
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 import AboutUs from '../components/AboutUs'
@@ -13,6 +14,19 @@ function About() {
   const pageName = "about"
   return (
     <>
+      <Helmet>
+        <title>About Softkhlome - Our Story and Team</title>
+        <meta name="description" content="Learn about Softkhlome's origin, mission, and dedicated team. Discover how we provide innovative web design and development services in Malawi." />
+        <meta name="keywords" content="about Softkhlome, web development company Malawi, team, mission, services" />
+        <link rel="canonical" href="https://softklhome-v1.firebaseapp.com/about" />
+        <meta property="og:title" content="About Softkhlome - Our Story and Team" />
+        <meta property="og:description" content="Learn about Softkhlome's origin, mission, and dedicated team. Discover how we provide innovative web design and development services in Malawi." />
+        <meta property="og:url" content="https://softklhome-v1.firebaseapp.com/about" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Softkhlome - Our Story and Team" />
+        <meta name="twitter:description" content="Learn about Softkhlome's origin, mission, and dedicated team. Discover how we provide innovative web design and development services in Malawi." />
+      </Helmet>
       <NavBar pageName={pageName} />
       
       {/* Hero Section */}
@@ -28,7 +42,7 @@ function About() {
                   </p>
                   <a href="#contact" className="btn btn-warning text-warning fw-bold px-4 py-2">
                     <i className="bi bi-arrow-right me-2"></i>
-                    Get Started
+                    contact us
                   </a>
                 </div>
               </div>
@@ -58,7 +72,7 @@ function About() {
                 </div>
                 <div className="card-body">
                   <p className="card-text text-muted">
-                    Softkhlome was founded in 2024 by its co-founder <strong>Brian Kamwera</strong>. Softkhlome itself was a project that we invented to showcase my development skills but it turned out to be more than just a project. It became a platform where I could share my passion for web development and connect with like-minded individuals. The name "Softkhlome" is a combination of "Software" and "Home," reflecting our vision of creating a welcoming space for software development and innovation. Since its inception, Softkhlome has evolved into a thriving community and a hub for developers, entrepreneurs, and tech enthusiasts to collaborate, learn, and grow together.  
+                    Softkhlome was founded in 2024 by its co-founder <strong>Brian Kamwera</strong>. "Softkhlome itself was a project that we invented to showcase my development skills but it turned out to be more than just a project. It became a platform where I could share my passion for web development and connect with like-minded individuals. The name came from my early desire to become a proffessional coding artist, I was always thrilled to look into code base of big software companies and someday i wanted write code as much good as their's". Since its inception, Softkhlome has evolved into a thriving community and a hub for developers, entrepreneurs, and tech enthusiasts to collaborate, learn, and grow together.  
                   </p>
                 </div>
               </div>
@@ -74,9 +88,10 @@ function About() {
                 </div>
                 <div className="card-body">
                   <p className="card-text text-muted">
-                    Softkhlome is a newly established web development company founded in 2025 with a mission to deliver innovative and high-quality solutions to clients worldwide.
-                    Our journey began with one passionate developer who had a vision of creating impactful software that transforms businesses and enhances user experiences.
-                    Over the years, we have grown into a dynamic organization with a immense talent pool, serving clients across various industries and delivering successful projects that drive growth and success.                 
+                     Softkhlome is a newly established institution providing cutting-edge digital services for modern businesses and creative individuals. Founded on innovation, quality, and customer satisfaction, we're driven by passionate professionals bringing fresh ideas and technical expertise.
+                     Our core services include web design and development, graphic design, and web development courses. We offer customized solutions for startups needing functional websites and individuals seeking captivating visuals. Our team ensures responsive, user-friendly, SEO-optimized websites and visually striking designs.
+                     Operating with a client-centric approach, we prioritize collaboration and communication, treating each project as a partnership to deliver meaningful, sustainable results.
+                     As we grow, we're committed to continuous learning and emerging technologies to keep our offerings relevant and impactful.
                   </p>
                 </div>
               </div>
@@ -121,7 +136,7 @@ function About() {
         <div className="container">
           <div className="text-center mb-5">
             <h2 className="display-5 fw-bold text-primary mb-3">Our Team</h2>
-            <p className="lead text-muted">Meet the talented people behind Softkhlome</p>
+            <p className="lead text-muted">Who are the people behind Softkhlome</p>
           </div>
 
           <div className="row g-4 align-items-center">
@@ -142,7 +157,7 @@ function About() {
                 <div className="card-body p-4">
                   <h4 className="card-title text-primary fw-bold mb-3">A Dedicated Team</h4>
                   <p className="card-text text-muted mb-3">
-                    Right now Softkhlome is at its early stages and we are a small team of passionate individuals who are dedicated to delivering exceptional web development services. Our team is made up of talented developers, designers, and project managers who work collaboratively to bring our clients' visions to life. We are committed to fostering a positive and inclusive work environment where creativity and innovation thrive, allowing us to deliver high-quality solutions that exceed our clients' expectations.
+                    Right now Softkhlome is at its early stages and we are company dedicated to delivering exceptional web development services. Right now softkhlome has one talented developer <strong>(Brian Kamwera)</strong> we are looking foward to hiring talented teams members to our cause once we start getting big projects. We are committed to fostering a positive and inclusive work environment where creativity and innovation thrive, allowing us to deliver high-quality solutions that exceed our clients' expectations.
                   </p>
                   <div className="row g-3">
                     <div className="col-6">

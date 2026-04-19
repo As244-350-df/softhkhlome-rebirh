@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Logo from '../assets/Logo (2).png';
+import Logo from '../assets/Logo(2).png';
 function NavBar({pageName}) {
     const navLinksStyle=pageName==="home"?"nav-link text-light":"nav-link text-dark"
     const NavlinkStyle=({isActive})=>{
@@ -21,7 +21,7 @@ function NavBar({pageName}) {
                         <li className="nav-item"><NavLink to="/about" className={navLinksStyle}>About</NavLink></li>
                         <li className="nav-item"><a href="/#services" className={navLinksStyle}>Services</a></li>
                         <li className="nav-item"><a href="/#contact" className={navLinksStyle}>Contact</a></li>
-                        <li className="nav-item"><NavLink to="/Profile" className={navLinksStyle}>Profile</NavLink></li>
+                        <li className="nav-item"><NavLink to="/Profile" className={navLinksStyle}>Dev Profile</NavLink></li>
                     </ul>
                 </div>
             </div>

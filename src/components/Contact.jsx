@@ -16,7 +16,7 @@ function Contact() {
             <div className="text-center mb-5">
               <h2 className="display-5 fw-bold text-primary mb-3">Contact Us</h2>
               <p className="lead text-muted">
-                Ready to start your project? Get in touch with us today and let's bring your vision to life.
+                Ready to start your project? Get in touch with us today.
               </p>
             </div>
 

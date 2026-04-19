@@ -71,12 +71,12 @@ function Experience() {
               </div>
 
               <div className="col-md-4">
-                <div className="card shadow-sm border-success h-100 text-center">
+                <div className="card shadow-sm border-warning h-100 text-center">
                   <div className="card-body p-4">
                     <div className="mb-3">
-                      <i className="bi bi-check-circle-fill text-success fs-1"></i>
+                      <i className="bi bi-check-circle-fill text-warning fs-1"></i>
                     </div>
-                    <h5 className="card-title text-success fw-bold">Quality</h5>
+                    <h5 className="card-title text-warning fw-bold">Quality</h5>
                     <p className="card-text text-light">
                       Committed to delivering high-quality code and exceptional user experiences.
                     </p>
@@ -85,12 +85,12 @@ function Experience() {
               </div>
 
               <div className="col-md-4">
-                <div className="card shadow-sm border-info h-100 text-center">
+                <div className="card shadow-sm border-warning h-100 text-center">
                   <div className="card-body p-4">
                     <div className="mb-3">
-                      <i className="bi bi-people-fill text-info fs-1"></i>
+                      <i className="bi bi-people-fill text-warning fs-1"></i>
                     </div>
-                    <h5 className="card-title text-info fw-bold">Collaboration</h5>
+                    <h5 className="card-title text-warning fw-bold">Collaboration</h5>
                     <p className="card-text text-light">
                       Working effectively with teams and clients to achieve shared goals and success.
                     </p>

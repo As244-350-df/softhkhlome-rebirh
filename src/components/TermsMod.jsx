@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { Helmet } from 'react-helmet-async'
 
 function TermsMod() {
   const [accepted, setAccepted] = useState(false)
@@ -50,12 +51,27 @@ function TermsMod() {
   }
 
   return (
+    <>
+      <Helmet>
+        <title>Terms of Service - Softkhlome</title>
+        <meta name="description" content="Review Softkhlome's Terms of Service to understand the rules and guidelines for using our web development services." />
+        <meta name="keywords" content="terms of service, Softkhlome, service agreement, terms and conditions" />
+        <link rel="canonical" href="https://softklhome-v1.firebaseapp.com/Terms" />
+        <meta property="og:title" content="Terms of Service - Softkhlome" />
+        <meta property="og:description" content="Review Softkhlome's Terms of Service to understand the rules and guidelines for using our web development services." />
+        <meta property="og:url" content="https://softklhome-v1.firebaseapp.com/Terms" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Terms of Service - Softkhlome" />
+        <meta name="twitter:description" content="Review Softkhlome's Terms of Service to understand the rules and guidelines for using our web development services." />
+      </Helmet>
+
     <section className="container py-5" inert={modalOpen ? "" : undefined}>
       <div className="row justify-content-center">
         <div className="col-12 col-lg-8">
           <div className="card shadow-sm border-0">
             <div className="card-body text-center">
-              <h1 className="display-6 fw-bold mb-3">Softkhlome Terms & Conditions</h1>
+              <h1 className="display-6 text-primary fw-bold mb-3">Softkhlome Terms & Conditions</h1>
               <p className="lead text-muted mb-4">
                 Please review and accept our terms to proceed. Your acceptance confirms that you understand and agree to the terms of use for Softkhlome.
               </p>
@@ -122,6 +138,7 @@ function TermsMod() {
         </div>
       </div>
     </section>
+    </>
   )
 }
 
