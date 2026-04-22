@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function Introduction() {
   return (
-    <section className="hero px-5 d-flex children-bg-transparent flex-direction-row align-items-center mb-sm-2 pb-5">
+    <section className="hero px-5 d-flex children-bg-transparent align-items-center mb-sm-2 pb-5">
       <div className="container-fluid">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10 col-xl-8">

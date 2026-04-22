@@ -1,10 +1,31 @@
 import React from "react"
 import { contactmethods } from "./contactUs.js"
-
+import emailjs from "@emailjs/browser";
+const SERVICE_KEY=import.meta.env.VITE_EMAILJS_SERVICE_KEY;
+const TEMPLATE_KEY=import.meta.env.VITE_EMAILJS_TEMPLATE_KEY;
+const PUBLIC_KEY=import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission logic here
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const message = e.target.message.value;
+    //i want to send this data to my email address using emailjs or any other service 
+    // Example using EmailJS (uncomment and replace with your actual service ID and template ID)
+    emailjs.send(SERVICE_KEY, TEMPLATE_KEY, {
+         name: name,
+         email: email,
+         message: message
+     },
+    PUBLIC_KEY
+    ).then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        alert("Message sent successfully!");
+    }).catch((err) => {        
+        console.log('FAILED...', err);
+        alert("Failed to send message. Please try again later.");
+    });
   };
 
   return (
@@ -37,6 +58,7 @@ function Contact() {
                           className="form-control form-control-lg border-primary"
                           placeholder="Enter your full name..."
                           id="name"
+                          name="name"
                           required
                         />
                       </div>
@@ -47,6 +69,7 @@ function Contact() {
                           className="form-control form-control-lg border-primary"
                           placeholder="your.email@example.com"
                           id="email"
+                          name="email"
                           required
                         />
                       </div>
@@ -56,6 +79,7 @@ function Contact() {
                           className="form-control form-control-lg border-primary"
                           id="message"
                           rows="5"
+                          name="message"
                           placeholder="Tell us about your project..."
                           required
                         ></textarea>

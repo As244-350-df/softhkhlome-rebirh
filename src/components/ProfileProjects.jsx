@@ -33,7 +33,7 @@ function ProfileProjects() {
                       <p className="card-text text-light text-center flex-grow-1 tech-text">{project.description}</p>
                       <div className="mt-auto">
                         <a
-                          href={project.link || '#'}
+                          href={project.link}
                           className="btn btn-warning w-100 text-warning"
                           target="_blank"
                           rel="noopener noreferrer"
