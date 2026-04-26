@@ -63,7 +63,7 @@ function About() {
         <div className="container">
           <div className="row g-4">
             <div className="col-lg-6">
-              <div className="card shadow-lg border-primary h-100">
+              <div className="card shadow-lg box-transition border-primary h-100">
                 <div className="card-header bg-primary text-light children-bg-transparent py-3">
                   <h3 className="card-title mb-0 fw-bold">
                     <i className="bi bi-star me-2"></i>
@@ -79,7 +79,7 @@ function About() {
             </div>
 
             <div className="col-lg-6">
-              <div className="card shadow-lg border-warning h-100">
+              <div className="card shadow-lg box-transition border-warning h-100">
                 <div className="card-header bg-warning text-primary children-bg-transparent py-3">
                   <h3 className="card-title mb-0 fw-bold">
                     <i className="bi bi-info-circle me-2"></i>
@@ -125,7 +125,7 @@ function About() {
               </div>
             </div>
             <div className="col-lg-6">
-              <img src={webDevImg} alt="Our mission" className="img-fluid rounded shadow-lg" />
+              <img src={webDevImg} alt="Our mission" className="box-transition img-fluid rounded shadow-lg" />
             </div>
           </div>
         </div>
@@ -141,12 +141,12 @@ function About() {
 
           <div className="row g-4 align-items-center">
             <div className="col-lg-6">
-              <div className="card shadow-lg border-0">
+              <div className="card card-transition shadow-lg border-0">
                 <div className="card-body p-0">
                   <img
                     src={FounderImg}
                     alt="Our dedicated team"
-                    className="img-fluid rounded w-100"
+                    className="img-fluid  rounded w-100"
                     style={{ height: '100%', objectFit: 'cover' }}
                   />
                 </div>

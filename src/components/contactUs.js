@@ -1,7 +1,7 @@
 export const contactmethods=[
     {
         method:"Email",
-        description:"message the developers via  email.",
+        description:"message the developers via  email,you can use the form above for simplicity sake.",
         icon:"bi bi-laptop ",
         link:"mailto:softkhlome@gmail.com"
     },

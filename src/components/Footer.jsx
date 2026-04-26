@@ -14,6 +14,7 @@ function Footer() {
                 <div className="mb-3">
                   <img
                     src={brand}
+                    loading='lazy'
                     className="img-fluid"
                     alt="SoftKhlome Brand"
                     style={{ maxHeight: '80px' }}

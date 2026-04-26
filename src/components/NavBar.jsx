@@ -21,7 +21,7 @@ function NavBar({pageName}) {
                         <li className="nav-item"><NavLink to="/about" className={navLinksStyle}>About</NavLink></li>
                         <li className="nav-item"><a href="/#services" className={navLinksStyle}>Services</a></li>
                         <li className="nav-item"><a href="/#contact" className={navLinksStyle}>Contact</a></li>
-                        <li className="nav-item"><NavLink to="/Profile" className={navLinksStyle}>Dev Profile</NavLink></li>
+                        {/* <li className="nav-item"><NavLink to="/Profile" className={navLinksStyle}>Dev Profile</NavLink></li> */}
                     </ul>
                 </div>
             </div>

@@ -19,7 +19,7 @@ function ProfileProjects() {
             <div className="row g-4">
               {projects.map((project, index) => (
                 <div className="col-lg-4 col-md-4" key={index}>
-                  <div className="card shadow-sm h-100 bg-primary border border-warning children-bg-transparent border-0 hover-lift">
+                  <div className="card shadow-sm card-transition h-100 bg-primary border border-warning children-bg-transparent border-0 hover-lift">
                     <div className="card-img-top overflow-hidden d-flex justify-content-center py-2 pt-0">
                       <img
                         src={project.image}

@@ -32,7 +32,7 @@ function ProjStackTest() {
                   {projects.map((project, idx) => (
                     <div
                       key={idx}
-                      className="card border shadow-sm flex-shrink-0"
+                      className="card card-transition border shadow-sm flex-shrink-0"
                       style={{
                         minWidth: '380px',
                         scrollSnapAlign: 'start',
@@ -47,9 +47,12 @@ function ProjStackTest() {
                           style={{ objectFit: 'cover' }}
                         />
                       </div>
-                      <div className="card-body">
+                      <div className="card-body d-flex flex-column justify-content-between">
                         <h6 className="card-title text-center text-primary fw-bold">{project.name}</h6>
                         <p className="card-text tech-text text-center text-muted">{project.description}</p>
+                        <a href={project.link} className="btn btn-primary text-light btn-md px-4">
+                          View Project
+                        </a>
                       </div>
                     </div>
                   ))}
@@ -72,13 +75,13 @@ function ProjStackTest() {
                     overflowX: 'auto',
                     scrollSnapType: 'x mandatory',
                     scrollbarWidth: 'thin',
-                    scrollbarColor: '#6c757d transparent'
+                    scrollbarColor: '#34383c transparent'
                   }}
                 >
                   {techStack.map((tech, idx) => (
                     <div
                       key={idx}
-                      className="card border shadow-sm flex-shrink-0 text-center"
+                      className="card card-transition border shadow-sm flex-shrink-0 text-center"
                       style={{
                         minWidth: '200px',
                         scrollSnapAlign: 'start',

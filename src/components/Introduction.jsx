@@ -11,7 +11,7 @@ function Introduction() {
               <div className="card bg-transparent border-0 shadow-lg">
                 <div className="card-body py-2">
                   <h1 className='display-4 fw-bold text-light mb-4'>
-                    <span className="text-warning">Build</span>, <span className="text-warning">Grow</span> and <span className="text-warning">develop</span> business with us.
+                    We <span className="text-warning">Build</span> websites<span className="text-warning"></span> and <span className="text-warning">create</span> stunning designs for businesses.
                   </h1>
                   <p className='lead small text-light mb-4 px-md-5'>
                     We provide mordern digitals solutions to bussineses helping to grow your brand and imrpove businesses digital presence. 
@@ -30,7 +30,7 @@ function Introduction() {
               </div>
 
               {/* Feature Highlights */}
-              <div className="row mt-2  mb-1 g-4">
+              <div className="row mt-2 d-none d-lg-flex mb-1 g-4">
                 <div className="col-md-4">
                   <div className="card bg-white bg-opacity-10 border-warning text-light h-100">
                     <div className="card-body text-center">
@@ -42,7 +42,7 @@ function Introduction() {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-4 ">
                   <div className="card bg-white bg-opacity-10 border-warning text-light h-100">
                     <div className="card-body text-center">
                       <div className="mb-3">

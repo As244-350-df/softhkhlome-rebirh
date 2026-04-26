@@ -18,7 +18,7 @@ function Services() {
             <div className="row g-4">
               {services.map((service, index) => (
                 <div className="col-lg-4 col-md-6" key={index}>
-                  <div className="card shadow-sm h-100 border-0">
+                  <div className="card card-transition shadow-sm h-100 border-0">
                     <div className="card-img-wrapper position-relative overflow-hidden">
                       <img
                         src={service.image}

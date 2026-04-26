@@ -17,7 +17,7 @@ function WhyChooseUs() {
             {/* Why Choose Us Cards */}
             <div className="row g-4">
               <div className="col-lg-4 col-md-6">
-                <div className="card shadow-sm h-100 border-0 bg-primary text-white">
+                <div className="card card-transition shadow-sm h-100 border-0 bg-primary text-white">
                   <div className="card-body text-center p-4">
                     <div className="mb-4">
                       <i className="bi bi-star-fill fs-1 text-warning"></i>
@@ -31,7 +31,7 @@ function WhyChooseUs() {
               </div>
 
               <div className="col-lg-4 col-md-6">
-                <div className="card shadow-sm h-100 border-0 bg-primary text-white">
+                <div className="card card-transition shadow-sm h-100 border-0 bg-primary text-white">
                   <div className="card-body text-center p-4">
                     <div className="mb-4">
                       <i className="bi bi-heart-fill fs-1 text-warning"></i>
@@ -45,7 +45,7 @@ function WhyChooseUs() {
               </div>
 
               <div className="col-lg-4 col-md-6">
-                <div className="card shadow-sm h-100 border-0 bg-primary text-white">
+                <div className="card card-transition shadow-sm h-100 border-0 bg-primary text-white">
                   <div className="card-body text-center p-4">
                     <div className="mb-4">
                       <i className="bi bi-lightbulb-fill fs-1 text-warning"></i>
@@ -58,7 +58,7 @@ function WhyChooseUs() {
                 </div>
               </div>
               <div className="col-lg-4 col-md-6">
-                <div className="card shadow-sm h-100 border-0 bg-primary text-white">
+                <div className="card card-transition shadow-sm h-100 border-0 bg-primary text-white">
                   <div className="card-body text-center p-4">
                     <div className="mb-4">
                       <i className="bi bi-headset fs-1 text-warning"></i>
@@ -75,7 +75,7 @@ function WhyChooseUs() {
             {/* Additional Benefits */}
             <div className="row mt-5 g-4">
               <div className="col-md-6">
-                <div className="card shadow-sm h-100">
+                <div className="card card-transition shadow-sm h-100">
                   <div className="card-body">
                     <div className="d-flex align-items-center mb-3">
                       <i className="bi bi-clock-history text-primary fs-3 me-3"></i>
@@ -89,7 +89,7 @@ function WhyChooseUs() {
               </div>
 
               <div className="col-md-6">
-                <div className="card shadow-sm h-100">
+                <div className="card card-transition shadow-sm h-100">
                   <div className="card-body">
                     <div className="d-flex align-items-center mb-3">
                       <i className="bi bi-headset text-primary fs-3 me-3"></i>

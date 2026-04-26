@@ -351,7 +351,21 @@
 .card-img-wrapper:hover .card-img-overlay {
   opacity: 1 !important;
 }
-
+/*transition classes*/
 .transition-opacity {
   transition: opacity 0.3s ease;
+}
+.box-transition{
+  transition: all 0.3s ease;
+  &&:hover{
+    transform: translateY(-5px) !important;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2) !important;
+  }
+}
+.card-transition{
+  transition: all 0.3s ease;
+  &&:hover{
+    transform: translateY(-1px) !important;
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.2) !important;
+  }
 }

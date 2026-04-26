@@ -18,7 +18,7 @@ function Home() {
       <Helmet>
         <title>Softkhlome - Leading Web Design and Development Company in Malawi</title>
         <meta name="description" content="Softkhlome is a leading website design company in Malawi, providing innovative web development solutions for businesses of all sizes. Get professional web design, development, and graphic design services." />
-        <meta name="keywords" content="web design Malawi, web development company, graphic design, website creation, digital solutions" />
+        <meta name="keywords" content="web design Malawi, softkhlome, graphic design, website creation, digital solutions" />
         <link rel="canonical" href="https://softklhome-v1.firebaseapp.com/" />
         <meta property="og:title" content="Softkhlome - Leading Web Design and Development Company in Malawi" />
         <meta property="og:description" content="Softkhlome is a leading website design company in Malawi, providing innovative web development solutions for businesses of all sizes." />

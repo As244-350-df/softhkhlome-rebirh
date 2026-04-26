@@ -19,7 +19,7 @@ function AboutUs() {
             {/* Main Content */}
             <div className="row g-4 align-items-center">
               <div className="col-lg-6">
-                <div className="card shadow-lg border-0 h-100">
+                <div className="card box-transition shadow-lg border-0 h-100">
                   <div className="card-body p-4">
                     <div className="text-center mb-4">
                       <i className="bi bi-building text-primary fs-1"></i>
@@ -57,7 +57,7 @@ function AboutUs() {
                       </div>
                     </div>
                     <div className="text-center">
-                      <Link to="/about" className="btn bg-primary btn-primary text-warning btn-lg px-4">
+                      <Link to="/about" className="btn btn-primary text-primary btn-lg px-4">
                         <i className="bi bi-info-circle me-2"></i>
                         Learn More About Us
                       </Link>
@@ -67,12 +67,13 @@ function AboutUs() {
               </div>
 
               <div className="col-lg-6">
-                <div className="card shadow-lg border-0">
+                <div className="card box-transition shadow-lg border-0">
                   <div className="card-body p-0">
                     <img
+                      loading='lazy'
                       src={developerImg}
-                      alt="Brian Kamwera - Founder of Softkhlome"
-                      className="img-fluid rounded w-100"
+                      alt="Brian Kamwera - Founder of Softkhlome and Lead Developer"
+                      className="img-fluid rounded w-100 "
                       style={{ height: '100%', objectFit: 'cover' }}
                     />
                   </div>
@@ -87,7 +88,7 @@ function AboutUs() {
             {/* Mission Statement */}
             <div className="row mt-5">
               <div className="col-12">
-                <div className="card">
+                <div className="card card-transition shadow-lg border-0">
                   <div className="card-body text-center p-4">
                     <div className="mb-3">
                       <i className="fas fa-bullseye text-primary fs-1"></i>

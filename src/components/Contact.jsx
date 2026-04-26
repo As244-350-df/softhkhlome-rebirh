@@ -4,6 +4,7 @@ import emailjs from "@emailjs/browser";
 const SERVICE_KEY=import.meta.env.VITE_EMAILJS_SERVICE_KEY;
 const TEMPLATE_KEY=import.meta.env.VITE_EMAILJS_TEMPLATE_KEY;
 const PUBLIC_KEY=import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+const TEMPLATE2_KEY=import.meta.env.VITE_EMAILJS_TEMPLATE2_KEY;
 function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,13 +16,26 @@ function Contact() {
     // Example using EmailJS (uncomment and replace with your actual service ID and template ID)
     emailjs.send(SERVICE_KEY, TEMPLATE_KEY, {
          name: name,
+         title: "New PROJECT FORM SUBMISSION",
          email: email,
          message: message
      },
     PUBLIC_KEY
     ).then((response) => {
-        console.log('SUCCESS!', response.status, response.text);
-        alert("Message sent successfully!");
+        emailjs.send(SERVICE_KEY, TEMPLATE2_KEY, {
+            name: "SoftKhlome Team",
+            title: "we have received your email",
+            email: email,
+            message: `Dear ${name},\n\nThank you for reaching out to us! We have received your message and will get back to you as soon as possible.`
+        },
+        PUBLIC_KEY
+        ).then((response) => {
+            console.log('SUCCESS!', response.status, response.text);
+            alert("Message sent successfully! We will get back to you soon.");
+        }).catch((err) => {
+            console.log('FAILED...', err);
+            alert("Failed to send confirmation email. Please check your email address and try again.");
+        });
     }).catch((err) => {        
         console.log('FAILED...', err);
         alert("Failed to send message. Please try again later.");
@@ -84,8 +98,8 @@ function Contact() {
                           required
                         ></textarea>
                       </div>
-                      <button type="submit" className="btn btn-warning text-primary btn-lg w-100 fw-bold">
-                        <i className="bi bi-send me-2 bg-transparent"></i>
+                      <button type="submit" className="btn btn-warning text-primary border border-primary btn-lg w-100 fw-bold">
+                        <i className="bi bi-send me-2 bg-transparent "></i>
                         Send Message
                       </button>
                     </form>
@@ -142,7 +156,7 @@ function Contact() {
                 <div className="row g-3">
                   {contactmethods.map((method, index) => (
                     <div className="col-md-4" key={index}>
-                      <div className="card shadow-sm border-0 bg-primary children-bg-transparent h-100 text-center">
+                      <div className="card shadow-sm card-transition border-0 bg-primary children-bg-transparent h-100 text-center">
                         <div className="card-body d-flex flex-column align-items-center justify-content-around p-3">
                           <div className="mb-3 text-warning">
                             <i className={`${method.icon} fs-2 text-warning`}></i>
