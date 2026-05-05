@@ -77,7 +77,7 @@ function AboutUs() {
                       style={{ height: '100%', objectFit: 'cover' }}
                     />
                   </div>
-                  <div className="card-footer bkg-primary text-light text-center">
+                  <div className="card-footer  text-primary text-center">
                     <h5 className="mb-1">Brian Kamwera</h5>
                     <p className="mb-0 small">Founder & Lead Developer</p>
                   </div>

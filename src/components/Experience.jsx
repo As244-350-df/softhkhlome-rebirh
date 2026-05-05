@@ -1,7 +1,7 @@
 import React from 'react'
 import OfficeImg from "../images/undraw_in-the-office_e7pg.svg"
 
-function Experience() {
+function Experience({pageName}) {
   return (
     <section className="container-fluid children-bg-transparent bg-primary py-5">
       <div className="container">
@@ -18,17 +18,17 @@ function Experience() {
             {/* Main Experience Card */}
             <div className="row g-4 align-items-center">
               <div className="col-lg-6">
-                <div className="card shadow-lg border-0 bg-white h-100">
+                <div className="card shadow-lg box-transition border-0 bg-white h-100">
                   <div className="card-body p-4">
                     <div className="text-center mb-4">
                       <div className="mb-3">
-                        <i className="bi bi-briefcase-fill text-primary fs-1"></i>
+                        <i className="bi bi-briefcase-fill text-warning fs-1"></i>
                       </div>
-                      <h3 className="card-title text-primary fw-bold">Professional Journey</h3>
+                      <h3 className="card-title text-warning fw-bold">{pageName=="Profile" ? "My" : "Our"} Professional Journey</h3>
                     </div>
                     <p className="card-text text-light mb-4">
                       With over three years of hands-on experience in web development and software engineering,
-                      I've had the privilege of working on diverse projects that have shaped my expertise and
+                      {pageName=="Profile" ? "I" : "We"}'ve had the privilege of working on diverse projects that have shaped my expertise and
                       passion for creating impactful digital solutions.
                     </p>
                     <div className="text-center">
@@ -57,7 +57,7 @@ function Experience() {
             {/* Experience Highlights */}
             <div className="row mt-5 g-4">
               <div className="col-md-4">
-                <div className="card shadow-sm border-warning h-100 text-center">
+                <div className="card shadow-sm card-transition border-warning h-100 text-center">
                   <div className="card-body p-4">
                     <div className="mb-3">
                       <i className="bi bi-lightbulb-fill text-warning fs-1"></i>
@@ -71,7 +71,7 @@ function Experience() {
               </div>
 
               <div className="col-md-4">
-                <div className="card shadow-sm border-warning h-100 text-center">
+                <div className="card shadow-sm card-transition border-warning h-100 text-center">
                   <div className="card-body p-4">
                     <div className="mb-3">
                       <i className="bi bi-check-circle-fill text-warning fs-1"></i>
@@ -85,7 +85,7 @@ function Experience() {
               </div>
 
               <div className="col-md-4">
-                <div className="card shadow-sm border-warning h-100 text-center">
+                <div className="card shadow-sm card-transition border-warning h-100 text-center">
                   <div className="card-body p-4">
                     <div className="mb-3">
                       <i className="bi bi-people-fill text-warning fs-1"></i>

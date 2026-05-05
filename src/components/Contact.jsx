@@ -156,7 +156,7 @@ function Contact() {
                 <div className="row g-3">
                   {contactmethods.map((method, index) => (
                     <div className="col-md-4" key={index}>
-                      <div className="card shadow-sm card-transition border-0 bg-primary children-bg-transparent h-100 text-center">
+                      <div className="card shadow-sm card-transition border border-warning bg-primary children-bg-transparent h-100 text-center">
                         <div className="card-body d-flex flex-column align-items-center justify-content-around p-3">
                           <div className="mb-3 text-warning">
                             <i className={`${method.icon} fs-2 text-warning`}></i>

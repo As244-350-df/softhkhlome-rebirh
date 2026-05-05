@@ -7,10 +7,15 @@ import Services from '../components/Services.jsx'
 import WhyChooseUs from '../components/WhyChooseUs'
 import Contact from '../components/Contact'
 import AboutUs from '../components/AboutUs'
+import Experience from '../components/Experience'
 import Footer from '../components/Footer'
 import ProjStackTest from '../components/ProjStackTest'
 import Loader from '../components/Loader.jsx'
 import TermsMod from '../components/TermsMod.jsx'
+import FavIcon from "../assets/favicon/favicon.ico"
+import favIcon192 from "../assets/favicon/web-app-manifest-192x192.png"
+import favIcon96 from "../assets/favicon/favicon-96x96.png"
+import appleTouchIcon from "../assets/favicon/apple-touch-icon.png"
 function Home() {
   const pageName="home"
   return (
@@ -27,6 +32,10 @@ function Home() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Softkhlome - Leading Web Design and Development Company in Malawi" />
         <meta name="twitter:description" content="Softkhlome is a leading website design company in Malawi, providing innovative web development solutions for businesses of all sizes." />
+        <link rel="icon" href={FavIcon} sizes="any" />
+        <link rel="icon" href={favIcon192} type="image/png" sizes="192x192" />
+        <link rel="icon" href={favIcon96} type="image/png" sizes="96x96"/>
+        <link rel="icon" href={appleTouchIcon}/>
         <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
@@ -65,6 +74,7 @@ function Home() {
           <WhyChooseUs />
           <Contact/>
           <AboutUs/>
+          <Experience pageName={pageName}/>
           <ProjStackTest/>
       </div>
       <Footer/>

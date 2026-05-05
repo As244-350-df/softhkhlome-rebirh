@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import {Suspense} from 'react'
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import { HelmetProvider } from 'react-helmet-async'
 import Home from './pages/Home'
@@ -9,6 +10,7 @@ import TermsMod from './components/TermsMod'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
+import Loader from './components/Loader'
 import './App.css'
 import "./index.css"
 import "bootstrap-icons/font/bootstrap-icons.css"
@@ -21,7 +23,7 @@ function App() {
     <HelmetProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Suspense fallback={<Loader />}><Home /></Suspense>} />
           <Route path="/about" element={<About />} />
           <Route path="/Profile" element={<Profile />} />
           <Route path="/Policy" element={<Policy />} />

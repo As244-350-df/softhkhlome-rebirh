@@ -27,7 +27,7 @@ function Profile() {
       <NavBar pageName={pageName}/>
       <DevDesc/>
       <Skills/>
-      <Experience/>
+      <Experience pageName={pageName}/>
       <ProfileProjects/>
       <Contact/>
       <Footer/>
