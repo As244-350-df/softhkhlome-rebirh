@@ -84,9 +84,13 @@ function TermsMod() {
         <link rel="canonical" href="https://softkhlome.web.app/Terms" />
         <meta property="og:title" content="Terms of Service - Softkhlome" />
         <meta property="og:description" content="Review Softkhlome's Terms of Service to understand the rules and guidelines for using our web development services." />
+        <meta property="og:image" content="https://softkhlome.web.app/logo(2).png" />
         <meta property="og:url" content="https://softkhlome.web.app/Terms" />
         <meta property="og:type" content="website" />
+        <meta name="robots" content="index, follow" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://softkhlome.web.app/Terms" />
+        <meta name="twitter:image" content="https://softkhlome.web.app/logo(2).png" />
         <meta name="twitter:title" content="Terms of Service - Softkhlome" />
         <meta name="twitter:description" content="Review Softkhlome's Terms of Service to understand the rules and guidelines for using our web development services." />
       </Helmet>

@@ -33,7 +33,11 @@ function Profile() {
         <link rel="canonical" href="https://softkhlome.web.app/Profile" />
         <meta property="og:title" content="Brian Kamwera - Web Developer at Softkhlome" />
         <meta property="og:description" content="Meet Brian Kamwera, the founder and lead web developer at Softkhlome. Explore his skills, experience, and portfolio of web development projects." />
+        <meta property="og:image" content="https://softkhlome.web.app/logo(2).png" />
         <meta property="og:url" content="https://softkhlome.web.app/Profile" />
+        <meta name="robots" content="index, follow" />
+        <meta name="twitter:url" content="https://softkhlome.web.app/Profile" />
+        <meta name="twitter:image" content="https://softkhlome.web.app/logo(2).png" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Brian Kamwera - Web Developer at Softkhlome" />

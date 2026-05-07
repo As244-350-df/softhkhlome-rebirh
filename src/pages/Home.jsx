@@ -22,7 +22,11 @@ function Home() {
         <link rel="canonical" href="https://softkhlome.web.app/" />
         <meta property="og:title" content="Softkhlome - Leading Web Design and Development Company in Malawi" />
         <meta property="og:description" content="Softkhlome is a leading website design company in Malawi, providing innovative web development solutions for businesses of all sizes." />
+        <meta property="og:image" content="https://softkhlome.web.app/logo(2).png" />
         <meta property="og:url" content="https://softkhlome.web.app/" />
+        <meta name="robots" content="index, follow" />
+        <meta name="twitter:url" content="https://softkhlome.web.app/" />
+        <meta name="twitter:image" content="https://softkhlome.web.app/logo(2).png" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Softkhlome - Leading Web Design and Development Company in Malawi" />

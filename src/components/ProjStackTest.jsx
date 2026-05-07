@@ -46,6 +46,7 @@ function ProjStackTest() {
                           className="w-100 h-100"
                           alt={project.name}
                           style={{ objectFit: 'cover' }}
+                          loading="lazy"
                         />
                       </div>
                       <div className="card-body d-flex flex-column justify-content-between">
@@ -96,6 +97,7 @@ function ProjStackTest() {
                             alt={tech.name}
                             className="img-fluid"
                             style={{ height: '50px', width: '50px' }}
+                            loading="lazy"
                           />
                         </div>
                         <h6 className="card-title  text-primary fw-bold">{tech.name}</h6>
@@ -136,6 +138,7 @@ function ProjStackTest() {
                             alt={testimonial.name}
                             className="rounded-circle border"
                             style={{ width: '60px', height: '60px', objectFit: 'cover' }}
+                            loading="lazy"
                           />
                         </div>
                         <h6 className="card-title text-info fw-bold mb-2">{testimonial.name}</h6>
@@ -151,7 +154,7 @@ function ProjStackTest() {
                     </div>
                   ))
                   :<div className="d-flex flex-column align-items-center gap-3 py-5">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2038/2038547.png" alt="No Testimonials" className="img-fluid" style={{ width: '100px', height: '100px' }} />
+                    <img src="https://cdn-icons-png.flaticon.com/512/2038/2038547.png" alt="No Testimonials" className="img-fluid" style={{ width: '100px', height: '100px' }} loading="lazy" />
                     <div className="text-center">
                       <h5 className="text-muted">No Testimonials Yet</h5>
                       <p className="small text-muted">Be the first to share your experience!</p>

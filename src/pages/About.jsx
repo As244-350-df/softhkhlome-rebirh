@@ -36,7 +36,11 @@ function About() {
         <link rel="canonical" href="https://softkhlome.web.app/about" />
         <meta property="og:title" content="About Softkhlome - Our Story and Team" />
         <meta property="og:description" content="Learn about Softkhlome's origin, mission, and dedicated team. Discover how we provide innovative web design and development services in Malawi." />
+        <meta property="og:image" content="https://softkhlome.web.app/logo(2).png" />
         <meta property="og:url" content="https://softkhlome.web.app/about" />
+        <meta name="robots" content="index, follow" />
+        <meta name="twitter:url" content="https://softkhlome.web.app/about" />
+        <meta name="twitter:image" content="https://softkhlome.web.app/logo(2).png" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="About Softkhlome - Our Story and Team" />
@@ -67,6 +71,7 @@ function About() {
                 src={TeamImg}
                 className="img img-fluid about-animate"
                 alt="About our team"
+                loading="lazy"
               />
             </div>
           </div>
@@ -140,7 +145,7 @@ function About() {
               </div>
             </div>
             <div className="col-lg-6">
-              <img src={webDevImg} alt="Our mission" className="box-transition img-fluid rounded shadow-lg about-animate" />
+              <img src={webDevImg} alt="Our mission" className="box-transition img-fluid rounded shadow-lg about-animate" loading="lazy" />
             </div>
           </div>
         </div>
@@ -163,6 +168,7 @@ function About() {
                     alt="Our dedicated team"
                     className="img-fluid  rounded w-100 about-animate"
                     style={{ height: '100%', objectFit: 'cover' }}
+                    loading="lazy"
                   />
                 </div>
               </div>

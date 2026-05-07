@@ -28,7 +28,11 @@ function Policy() {
         <link rel="canonical" href="https://softkhlome.web.app/Policy" />
         <meta property="og:title" content="Privacy Policy - Softkhlome" />
         <meta property="og:description" content="Read Softkhlome's Privacy Policy to understand how we collect, use, and protect your personal information." />
+        <meta property="og:image" content="https://softkhlome.web.app/logo(2).png" />
         <meta property="og:url" content="https://softkhlome.web.app/Policy" />
+        <meta name="robots" content="index, follow" />
+        <meta name="twitter:url" content="https://softkhlome.web.app/Policy" />
+        <meta name="twitter:image" content="https://softkhlome.web.app/logo(2).png" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Privacy Policy - Softkhlome" />

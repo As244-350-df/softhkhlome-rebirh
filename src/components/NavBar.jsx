@@ -11,7 +11,7 @@ function NavBar({pageName}) {
     return (
         <nav className="navbar navbar-expand-sm navbar-light">
             <div className="container-fluid text-dark d-flex flex-direction-row align-items-end justify-content-between">
-                <a className="navbar-brand text-primary d-flex fw-bold" href="#"><img src={Logo} className='mx-1 mr-2' height='30px' alt="logo" />softkhlome</a>
+                <a className="navbar-brand text-primary d-flex fw-bold" href="#"><img src={Logo} className='mx-1 mr-2' height='30px' alt="logo" loading="lazy" />softkhlome</a>
                 <button className="navbar-toggler text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarID" aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="bi bi-menu-button menu-sfill"></span>
                 </button>

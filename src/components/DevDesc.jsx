@@ -24,6 +24,7 @@ function DevDesc() {
                       src={devImg}
                       alt="Brian Kamwera - Full Stack Developer"
                       style={{ maxWidth: '250px', height: '250px', objectFit: 'cover' }}
+                      loading="lazy"
                     />
                     <h3 className="h4 text-primary fw-bold mb-1">Brian Kamwera</h3>
                     <p className="text-muted fw-bold mb-0">Full-Stack Web Developer</p>

@@ -41,6 +41,7 @@ function ProfileProjects() {
                         alt={project.name}
                         className="img img-fluid"
                         style={{ height: '10rem',width:"100%", objectFit: 'cover' }}
+                        loading="lazy"
                       />
                     </div>
                     <div className="card-body d-flex flex-column">

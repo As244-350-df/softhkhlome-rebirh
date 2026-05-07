@@ -27,6 +27,7 @@ function Skills() {
                           alt={`${tech.name} icon`}
                           className="img-fluid"
                           style={{ height: '60px', width: '60px' }}
+                          loading="lazy"
                         />
                       </div>
                       <h5 className="card-title text-primary fw-bold mb-3">{tech.name}</h5>

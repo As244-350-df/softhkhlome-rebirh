@@ -48,6 +48,7 @@ function Experience() {
                       src={OfficeImg}
                       alt="Professional workspace illustration"
                       className="img-fluid rounded"
+                      loading="lazy"
                     />
                   </div>
                 </div>

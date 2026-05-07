@@ -38,6 +38,7 @@ function Services() {
                         className="card-img-top img-fluid"
                         alt={service.name}
                         style={{ height: '200px', objectFit: 'cover' }}
+                        loading="lazy"
                       />
                       <div className="card-img-overlay d-flex align-items-center justify-content-center bg-primary bg-opacity-75 opacity-0 hover-opacity-100 transition-opacity">
                         <i className={`${service.icon} text-white fs-1`}></i>
