@@ -1,20 +1,34 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import brand from '../assets/brand.png'
+import anime from 'animejs/lib/anime.es.js'
 
 function Footer() {
+  const footerRef = useRef(null)
+
+  useEffect(() => {
+    if (!footerRef.current) return
+
+    anime.timeline({ easing: 'easeOutExpo', duration: 650 })
+      .add({
+        targets: footerRef.current.querySelectorAll('.footer-item'),
+        translateY: [24, 0],
+        opacity: [0, 1],
+        delay: anime.stagger(90),
+      })
+  }, [])
+
   return (
-    <footer className="bg-primary text-light children-bg-transparent py-5 mt-5">
+    <footer className="bg-primary text-light children-bg-transparent py-5 mt-5" ref={footerRef}>
       <div className="container">
         <div className="row g-4">
-          {/* Brand Section */}
           <div className="col-lg-4">
-            <div className="card bg-transparent border-0 text-light h-100">
+            <div className="card bg-transparent border-0 text-light h-100 footer-item">
               <div className="card-body text-center">
-                <div className="mb-3">
+                <div className="mb-3  d-flex justify-content-center">
                   <img
                     src={brand}
-                    loading='lazy'
+                    loading="lazy"
                     className="img-fluid"
                     alt="SoftKhlome Brand"
                     style={{ maxHeight: '80px' }}
@@ -22,23 +36,18 @@ function Footer() {
                 </div>
                 <h4 className="card-title fw-bold mb-3">SoftKhlome</h4>
                 <p className="card-text text-light">
-                  Softkhlome is a newly established private institution dedicated to
-                  providing cutting-edge digital services tailored to meet the growing
-                  needs of modern businesses and creative individuals. Founded on the principles of
-                  innovation, quality, and customer satisfaction, Softkhlome strives to become a trusted
-                  name in the digital solutions industry.
+                  Softkhlome is a newly established private institution dedicated to providing cutting-edge digital services tailored to meet the growing needs of modern businesses and creative individuals.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Navigation Section */}
           <div className="col-lg-4">
-            <div className="card bg-transparent border-0 text-light h-100">
-              <div className="card-body text-center">
+            <div className="card bg-transparent border-0 text-light h-100 footer-item">
+              <div className="card-body">
                 <h4 className="card-title fw-bold mb-4">Navigate</h4>
-                <div className="d-flex flex-column gap-2">
-                  <Link to="/" className="btn btn-outline-light text-start">
+                <div className="d-flex flex-column  gap-2">
+                  <Link to="/#" className="btn btn-outline-light text-start">
                     <i className="bi bi-house me-2"></i>
                     Home
                   </Link>
@@ -50,9 +59,9 @@ function Footer() {
                     <i className="bi bi-info-circle me-2"></i>
                     About
                   </Link>
-                  <Link to="/Policy" className="btn btn-outline-light text-start">
+                  <Link to="/profile" className="btn btn-outline-light text-start">
                     <i className="bi bi-shield-check me-2"></i>
-                    Privacy Policy
+                    developer
                   </Link>
                   <a href="/#contact" className="btn btn-outline-light text-start">
                     <i className="bi bi-envelope me-2"></i>
@@ -63,13 +72,11 @@ function Footer() {
             </div>
           </div>
 
-          {/* Contact & Social Section */}
           <div className="col-lg-4">
-            <div className="card bg-transparent border-0 text-light h-100">
+            <div className="card bg-transparent border-0 text-light h-100 footer-item">
               <div className="card-body">
-                {/* Contact Info */}
                 <div className="mb-4">
-                  <h5 className="card-title fw-bold text-center mb-3">Our Contact Info</h5>
+                  <h5 className="card-title fw-bold mb-3">Our Contact Info</h5>
                   <div className="d-flex flex-column gap-2">
                     <div className="d-flex align-items-center">
                       <i className="bi bi-geo-alt me-3 text-warning"></i>
@@ -86,13 +93,12 @@ function Footer() {
                   </div>
                 </div>
 
-                {/* Social Media */}
                 <div>
                   <h5 className="card-title fw-bold text-center mb-3">Follow Us</h5>
                   <div className="d-flex justify-content-center gap-3">
                     <a
                       href="https://web.facebook.com/profile.php?id=61576749383886&__tn__=-UC*F"
-                      className="btn text-light btn-lg rounded-circle"
+                      className="btn text-light btn-lg rounded-circle footer-item"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -100,7 +106,7 @@ function Footer() {
                     </a>
                     <a
                       href="https://whatsapp.com/channel/0029VbBjQ0CCsU9IEWqCrG37"
-                      className="btn text-light btn-lg rounded-circle"
+                      className="btn text-light btn-lg rounded-circle footer-item"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -108,7 +114,7 @@ function Footer() {
                     </a>
                     <a
                       href="https://www.instagram.com/softkhlome/#"
-                      className="btn text-light btn-lg rounded-circle"
+                      className="btn text-light btn-lg rounded-circle footer-item"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -116,7 +122,7 @@ function Footer() {
                     </a>
                     <a
                       href="https://youtube.com/@softkhlome?si=pVx2sPoax3L6yq8t"
-                      className="btn text-light btn-lg rounded-circle"
+                      className="btn text-light btn-lg rounded-circle footer-item"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -129,10 +135,9 @@ function Footer() {
           </div>
         </div>
 
-        {/* Copyright */}
         <div className="row mt-4">
           <div className="col-12">
-            <div className="card bg-transparent border-0">
+            <div className="card bg-transparent border-0 footer-item">
               <div className="card-body text-center">
                 <p className="mb-0 text-light">
                   SoftKhlome 2025. All rights reserved © |

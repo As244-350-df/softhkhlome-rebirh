@@ -9,24 +9,15 @@ body {
   padding: 0;
   overflow-x: hidden !important;
   font-family: 'Inter', system-ui, sans-serif;
-  background:#eef5ff ;
+  background: #081229;
   color: #eef5ff;
 }
 
 * {
   box-sizing: border-box;
 }
-.grass{
+.glass {
   background-color: transparent !important;
   backdrop-filter: blur(10px);
-  color:#eef5ff;
-}
-.overflow-hidden {
-  overflow: hidden !important;
-}
-.small{
-  font-size:.66rem !important;
-}
-.btn-hidden{
-  display: none;
+  color: #eef5ff;
 }

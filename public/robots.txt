@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://softklhome-v1.firebaseapp.com/sitemap.xml
+Sitemap: https://softkhlome.web.app/sitemap.xml

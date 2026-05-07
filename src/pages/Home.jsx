@@ -19,10 +19,10 @@ function Home() {
         <title>Softkhlome - Leading Web Design and Development Company in Malawi</title>
         <meta name="description" content="Softkhlome is a leading website design company in Malawi, providing innovative web development solutions for businesses of all sizes. Get professional web design, development, and graphic design services." />
         <meta name="keywords" content="web design Malawi, softkhlome, graphic design, website creation, digital solutions" />
-        <link rel="canonical" href="https://softklhome-v1.firebaseapp.com/" />
+        <link rel="canonical" href="https://softkhlome.web.app/" />
         <meta property="og:title" content="Softkhlome - Leading Web Design and Development Company in Malawi" />
         <meta property="og:description" content="Softkhlome is a leading website design company in Malawi, providing innovative web development solutions for businesses of all sizes." />
-        <meta property="og:url" content="https://softklhome-v1.firebaseapp.com/" />
+        <meta property="og:url" content="https://softkhlome.web.app/" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Softkhlome - Leading Web Design and Development Company in Malawi" />
@@ -32,8 +32,8 @@ function Home() {
           "@context": "https://schema.org",
           "@type": "Organization",
           "name": "Softkhlome",
-          "url": "https://softklhome-v1.firebaseapp.com",
-          "logo": "https://softklhome-v1.firebaseapp.com/logo(2).png",
+          "url": "https://softkhlome.web.app",
+          "logo": "https://softkhlome.web.app/logo(2).png",
           "description": "Leading web design and development company in Malawi, providing innovative digital solutions.",
           "founder": {
             "@type": "Person",

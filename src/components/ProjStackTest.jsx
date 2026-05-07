@@ -7,14 +7,15 @@ import { projects } from './projects.js';
 function ProjStackTest() {
   return (
     <section className="container-fluid bg-light py-5">
+      <h2 className="display-5 fw-bold text-primary mb-3">Projects & Tech Stack</h2>
       <div className="container">
         <div className="row g-4">
           {/* Projects and Tech Stack Section */}
           <div className="col-lg-8">
             {/* Projects Section */}
-            <div className="card shadow-sm mb-4">
+            <div className="card shadow-sm overflow-hidden mb-4">
               <div className="card-header bg-primary children-bg-transparent text-white">
-                <h3 className="card-title text-warning mb-0">
+                <h3 className="card-title text-warning text-center mb-0">
                   <i className="bi bi-folder me-2"></i>
                   Featured Projects
                 </h3>
@@ -49,7 +50,7 @@ function ProjStackTest() {
                       </div>
                       <div className="card-body d-flex flex-column justify-content-between">
                         <h6 className="card-title text-center text-primary fw-bold">{project.name}</h6>
-                        <p className="card-text tech-text text-center text-muted">{project.description}</p>
+                        <p className="card-text tech-text text-center small text-muted">{project.description}</p>
                         <a href={project.link} className="btn btn-primary text-light btn-md px-4">
                           View Project
                         </a>
@@ -61,9 +62,9 @@ function ProjStackTest() {
             </div>
 
             {/* Tech Stack Section */}
-            <div className="card shadow-sm">
+            <div className="card shadow-sm overflow-hidden">
               <div className="card-header bg-primary children-bg-transparent text-white">
-                <h3 className="card-title text-warning mb-0">
+                <h3 className="card-title text-warning text-center mb-0">
                   <i className="bi bi-tools me-2"></i>
                   Technology Stack
                 </h3>
@@ -89,7 +90,7 @@ function ProjStackTest() {
                       }}
                     >
                       <div className="card-body">
-                        <div className="mb-3">
+                        <div className="mb-3 d-flex justify-content-center">
                           <img
                             src={tech.icon}
                             alt={tech.name}
@@ -98,7 +99,7 @@ function ProjStackTest() {
                           />
                         </div>
                         <h6 className="card-title  text-primary fw-bold">{tech.name}</h6>
-                        <p className="card-text tech-text text-muted">{tech.description}</p>
+                        <p className="card-text tech-text small text-muted">{tech.description}</p>
                       </div>
                     </div>
                   ))}
@@ -109,9 +110,9 @@ function ProjStackTest() {
 
           {/* Testimonials Section */}
           <div className="col-lg-4">
-            <div className="card shadow-sm h-100">
+            <div className="card shadow-sm overflow-hidden h-100">
               <div className="card-header bg-warning children-bg-transparent text-white">
-                <h3 className="card-title text-primary mb-0">
+                <h3 className="card-title text-primary text-center mb-0">
                   <i className="bi bi-chat-quote me-2"></i>
                   Client Testimonials
                 </h3>

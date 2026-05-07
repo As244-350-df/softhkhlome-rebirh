@@ -1,24 +1,37 @@
-import { services } from "./services.js"
+import React, { useEffect, useRef } from 'react'
+import { services } from './services.js'
+import anime from 'animejs/lib/anime.es.js'
 
 function Services() {
+  const serviceRef = useRef(null)
+
+  useEffect(() => {
+    if (!serviceRef.current) return
+
+    anime.timeline({ easing: 'easeOutExpo', duration: 700 }).add({
+      targets: serviceRef.current.querySelectorAll('.service-card'),
+      translateY: [40, 0],
+      opacity: [0, 1],
+      delay: anime.stagger(120),
+    })
+  }, [])
+
   return (
-    <section className="container-fluid bg-light py-5" id="services">
+    <section className="container-fluid bg-light py-5" id="services" ref={serviceRef}>
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10 col-xl-8">
-            {/* Header Section */}
             <div className="text-center mb-5">
-              <h2 className="display-5 fw-bold text-primary mb-3">What we do </h2>
+              <h2 className="display-5 fw-bold text-primary mb-3">What we do</h2>
               <p className="lead text-muted">
-               We provide small businesses with stunnning digital solutions such as web development and design, graphic design.
+                We provide small businesses with stunning digital solutions such as web development, design, and branding.
               </p>
             </div>
 
-            {/* Services Cards */}
             <div className="row g-4">
               {services.map((service, index) => (
                 <div className="col-lg-4 col-md-6" key={index}>
-                  <div className="card card-transition shadow-sm h-100 border-0">
+                  <div className="card card-transition shadow-sm h-100 border-0 service-card">
                     <div className="card-img-wrapper position-relative overflow-hidden">
                       <img
                         src={service.image}
@@ -31,11 +44,11 @@ function Services() {
                       </div>
                     </div>
                     <div className="card-body d-flex flex-column">
-                      <h5 className="card-title text-primary fw-bold mb-3">{service.name}</h5>
-                      <p className="card-text text-muted flex-grow-1">{service.description}</p>
+                      <h5 className="card-title text-primary fw-bold mb-3 text-center">{service.name}</h5>
+                      <p className="card-text text-muted tech-text flex-grow-1 text-center">{service.description}</p>
                       <div className="mt-auto">
-                        <div className=" w-100 d-flex justify-content-between align-items-center">
-                          <span className=" badge bg-warning text-primary fw-bold px-3 py-2">
+                        <div className="w-100 d-flex justify-content-center align-items-center">
+                          <span className="badge bg-warning text-primary fw-bold px-3 py-2">
                             {service.priceRange}/{service.unit}
                           </span>
                           <button className="d-none btn my-1 mx-1 btn-primary btn-sm">
@@ -48,10 +61,9 @@ function Services() {
                 </div>
               ))}
             </div>
-            <div className="alert alert-warning mt-3">
-               <strong>Note:</strong> the prices of our services depends on the complexity of your project, but we don't exceed the the price ranges shown in our descriptions. We settle on prices before starting any project, so you can be sure there are no hidden fees or unexpected costs.
+            <div className="alert alert-warning text-secondary  mt-3">
+              <strong>Note:</strong> the prices of our services depend on the complexity of your project, but we do not exceed the ranges shown. We agree on costs before starting so you can avoid hidden fees.
             </div>
-            {/* Call to Action */}
             <div className="text-center mt-5">
               <div className="card shadow-sm border-primary">
                 <div className="card-body py-4">
@@ -70,7 +82,7 @@ function Services() {
         </div>
       </div>
     </section>
-  );
+  )
 }
 
 export default Services

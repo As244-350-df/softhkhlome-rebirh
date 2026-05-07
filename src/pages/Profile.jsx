@@ -15,10 +15,10 @@ function Profile() {
         <title>Brian Kamwera - Web Developer at Softkhlome</title>
         <meta name="description" content="Meet Brian Kamwera, the founder and lead web developer at Softkhlome. Explore his skills, experience, and portfolio of web development projects." />
         <meta name="keywords" content="Brian Kamwera, web developer Malawi, Softkhlome founder, portfolio, skills, experience" />
-        <link rel="canonical" href="https://softklhome-v1.firebaseapp.com/Profile" />
+        <link rel="canonical" href="https://softkhlome.web.app/Profile" />
         <meta property="og:title" content="Brian Kamwera - Web Developer at Softkhlome" />
         <meta property="og:description" content="Meet Brian Kamwera, the founder and lead web developer at Softkhlome. Explore his skills, experience, and portfolio of web development projects." />
-        <meta property="og:url" content="https://softklhome-v1.firebaseapp.com/Profile" />
+        <meta property="og:url" content="https://softkhlome.web.app/Profile" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Brian Kamwera - Web Developer at Softkhlome" />

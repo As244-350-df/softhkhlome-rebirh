@@ -21,7 +21,7 @@ function Skills() {
                 <div className="col-lg-3 col-md-4 col-sm-6" key={idx}>
                   <div className="card shadow-sm h-100 border border-radius hover-lift">
                     <div className="card-body text-center p-4">
-                      <div className="mb-3">
+                      <div className="mb-3 d-flex justify-content-center">
                         <img
                           src={tech.icon}
                           alt={`${tech.name} icon`}

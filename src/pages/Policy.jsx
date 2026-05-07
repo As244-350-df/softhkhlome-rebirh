@@ -10,10 +10,10 @@ function Policy() {
         <title>Privacy Policy - Softkhlome</title>
         <meta name="description" content="Read Softkhlome's Privacy Policy to understand how we collect, use, and protect your personal information. Your privacy is our priority." />
         <meta name="keywords" content="privacy policy, Softkhlome, data protection, personal information" />
-        <link rel="canonical" href="https://softklhome-v1.firebaseapp.com/Policy" />
+        <link rel="canonical" href="https://softkhlome.web.app/Policy" />
         <meta property="og:title" content="Privacy Policy - Softkhlome" />
         <meta property="og:description" content="Read Softkhlome's Privacy Policy to understand how we collect, use, and protect your personal information." />
-        <meta property="og:url" content="https://softklhome-v1.firebaseapp.com/Policy" />
+        <meta property="og:url" content="https://softkhlome.web.app/Policy" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Privacy Policy - Softkhlome" />
@@ -26,11 +26,11 @@ function Policy() {
             <div className="col-12 col-lg-10 col-xl-8">
               {/* Header Section */}
               <div className="text-center mb-5">
-                <h1 className="display-4 fw-bold text-primary mb-3">Privacy Policy</h1>
+                <h1 className="display-4 fw-bold text-primary d-flex flex-column align-items-center mb-3">Privacy Policy</h1>
                 <p className="lead text-muted">
                   Your privacy is important to us. This policy explains how Softkhlome collects, uses, and protects your information.
                 </p>
-                <small className="text-muted">Last Updated: April 14, 2025</small>
+                <small className="text-muted">Last Updated: April 14, 2026</small>
               </div>
 
               {/* Introduction Card */}
@@ -139,7 +139,7 @@ function Policy() {
                     We may share your information in the following circumstances:
                   </p>
 
-                  <div className="alert alert-info">
+                  <div className="alert alert-info text-muted">
                     <strong>Important:</strong> We only share information when necessary and with appropriate safeguards in place.
                   </div>
 
@@ -195,7 +195,7 @@ function Policy() {
                     </div>
                   </div>
 
-                  <div className="alert alert-warning mt-3">
+                  <div className="alert alert-warning  text-muted mt-3">
                     <strong>Note:</strong> While we strive to protect your information, no method of transmission over the internet
                     or electronic storage is 100% secure. We cannot guarantee absolute security.
                   </div>

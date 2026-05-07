@@ -1,66 +1,87 @@
-import React from "react"
+import React, { useEffect, useRef,useState } from "react"
 import { contactmethods } from "./contactUs.js"
-import emailjs from "@emailjs/browser";
-const SERVICE_KEY=import.meta.env.VITE_EMAILJS_SERVICE_KEY;
-const TEMPLATE_KEY=import.meta.env.VITE_EMAILJS_TEMPLATE_KEY;
-const PUBLIC_KEY=import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-const TEMPLATE2_KEY=import.meta.env.VITE_EMAILJS_TEMPLATE2_KEY;
+import emailjs from "@emailjs/browser"
+import Status from "./Status.jsx"
+const SERVICE_KEY = import.meta.env.VITE_EMAILJS_SERVICE_KEY
+const TEMPLATE_KEY = import.meta.env.VITE_EMAILJS_TEMPLATE_KEY
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+const TEMPLATE2_KEY = import.meta.env.VITE_EMAILJS_TEMPLATE2_KEY
+import anime from 'animejs/lib/anime.es.js'
+
 function Contact() {
+  const sectionRef = useRef(null)
+  const [response, setResponse] = useState(null)
   const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission logic here
-    const name = e.target.name.value;
-    const email = e.target.email.value;
-    const message = e.target.message.value;
-    //i want to send this data to my email address using emailjs or any other service 
-    // Example using EmailJS (uncomment and replace with your actual service ID and template ID)
+    e.preventDefault()
+    const name = e.target.name.value
+    const email = e.target.email.value
+    const message = e.target.message.value
+
     emailjs.send(SERVICE_KEY, TEMPLATE_KEY, {
-         name: name,
-         title: "New PROJECT FORM SUBMISSION",
-         email: email,
-         message: message
-     },
-    PUBLIC_KEY
+        name: name,
+        title: "New PROJECT FORM SUBMISSION",
+        email: email,
+        message: message,
+      },
+      PUBLIC_KEY
     ).then((response) => {
-        emailjs.send(SERVICE_KEY, TEMPLATE2_KEY, {
-            name: "SoftKhlome Team",
-            title: "we have received your email",
-            email: email,
-            message: `Dear ${name},\n\nThank you for reaching out to us! We have received your message and will get back to you as soon as possible.`
+      emailjs.send(SERVICE_KEY, TEMPLATE2_KEY, {
+          name: "SoftKhlome Team",
+          title: "we have received your email",
+          email: email,
+          message: `Dear ${name},\n\nThank you for reaching out to us! We have received your message and will get back to you as soon as possible.`,
         },
         PUBLIC_KEY
-        ).then((response) => {
-            console.log('SUCCESS!', response.status, response.text);
-            alert("Message sent successfully! We will get back to you soon.");
-        }).catch((err) => {
-            console.log('FAILED...', err);
-            alert("Failed to send confirmation email. Please check your email address and try again.");
-        });
-    }).catch((err) => {        
-        console.log('FAILED...', err);
-        alert("Failed to send message. Please try again later.");
-    });
-  };
+      ).then((response) => {
+        console.log('SUCCESS!', response.status, response.text)
+        //alert("Message sent successfully! We will get back to you soon.")
+        setResponse({ success:true,status:response.status, message: "Message sent successfully! We will get back to you soon."})
+        console.log(response)
+        document.getElementById("response-modal01").click()
+      }).catch((err) => {
+        console.log('FAILED...', err)
+        alert("Failed to send confirmation email. Please check your email address and try again.")
+        setResponse({ success: false ,status:500, message:err.message})
+        document.getElementById("response-modal01").click()
+      })
+    }).catch((err) => {
+      console.log('FAILED...', err)
+      //alert("Failed to send message. Please try again later.")
+      setResponse({ success: false ,status:500, message:err.message})
+      document.getElementById("response-modal01").click()
+    })
+  }
+
+  useEffect(() => {
+    if (!sectionRef.current) return
+
+    anime.timeline({ easing: 'easeOutExpo', duration: 700 })
+      .add({
+        targets: sectionRef.current.querySelectorAll('.contact-card'),
+        translateY: [35, 0],
+        opacity: [0, 1],
+        delay: anime.stagger(110),
+      })
+  }, [])
 
   return (
-    <section className="container-fluid bg-light py-5" id="contact">
+    <section className="container-fluid bg-light py-5" id="contact" ref={sectionRef}>
+      <Status response={response}/>
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10 col-xl-8">
-            {/* Header Section */}
             <div className="text-center mb-5">
               <h2 className="display-5 fw-bold text-primary mb-3">Contact Us</h2>
-              <p className="lead text-muted">
+              <p className="lead text-dark">
                 Ready to start your project? Get in touch with us today.
               </p>
             </div>
 
             <div className="row g-5">
-              {/* Contact Form */}
               <div className="col-lg-6">
-                <div className="card shadow-sm border-0">
+                <div className="card shadow-sm border-0 contact-card">
                   <div className="card-body p-4">
-                    <h3 className="card-title text-primary mb-4">
+                    <h3 className="card-title text-primary text-center mb-4">
                       <i className="bi bi-envelope-fill me-2"></i>
                       Send us a Message
                     </h3>
@@ -107,15 +128,14 @@ function Contact() {
                 </div>
               </div>
 
-              {/* Contact Information */}
               <div className="col-lg-6">
-                <div className="card shadow-sm border-0 mb-4">
+                <div className="card shadow-sm border-0 px-2 mb-4 contact-card">
                   <div className="card-body p-4">
-                    <h3 className="card-title text-primary mb-4">
+                    <h3 className="card-title text-primary text-center mb-4">
                       <i className="bi bi-info-circle-fill me-2"></i>
                       Get in Touch
                     </h3>
-                    <p className="text-muted mb-4">
+                    <p className="text-muted mb-4 text-center">
                       Have questions or want to learn more about our services? Feel free to reach out to us through any of these channels!
                     </p>
 
@@ -151,40 +171,39 @@ function Contact() {
                   </div>
                 </div>
               </div>
-  
-                {/* Contact Methods Cards */}
-                <div className="row g-3">
-                  {contactmethods.map((method, index) => (
-                    <div className="col-md-4" key={index}>
-                      <div className="card shadow-sm card-transition border-0 bg-primary children-bg-transparent h-100 text-center">
-                        <div className="card-body d-flex flex-column align-items-center justify-content-around p-3">
-                          <div className="mb-3 text-warning">
-                            <i className={`${method.icon} fs-2 text-warning`}></i>
-                          </div>
-                          <h6 className="card-title fw-bold text-warning mb-2">{method.method}</h6>
-                          <p className="card-text small text-light mb-3">
-                            {method.description}
-                          </p>
-                          <a
-                            href={method.link}
-                            className="btn btn-outline-warning btn-sm w-100"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <i className="bi bi-arrow-right me-1"></i>
-                            Connect
-                          </a>
+
+              <div className="row g-3">
+                {contactmethods.map((method, index) => (
+                  <div className="col-md-4" key={index}>
+                    <div className="card shadow-sm card-transition border-0 bg-primary children-bg-transparent h-100 text-center contact-card">
+                      <div className="card-body d-flex flex-column align-items-center justify-content-around p-3">
+                        <div className="mb-3 text-warning">
+                          <i className={`${method.icon} fs-2 text-warning`}></i>
                         </div>
+                        <h6 className="card-title fw-bold text-warning mb-2">{method.method}</h6>
+                        <p className="card-text small text-light mb-3">
+                          {method.description}
+                        </p>
+                        <a
+                          href={method.link}
+                          className="btn btn-outline-warning btn-sm w-100"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <i className="bi bi-arrow-right me-1"></i>
+                          Connect
+                        </a>
                       </div>
                     </div>
-                  ))}
-                </div>            
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-  );
+  )
 }
 
 export default Contact

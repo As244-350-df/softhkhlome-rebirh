@@ -36,11 +36,7 @@ function DevDesc() {
                         Hello! I'm <strong>Brian Kamwera</strong>, a passionate <strong>full-stack web developer</strong>.
                         I specialize in creating dynamic and responsive websites that not only look great but also provide an exceptional user experience.
                       </p>
-                      <p className="text-muted">
-                        With a keen eye for detail and a commitment to quality, I strive to bring your digital ideas to life.
-                        Whether it's crafting beautiful user interfaces or building robust backend systems, I'm dedicated to delivering
-                        solutions that drive results and exceed expectations.
-                      </p>
+ 
                     </div>
 
                     <div className="d-flex gap-3 justify-content-center justify-content-md-start">

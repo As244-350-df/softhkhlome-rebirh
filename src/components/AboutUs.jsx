@@ -24,8 +24,8 @@ function AboutUs() {
                     <div className="text-center mb-4">
                       <i className="bi bi-building text-primary fs-1"></i>
                     </div>
-                    <h4 className="card-title text-primary fw-bold mb-3">Our Story</h4>
-                    <p className="card-text text-muted mb-4">
+                    <h4 className="card-title text-primary fw-bold mb-3 text-center">Our Story</h4>
+                    <p className="card-text text-muted mb-4 text-center">
                       Softkhlome is a newly established company founded by <strong>Brian Kamwera</strong>.
                       We specialize in delivering exceptional digital solutions that help businesses thrive
                       in the modern world. We provide cutting edge website development ,design and graphic design to mention a few.
@@ -57,9 +57,9 @@ function AboutUs() {
                       </div>
                     </div>
                     <div className="text-center">
-                      <Link to="/about" className="btn btn-primary text-primary btn-lg px-4">
+                      <Link to="/about" className="btn btn-warning text-primary btn-lg px-4">
                         <i className="bi bi-info-circle me-2"></i>
-                        Learn More About Us
+                         About Us
                       </Link>
                     </div>
                   </div>
@@ -68,7 +68,7 @@ function AboutUs() {
 
               <div className="col-lg-6">
                 <div className="card box-transition shadow-lg border-0">
-                  <div className="card-body p-0">
+                  <div className="card-body p-0 overflow-hidden">
                     <img
                       loading='lazy'
                       src={developerImg}
@@ -77,7 +77,7 @@ function AboutUs() {
                       style={{ height: '100%', objectFit: 'cover' }}
                     />
                   </div>
-                  <div className="card-footer bkg-primary text-light text-center">
+                  <div className="card-footer bkg-primary text-primary text-center">
                     <h5 className="mb-1">Brian Kamwera</h5>
                     <p className="mb-0 small">Founder & Lead Developer</p>
                   </div>
