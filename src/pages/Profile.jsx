@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
+import anime from 'animejs/lib/anime.es.js'
 import { Helmet } from 'react-helmet-async'
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
@@ -9,6 +10,20 @@ import Contact from '../components/Contact'
 import ProfileProjects from '../components/ProfileProjects'
 function Profile() {
   const pageName="Profile"
+  const pageRef = useRef(null)
+
+  useEffect(() => {
+    if (!pageRef.current) return
+
+    anime.timeline({ easing: 'easeOutExpo', duration: 650 })
+      .add({
+        targets: pageRef.current.querySelectorAll('.profile-animate'),
+        translateY: [30, 0],
+        opacity: [0, 1],
+        delay: anime.stagger(90),
+      })
+  }, [])
+
   return (
     <div className='Profile page'>
       <Helmet>
@@ -24,13 +39,15 @@ function Profile() {
         <meta name="twitter:title" content="Brian Kamwera - Web Developer at Softkhlome" />
         <meta name="twitter:description" content="Meet Brian Kamwera, the founder and lead web developer at Softkhlome. Explore his skills, experience, and portfolio of web development projects." />
       </Helmet>
-      <NavBar pageName={pageName}/>
-      <DevDesc/>
-      <Skills/>
-      <Experience/>
-      <ProfileProjects/>
-      <Contact/>
-      <Footer/>
+      <div ref={pageRef}>
+        <div className="profile-animate"><NavBar pageName={pageName}/></div>
+        <div className="profile-animate"><DevDesc/></div>
+        <div className="profile-animate"><Skills/></div>
+        <div className="profile-animate"><Experience/></div>
+        <div className="profile-animate"><ProfileProjects/></div>
+        <div className="profile-animate"><Contact/></div>
+        <div className="profile-animate"><Footer/></div>
+      </div>
     </div>
   )
 }

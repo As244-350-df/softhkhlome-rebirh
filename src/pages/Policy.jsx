@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import anime from 'animejs/lib/anime.es.js'
 import { Helmet } from 'react-helmet-async'
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 
 function Policy() {
+  const pageRef = useRef(null)
+
+  useEffect(() => {
+    if (!pageRef.current) return
+
+    anime.timeline({ easing: 'easeOutExpo', duration: 650 })
+      .add({
+        targets: pageRef.current.querySelectorAll('.policy-animate'),
+        translateY: [30, 0],
+        opacity: [0, 1],
+        delay: anime.stagger(80),
+      })
+  }, [])
+
   return (
     <>
       <Helmet>
@@ -20,12 +35,12 @@ function Policy() {
         <meta name="twitter:description" content="Read Softkhlome's Privacy Policy to understand how we collect, use, and protect your personal information." />
       </Helmet>
       <NavBar />
-      <div className="container-fluid bg-light py-5">
+      <div className="container-fluid bg-light py-5" ref={pageRef}>
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10 col-xl-8">
               {/* Header Section */}
-              <div className="text-center mb-5">
+              <div className="text-center mb-5 policy-animate">
                 <h1 className="display-4 fw-bold text-primary d-flex flex-column align-items-center mb-3">Privacy Policy</h1>
                 <p className="lead text-muted">
                   Your privacy is important to us. This policy explains how Softkhlome collects, uses, and protects your information.
@@ -34,7 +49,7 @@ function Policy() {
               </div>
 
               {/* Introduction Card */}
-              <div className="card shadow-sm mb-4">
+              <div className="card shadow-sm mb-4 policy-animate">
                 <div className="card-body">
                   <h2 className="h4 card-title text-primary mb-3">Introduction</h2>
                   <p className="card-text">
@@ -50,7 +65,7 @@ function Policy() {
               </div>
 
               {/* Information We Collect */}
-              <div className="card shadow-sm mb-4">
+              <div className="card shadow-sm mb-4 policy-animate">
                 <div className="card-body">
                   <h2 className="h4 card-title text-primary mb-3">Information We Collect</h2>
                   <p className="card-text mb-3">We collect information in the following ways:</p>
@@ -81,7 +96,7 @@ function Policy() {
               </div>
 
               {/* How We Use Information */}
-              <div className="card shadow-sm mb-4">
+              <div className="card shadow-sm mb-4 policy-animate">
                 <div className="card-body">
                   <h2 className="h4 card-title text-primary mb-3">How We Use Your Information</h2>
                   <p className="card-text mb-3">We use the collected information for the following purposes:</p>
@@ -131,7 +146,7 @@ function Policy() {
               </div>
 
               {/* Information Sharing */}
-              <div className="card shadow-sm mb-4">
+              <div className="card shadow-sm mb-4 policy-animate">
                 <div className="card-body">
                   <h2 className="h4 card-title text-primary mb-3">Information Sharing and Disclosure</h2>
                   <p className="card-text mb-3">
@@ -167,7 +182,7 @@ function Policy() {
               </div>
 
               {/* Data Security */}
-              <div className="card shadow-sm mb-4">
+              <div className="card shadow-sm mb-4 policy-animate">
                 <div className="card-body">
                   <h2 className="h4 card-title text-primary mb-3">Data Security</h2>
                   <p className="card-text mb-3">
@@ -203,7 +218,7 @@ function Policy() {
               </div>
 
               {/* Your Rights */}
-              <div className="card shadow-sm mb-4">
+              <div className="card shadow-sm mb-4 policy-animate">
                 <div className="card-body">
                   <h2 className="h4 card-title text-primary mb-3">Your Rights and Choices</h2>
                   <p className="card-text mb-3">

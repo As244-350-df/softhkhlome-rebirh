@@ -68,7 +68,7 @@ function Introduction() {
                     </a>
                     <Link to="/about" className="btn btn-outline-warning text-warning btn-lg px-4 py-2 intro-button">
                       <i className="bi bi-info-circle me-2"></i>
-                      Learn More
+                      About us
                     </Link>
                   </div>
                 </div>
