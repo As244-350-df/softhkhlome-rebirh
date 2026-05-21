@@ -105,7 +105,7 @@ function TermsMod() {
                 Please review and accept our terms to proceed. Your acceptance confirms that you understand and agree to the terms of use for Softkhlome.
               </p>
               <button
-                className="btn btn-primary btn-lg me-2 terms-animate"
+                className="btn btn-primary btn-lg me-md-2 text-warning me-0 mb-1 terms-animate"
                 data-bs-toggle="modal"
                 data-bs-target="#termsModal"
               >

@@ -11,6 +11,7 @@ import Footer from '../components/Footer'
 import ProjStackTest from '../components/ProjStackTest'
 import Loader from '../components/Loader.jsx'
 import TermsMod from '../components/TermsMod.jsx'
+import Points from '../components/Points.jsx'
 function Home() {
   const pageName="home"
   return (
@@ -58,13 +59,14 @@ function Home() {
         </script>
       </Helmet>
     <Suspense fallback={ <Loader/>}>
-      <div className="navbar-intro">
+      <div className="navbar-intro mb-0 pb-0">
         <div className="navbar-intro-cont border-primary ">
         <NavBar pageName={pageName}/>
         <Introduction />
         </div>
       </div>
       <div className="d-flex flex-column align-items-center">
+          <Points/>
           <Services />
           <WhyChooseUs />
           <Contact/>

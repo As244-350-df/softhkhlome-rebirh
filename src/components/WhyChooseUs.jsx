@@ -29,7 +29,7 @@ function WhyChooseUs() {
             </div>
 
             <div className="row g-4">
-              <div className="col-lg-4 col-md-6">
+              <div className="col-lg-6 col-md-6">
                 <div className="card card-transition shadow-sm h-100 border-0 bg-primary text-white why-card">
                   <div className="card-body text-center p-4">
                     <div className="mb-4">
@@ -43,7 +43,7 @@ function WhyChooseUs() {
                 </div>
               </div>
 
-              <div className="col-lg-4 col-md-6">
+              <div className="col-lg-6 col-md-6">
                 <div className="card card-transition shadow-sm h-100 border-0 bg-primary text-white why-card">
                   <div className="card-body text-center p-4">
                     <div className="mb-4">
@@ -57,7 +57,7 @@ function WhyChooseUs() {
                 </div>
               </div>
 
-              <div className="col-lg-4 col-md-6">
+              <div className="col-lg-6 col-md-6">
                 <div className="card card-transition shadow-sm h-100 border-0 bg-primary text-white why-card">
                   <div className="card-body text-center p-4">
                     <div className="mb-4">
@@ -70,7 +70,7 @@ function WhyChooseUs() {
                   </div>
                 </div>
               </div>
-              <div className="col-lg-4 col-md-6">
+              <div className="col-lg-6 col-md-6">
                 <div className="card card-transition shadow-sm h-100 border-0 bg-primary text-white why-card">
                   <div className="card-body text-center p-4">
                     <div className="mb-4">
@@ -91,7 +91,7 @@ function WhyChooseUs() {
                   <div className="card-body">
                     <div className="d-flex align-items-center mb-3">
                       <i className="bi bi-clock-history text-primary fs-3 me-3"></i>
-                      <h5 className="card-title mb-0 text-warning">Timely Delivery</h5>
+                      <h5 className="card-title mb-0 text-primary">Timely Delivery</h5>
                     </div>
                     <p className="card-text text-primary">
                       We respect your time and deliver projects on schedule without compromising quality.
@@ -105,7 +105,7 @@ function WhyChooseUs() {
                   <div className="card-body">
                     <div className="d-flex align-items-center mb-3">
                       <i className="bi bi-headset text-primary fs-3 me-3"></i>
-                      <h5 className="card-title mb-0 text-warning">24/7 Support</h5>
+                      <h5 className="card-title mb-0 text-primary">24/7 Support</h5>
                     </div>
                     <p className="card-text text-primary">
                       Our dedicated support team is always ready to help you with any questions or concerns.

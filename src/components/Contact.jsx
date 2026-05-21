@@ -81,7 +81,7 @@ function Contact() {
               <div className="col-lg-6">
                 <div className="card shadow-sm border-0 contact-card">
                   <div className="card-body p-4">
-                    <h3 className="card-title text-primary text-center mb-4">
+                    <h3 className="card-title text-primary mb-4">
                       <i className="bi bi-envelope-fill me-2"></i>
                       Send us a Message
                     </h3>
@@ -119,7 +119,7 @@ function Contact() {
                           required
                         ></textarea>
                       </div>
-                      <button type="submit" className="btn btn-warning text-primary border border-primary btn-lg w-100 fw-bold">
+                      <button type="submit" className="btn btn-warning text-primary  btn-lg w-100 fw-bold">
                         <i className="bi bi-send me-2 bg-transparent "></i>
                         Send Message
                       </button>
@@ -129,22 +129,22 @@ function Contact() {
               </div>
 
               <div className="col-lg-6">
-                <div className="card shadow-sm border-0 px-2 mb-4 contact-card">
+                <div className="card grass border-0 px-2 mb-4 contact-card">
                   <div className="card-body p-4">
-                    <h3 className="card-title text-primary text-center mb-4">
+                    <h3 className="card-title text-primary mb-4">
                       <i className="bi bi-info-circle-fill me-2"></i>
                       Get in Touch
                     </h3>
-                    <p className="text-muted mb-4 text-center">
+                    <p className="text-muted mb-4">
                       Have questions or want to learn more about our services? Feel free to reach out to us through any of these channels!
                     </p>
 
                     <div className="row g-3">
                       <div className="col-12">
-                        <div className="d-flex align-items-center children-bg-transparent p-3 bg-light rounded">
+                        <div className="d-flex align-items-center children-bg-transparent p-3 bg-transparent rounded">
                           <i className="bi bi-geo-alt-fill text-primary fs-4 me-3"></i>
                           <div className="children-bg-transparent">
-                            <strong>Address</strong><br />
+                            <strong className="text-dark">Address</strong><br />
                             <span className="text-muted">26 Mitundu, Lilongwe, Malawi</span>
                           </div>
                         </div>
@@ -153,7 +153,7 @@ function Contact() {
                         <div className="d-flex align-items-center children-bg-transparent p-3 bg-light rounded">
                           <i className="bi bi-telephone-fill text-primary fs-4 me-3"></i>
                           <div>
-                            <strong>Phone</strong><br />
+                            <strong className="text-dark">Phone</strong><br />
                             <span className="text-muted">+265 (886) 522-243</span>
                           </div>
                         </div>
@@ -162,7 +162,7 @@ function Contact() {
                         <div className="d-flex children-bg-transparent align-items-center p-3 bg-light rounded">
                           <i className="bi bi-envelope-fill text-primary fs-4 me-3"></i>
                           <div>
-                            <strong>Email</strong><br />
+                            <strong className="text-dark">Email</strong><br />
                             <span className="text-muted">softkhlome@gmail.com</span>
                           </div>
                         </div>
@@ -172,26 +172,26 @@ function Contact() {
                 </div>
               </div>
 
-              <div className="row g-3">
+              <div className="row g-3 ">
                 {contactmethods.map((method, index) => (
-                  <div className="col-md-4" key={index}>
-                    <div className="card shadow-sm card-transition border-0 bg-primary children-bg-transparent h-100 text-center contact-card">
+                  <div className="col-md-4 " key={index}>
+                    <div className="card card-transition border-0 bg-light children-bg-transparent h-100 text-center contact-card">
                       <div className="card-body d-flex flex-column align-items-center justify-content-around p-3">
-                        <div className="mb-3 text-warning">
-                          <i className={`${method.icon} fs-2 text-warning`}></i>
+                        <div className="mb-3 text-primary">
+                          <i className={`${method.icon} fs-2 text-primary`}></i>
                         </div>
-                        <h6 className="card-title fw-bold text-warning mb-2">{method.method}</h6>
-                        <p className="card-text small text-light mb-3">
+                        <h6 className="card-title fw-bold text-primasry mb-2">{method.method}</h6>
+                        <p className="card-text small text-secondary mb-3">
                           {method.description}
                         </p>
                         <a
                           href={method.link}
-                          className="btn btn-outline-warning btn-sm w-100"
+                          className="btn btn-primary btn-sm w-50"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
                           <i className="bi bi-arrow-right me-1"></i>
-                          Connect
+                          {method.message}
                         </a>
                       </div>
                     </div>

@@ -30,3 +30,52 @@ body {
 .btn-hidden{
   display: none;
 }
+.h-auto{
+   height: auto !important;
+}
+.img-start-cont{
+  width: 100% !important;
+  border:0px solid blue;
+}
+.bg-transparent{
+  background-color: transparent !important;
+}
+.img-top{
+  width:100% !important;
+}
+.contact-card{
+  margin: 0 !important;
+  margin-right: 0 !important;
+  margin-left: 0rem !important;
+}
+  .img-start{
+    width: 100% !important;
+    border: 0;
+    height:190px !important;
+    max-height:200px;
+    border-radius: 0 !important;
+  }
+@media (min-width:992px) {
+  .service-card{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    height:100% !important;
+  }
+  .img-start-cont{
+    border-radius: 0 !important;
+    max-width: 30% !important;
+    border:0px solid blue;
+    height:100%;
+  }
+  .img-start{
+    width: 100% !important;
+    border: 0;
+    height:200px !important;
+    max-height:200px !important;
+    border-radius: 0 !important;
+  }
+  .h-lg-auto{
+    height: auto !important;
+  }  
+}

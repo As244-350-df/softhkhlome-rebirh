@@ -8,7 +8,7 @@ function Services() {
   useEffect(() => {
     if (!serviceRef.current) return
 
-    anime.timeline({ easing: 'easeOutExpo', duration: 700 }).add({
+    anime.timeline({ easing: 'easeOutExpo', duration: 1000 }).add({
       targets: serviceRef.current.querySelectorAll('.service-card'),
       translateY: [40, 0],
       opacity: [0, 1],
@@ -30,14 +30,14 @@ function Services() {
 
             <div className="row g-4">
               {services.map((service, index) => (
-                <div className="col-lg-4 col-md-6" key={index}>
-                  <div className="card card-transition shadow-sm h-100 border-0 service-card">
-                    <div className="card-img-wrapper position-relative overflow-hidden">
+                <div className="col-lg-12 col-md-6" key={index}>
+                  <div className="card card-transition h-auto shadow-sm border-0 service-card overflow-hidden">
+                    <div className="card-img-wrapper img-start-cont position-relative overflow-hidden">
                       <img
                         src={service.image}
-                        className="card-img-top img-fluid"
+                        className="img-start img-top img-fluid"
                         alt={service.name}
-                        style={{ height: '200px', objectFit: 'cover' }}
+                        style={{ height: '300px', objectFit: 'cover',width:"200px" }}
                         loading="lazy"
                       />
                       <div className="card-img-overlay d-flex align-items-center justify-content-center bg-primary bg-opacity-75 opacity-0 hover-opacity-100 transition-opacity">
@@ -45,11 +45,11 @@ function Services() {
                       </div>
                     </div>
                     <div className="card-body d-flex flex-column">
-                      <h5 className="card-title text-primary fw-bold mb-3 text-center">{service.name}</h5>
-                      <p className="card-text text-muted tech-text flex-grow-1 text-center">{service.description}</p>
+                      <h5 className="card-title text-dark fw-bold mb-3">{service.name}</h5>
+                      <p className="card-text text-muted tech-text border-primary">{service.description}</p>
                       <div className="mt-auto">
-                        <div className="w-100 d-flex justify-content-center align-items-center">
-                          <span className="badge bg-warning text-primary fw-bold px-3 py-2">
+                        <div className="w-100 d-flex  align-items-center">
+                          <span className="badge bg-light text-dark t fw-bold px-1 py-2">
                             {service.priceRange}/{service.unit}
                           </span>
                           <button className="d-none btn my-1 mx-1 btn-primary btn-sm">
@@ -66,13 +66,13 @@ function Services() {
               <strong>Note:</strong> the prices of our services depend on the complexity of your project, but we do not exceed the ranges shown. We agree on costs before starting so you can avoid hidden fees.
             </div>
             <div className="text-center mt-5">
-              <div className="card shadow-sm border-primary">
+              <div className="card border-0 bg-transparent">
                 <div className="card-body py-4">
-                  <h4 className="card-title text-primary mb-3">Are you Interested?</h4>
+                  <h4 className="card-title text-dark mb-3">Are you Interested?</h4>
                   <p className="card-text text-muted mb-4">
                     Contact us today to discuss your project requirements.
                   </p>
-                  <a href="#contact" className="btn btn-primary text-warning btn-lg px-4">
+                  <a href="#contact" className="btn btn-warning text-primary btn-lg px-4">
                     <i className="bi bi-envelope me-2 bg-transparent"></i>
                     Contact Us
                   </a>

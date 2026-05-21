@@ -7,7 +7,7 @@ export const services = [
         description: "With our diverser caliber of technology help build responsive and fully function web application perfect to all devices and to your bussiness needs.",
         icon: "bi bi-code-slash",
         image: service1,
-        priceRange: "MWK50,000 -MWK700,000",
+        priceRange: "MWK250,000 -MWK700,000",
         unit:"Project"
     },
     {
@@ -23,7 +23,7 @@ export const services = [
         description: "We provide fundermental and advanced courses, helping you to get good understanding of fundermentals of programmimg languages and web development tools such html, css , javaScript, wordPress and many more.",
         icon: "bi bi-graph-up",
         image: service3,
-        priceRange: "MWK10,000-MWK15,000",
+        priceRange: "MWK40,000-MWK90,000",
         unit:"Course"
     }
 ];

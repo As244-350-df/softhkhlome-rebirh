@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import brand from '../assets/brand.png'
 import anime from 'animejs/lib/anime.es.js'
-
+import Map from './Map'
 function Footer() {
   const footerRef = useRef(null)
 
@@ -22,7 +22,7 @@ function Footer() {
     <footer className="bg-primary text-light children-bg-transparent py-5 mt-5" ref={footerRef}>
       <div className="container">
         <div className="row g-4">
-          <div className="col-lg-4">
+          <div className="col-lg-3">
             <div className="card bg-transparent border-0 text-light h-100 footer-item">
               <div className="card-body text-center">
                 <div className="mb-3  d-flex justify-content-center">
@@ -42,28 +42,28 @@ function Footer() {
             </div>
           </div>
 
-          <div className="col-lg-4">
+          <div className="col-lg-3 col-md-6">
             <div className="card bg-transparent border-0 text-light h-100 footer-item">
               <div className="card-body">
                 <h4 className="card-title fw-bold mb-4">Navigate</h4>
                 <div className="d-flex flex-column  gap-2">
-                  <Link to="/#" className="btn btn-outline-light text-start">
+                  <Link to="/#" className="btn text-light text-start">
                     <i className="bi bi-house me-2"></i>
                     Home
                   </Link>
-                  <a href="/#services" className="btn btn-outline-light text-start">
+                  <a href="/#services" className="btn text-light text-start">
                     <i className="bi bi-gear me-2"></i>
                     Services
                   </a>
-                  <Link to="/About" className="btn btn-outline-light text-start">
+                  <Link to="/About" className="btn text-light text-start">
                     <i className="bi bi-info-circle me-2"></i>
                     About
                   </Link>
-                  <Link to="/profile" className="btn btn-outline-light text-start">
+                  <Link to="/profile" className="btn text-light text-start">
                     <i className="bi bi-shield-check me-2"></i>
                     developer
                   </Link>
-                  <a href="/#contact" className="btn btn-outline-light text-start">
+                  <a href="/#contact" className="btn text-light text-start">
                     <i className="bi bi-envelope me-2"></i>
                     Contact
                   </a>
@@ -72,7 +72,7 @@ function Footer() {
             </div>
           </div>
 
-          <div className="col-lg-4">
+          <div className="col-lg-3 col-md-6">
             <div className="card bg-transparent border-0 text-light h-100 footer-item">
               <div className="card-body">
                 <div className="mb-4">
@@ -92,10 +92,10 @@ function Footer() {
                     </div>
                   </div>
                 </div>
-
+                
                 <div>
-                  <h5 className="card-title fw-bold text-center mb-3">Follow Us</h5>
-                  <div className="d-flex justify-content-center gap-3">
+                  <h5 className="card-title fw-bold mb-3">Follow Us</h5>
+                  <div className="d-flex justify-content-start gap-3">
                     <a
                       href="https://web.facebook.com/profile.php?id=61576749383886&__tn__=-UC*F"
                       className="btn text-light btn-lg rounded-circle footer-item"
@@ -133,12 +133,12 @@ function Footer() {
               </div>
             </div>
           </div>
+          <Map lat={-13.9833} lon={33.7833} zoom={12} />
         </div>
-
         <div className="row mt-4">
           <div className="col-12">
             <div className="card bg-transparent border-0 footer-item">
-              <div className="card-body text-center">
+              <div className="card-body text-center text-light">
                 <p className="mb-0 text-light">
                   SoftKhlome 2025. All rights reserved © |
                   <Link to="/Terms" className="text-light text-decoration-none ms-1">

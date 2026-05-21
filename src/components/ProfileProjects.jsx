@@ -18,8 +18,8 @@ function ProfileProjects() {
   }, [])
 
   return (
-    <section className="container-fluid bg-light py-5" ref={projectsRef}>
-      <div className="container">
+    <section className="container-fluid bg-transparent children-bg-transparent py-5" ref={projectsRef}>
+      <div className="container bg-transparent">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10 col-xl-8">
             {/* Header */}
@@ -34,7 +34,7 @@ function ProfileProjects() {
             <div className="row g-4">
               {projects.map((project, index) => (
                 <div className="col-lg-4 col-md-4" key={index}>
-                  <div className="card shadow-sm card-transition h-100 bg-primary border border-warning children-bg-transparent border-0 hover-lift project-card">
+                  <div className="card shadow-sm overflow-hidden card-transition h-100 bg-light border border-warning children-bg-transparent border-0 hover-lift project-card">
                     <div className="card-img-top overflow-hidden d-flex justify-content-center py-2 pt-0">
                       <img
                         src={project.image}
@@ -45,12 +45,12 @@ function ProfileProjects() {
                       />
                     </div>
                     <div className="card-body d-flex flex-column">
-                      <h5 className="card-title text-warning fw-bold text-center mb-3">{project.name}</h5>
-                      <p className="card-text text-light text-center small flex-grow-1 tech-text">{project.description}</p>
+                      <h5 className="card-title text-darks fw-bold  mb-3">{project.name}</h5>
+                      <p className="card-text text-secondary small flex-grow-1 tech-text">{project.description}</p>
                       <div className="mt-auto">
                         <a
                           href={project.link}
-                          className="btn btn-warning w-100 text-primary"
+                          className="btn w-100 text-primary text-start"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -66,7 +66,7 @@ function ProfileProjects() {
 
             {/* Call to Action */}
             <div className="text-center mt-5 project-card">
-              <div className="card shadow-sm border-primary">
+              <div className="card shadow-sm">
                 <div className="card-body p-4">
                   <h4 className="card-title text-primary mb-3">Want to see more?</h4>
                   <p className="card-text text-muted mb-4">

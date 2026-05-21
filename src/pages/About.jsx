@@ -11,6 +11,7 @@ import sampleImg from "../images/undraw_in-the-office_e7pg.svg"
 import ProfileProjects from '../components/ProfileProjects.jsx'
 import webDevImg from "../assets/Web Development.png"
 import FounderImg from "../assets/Polish_20250527_105337925.png"
+import Experience from "../components/Experience"
 function About() {
   const pageName = "about"
   const pageRef = useRef(null)
@@ -77,7 +78,6 @@ function About() {
           </div>
         </div>
       </section>
-
       {/* Origin and About Section */}
       <section className="container-fluid bg-light py-5">
         <div className="container">
@@ -121,7 +121,7 @@ function About() {
       </section>
 
       {/* Mission Section */}
-      <section className="container-fluid bg-white py-5">
+      <section className="container-fluid bg-Transparent py-5">
         <div className="container">
           <div className="text-center mb-5">
             <h2 className="display-5 fw-bold text-primary mb-3 about-animate">Our Mission</h2>
@@ -130,7 +130,7 @@ function About() {
 
           <div className="row g-4 align-items-center">
             <div className="col-lg-6">
-              <div className="card shadow-lg grass border-0 h-100 about-animate">
+              <div className="card  grass border-0 h-100 about-animate">
                 <div className="card-body p-4">
                   <div className="mb-3 d-flex justify-content-center">
                     <i className="bi bi-bullseye text-primary fs-1"></i>
@@ -152,7 +152,7 @@ function About() {
       </section>
 
       {/* Team Section */}
-      <section className="container-fluid bg-light py-5">
+      <section className="container-fluid bg-transparent py-5">
         <div className="container">
           <div className="text-center mb-5">
             <h2 className="display-5 fw-bold text-primary mb-3 about-animate">Our Team</h2>
@@ -174,7 +174,7 @@ function About() {
               </div>
             </div>
             <div className="col-lg-6">
-              <div className="card shadow-lg grass border-0 h-100 about-animate">
+              <div className="card grass border-0 h-100 about-animate">
                 <div className="card-body p-4">
                   <h4 className="card-title text-primary fw-bold mb-3 about-animate">A Dedicated Team</h4>
                   <p className="card-text text-muted mb-3 about-animate">
@@ -204,9 +204,9 @@ function About() {
           </div>
         </div>
       </section>
-
+      <Experience pageName={pageName}/>
       {/* Additional Components */}
-      <section className="bg-white py-5">
+      <section className="bg-transparent py-5">
         <ProfileProjects />
       </section>
       <Services />

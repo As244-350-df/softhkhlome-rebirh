@@ -50,13 +50,13 @@ function Introduction() {
   return (
     <section className="hero px-md-5 px-2 d-flex children-bg-transparent align-items-center mb-sm-2 pb-5">
       <div className="container-fluid">
-        <div className="row justify-content-center">
+        <div className="row justify-content-center align-items-between">
           <div className="col-12 col-lg-10 col-xl-8">
             <div className="text-center" ref={introRef}>
               <div className="card bg-transparent border-0 shadow-lg">
                 <div className="card-body py-2">
                   <h1 className='display-7 fw-bold text-light mb-4 intro-line'>
-                    We <span className="text-warning">Build</span> websites and <span className="text-warning">create</span> stunning designs for bussineses.
+                    We <span className="text-warning">Build websites</span> and create<span className="text-warning"> stunning designs</span> for bussineses.
                   </h1>
                   <p className='lead  text-light mb-4 px-md-5 intro-copy'>
                     We provide modern digital solutions to businesses, helping grow your brand and improve your digital presence and attract customers.
@@ -74,7 +74,7 @@ function Introduction() {
                 </div>
               </div>
 
-              <div className="row mt-2 d-none d-lg-flex mb-1 g-4">
+              <div className="d-none row mt-2 d-none mb-1 g-4">
                 <div className="col-md-4">
                   <div className="card bg-white bg-opacity-10 border-warning text-light h-100 feature-card">
                     <div className="card-body text-center">

@@ -47,7 +47,7 @@ function Profile() {
         <div className="profile-animate"><NavBar pageName={pageName}/></div>
         <div className="profile-animate"><DevDesc/></div>
         <div className="profile-animate"><Skills/></div>
-        <div className="profile-animate"><Experience/></div>
+        <div className="profile-animate"><Experience pageName={pageName}/></div>
         <div className="profile-animate"><ProfileProjects/></div>
         <div className="profile-animate"><Contact/></div>
         <div className="profile-animate"><Footer/></div>

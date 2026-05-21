@@ -1,7 +1,7 @@
 import React from 'react'
 import OfficeImg from "../images/undraw_in-the-office_e7pg.svg"
 
-function Experience() {
+function Experience({pageName}) {
   return (
     <section className="container-fluid children-bg-transparent bg-primary py-5">
       <div className="container">
@@ -28,7 +28,7 @@ function Experience() {
                     </div>
                     <p className="card-text text-light text-center mb-4">
                       With over three years of hands-on experience in web development and software engineering,
-                      I've had the privilege of working on diverse projects that have shaped my expertise and
+                      {pageName=="Profile"?'I ve':"we have"} had the privilege of working on diverse projects that have shaped my expertise and
                       passion for creating impactful digital solutions.
                     </p>
                     <div className="text-center">

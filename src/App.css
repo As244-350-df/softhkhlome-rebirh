@@ -87,12 +87,12 @@ svg {
 
 .navbar-intro-cont {
   position: relative;
-  min-height: 100vh;
+  min-height: 90vh;
   padding: 3rem 1rem 4rem;
 }
 
 .hero {
-  min-height: 90vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   position: relative;
@@ -295,7 +295,14 @@ section.bg-primary::before {
   transform: translateY(-8px);
   box-shadow: 0 28px 80px rgba(0, 0, 0, 0.18);
 }
-
+.logo-img{
+  color: #ffc107 !important;
+  forced-color-adjust: #ffc107 !important;
+  outline-color: #ffc107 !important;
+}
+.w-70{
+  width:70% !important;
+}
 @media (max-width: 991px) {
   .navbar {
     padding: 1rem 0.8rem;
@@ -311,4 +318,7 @@ section.bg-primary::before {
   .hero h1 {
     font-size: 2.6rem;
   }
+}
+.points{
+  width:80% !important;
 }

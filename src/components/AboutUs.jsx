@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 function AboutUs() {
   return (
-    <section className="container-fluid bg-white children-bg-transparent py-5">
+    <section className="container-fluid bg-transparent border-0 children-bg-transparent py-5">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10 col-xl-8">
@@ -19,13 +19,13 @@ function AboutUs() {
             {/* Main Content */}
             <div className="row g-4 align-items-center">
               <div className="col-lg-6">
-                <div className="card box-transition shadow-lg border-0 h-100">
+                <div className="card box-transition grass border-0 h-100">
                   <div className="card-body p-4">
                     <div className="text-center mb-4">
                       <i className="bi bi-building text-primary fs-1"></i>
                     </div>
                     <h4 className="card-title text-primary fw-bold mb-3 text-center">Our Story</h4>
-                    <p className="card-text text-muted mb-4 text-center">
+                    <p className="card-text text-muted mb-4 text-start px-lg-2">
                       Softkhlome is a newly established company founded by <strong>Brian Kamwera</strong>.
                       We specialize in delivering exceptional digital solutions that help businesses thrive
                       in the modern world. We provide cutting edge website development ,design and graphic design to mention a few.
@@ -67,7 +67,7 @@ function AboutUs() {
               </div>
 
               <div className="col-lg-6">
-                <div className="card box-transition shadow-lg border-0">
+                <div className="card box-transition overflow-hidden shadow-lg border-0">
                   <div className="card-body p-0 overflow-hidden">
                     <img
                       loading='lazy'
@@ -88,13 +88,13 @@ function AboutUs() {
             {/* Mission Statement */}
             <div className="row mt-5">
               <div className="col-12">
-                <div className="card card-transition shadow-lg border-0">
-                  <div className="card-body text-center p-4">
-                    <div className="mb-3">
+                <div className="card card-transition grass border-0">
+                  <div className="card-body p-4">
+                    <div className="mb-3 w-100 text-center">
                       <i className="fas fa-bullseye text-primary fs-1"></i>
                     </div>
-                    <h4 className="card-title text-primary fw-bold mb-3">Our Mission</h4>
-                    <p className="card-text lead text-muted mb-4">
+                    <h4 className="card-title text-primary text-center fw-bold mb-3">Our Mission</h4>
+                    <p className="card-text lead text-muted  text-center mb-4 px-lg-3">
                       To empower businesses with innovative digital solutions that drive growth,
                       enhance user experiences, and create lasting impact in the digital landscape.
                     </p>
@@ -102,21 +102,21 @@ function AboutUs() {
                       <div className="col-md-4">
                         <div className="p-3">
                           <i className="fas fa-bolt text-warning fs-2 mb-2"></i>
-                          <h6 className="fw-bold">Innovation</h6>
+                          <h6 className="fw-bold text-dark">Innovation</h6>
                           <p className="small text-muted">Staying ahead with cutting-edge technologies</p>
                         </div>
                       </div>
                       <div className="col-md-4">
                         <div className="p-3">
                           <i className="fas fa-heart text-danger fs-2 mb-2"></i>
-                          <h6 className="fw-bold">Quality</h6>
+                          <h6 className="fw-bold  text-dark">Quality</h6>
                           <p className="small text-muted">Delivering excellence in every project</p>
                         </div>
                       </div>
                       <div className="col-md-4">
                         <div className="p-3">
                           <i className="fas fa-handshake text-success fs-2 mb-2"></i>
-                          <h6 className="fw-bold">Partnership</h6>
+                          <h6 className="fw-bold  text-dark">Partnership</h6>
                           <p className="small text-muted">Building lasting relationships with clients</p>
                         </div>
                       </div>
