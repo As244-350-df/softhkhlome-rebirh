@@ -1,85 +1,191 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useState } from 'react'
+import { motion } from 'framer-motion'
 import { services } from './services.js'
-import anime from 'animejs/lib/anime.es.js'
 
 function Services() {
-  const serviceRef = useRef(null)
+  const [filter, setFilter] = useState('all')
 
-  useEffect(() => {
-    if (!serviceRef.current) return
+  const serviceCategories = {
+    0: ['Custom Web Applications', 'Mobile-Responsive UX', 'API & Database Integration', 'SEO & Performance Audit'],
+    1: ['Brand Identity & Logo Design', 'Marketing Banners & Posters', 'Social Media Creative Assets', 'Vector Graphics & Illustration'],
+    2: ['HTML5 & CSS3 Foundations', 'Modern JavaScript (ES6+)', 'React & Component Design', 'Real Portfolio Projects']
+  }
 
-    anime.timeline({ easing: 'easeOutExpo', duration: 1000 }).add({
-      targets: serviceRef.current.querySelectorAll('.service-card'),
-      translateY: [40, 0],
-      opacity: [0, 1],
-      delay: anime.stagger(120),
-    })
-  }, [])
+  const filteredServices = services.filter((_, idx) => {
+    if (filter === 'engineering') return idx === 0
+    if (filter === 'design') return idx === 1
+    if (filter === 'courses') return idx === 2
+    return true
+  })
 
   return (
-    <section className="container-fluid bg-light py-5" id="services" ref={serviceRef}>
-      <div className="container">
+    <section className="py-5" id="services" style={{ background: 'var(--bg-canvas)' }}>
+      <div className="container py-4" style={{ maxWidth: '1120px' }}>
+        {/* Section Header */}
         <div className="row justify-content-center">
-          <div className="col-12 col-lg-10 col-xl-8">
-            <div className="text-center mb-5">
-              <h2 className="display-5 fw-bold text-primary mb-3">What we do</h2>
-              <p className="lead text-muted">
-                We provide small businesses with stunning digital solutions such as web development, design, and branding.
-              </p>
-            </div>
+          <motion.div
+            className="col-12 col-lg-8 text-center mb-4"
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5 }}
+          >
+            <span className="section-kicker">01. Capabilities & Pricing</span>
+            <h2 className="section-title">Focused Digital Services</h2>
+            <p className="section-subtitle">
+              Practical web engineering, visual branding, and developer training built for measurable growth.
+            </p>
 
-            <div className="row g-4">
-              {services.map((service, index) => (
-                <div className="col-lg-12 col-md-6" key={index}>
-                  <div className="card card-transition h-auto shadow-sm border-0 service-card overflow-hidden">
-                    <div className="card-img-wrapper img-start-cont position-relative overflow-hidden">
-                      <img
-                        src={service.image}
-                        className="img-start img-top img-fluid"
-                        alt={service.name}
-                        style={{ height: '300px', objectFit: 'cover',width:"200px" }}
-                        loading="lazy"
-                      />
-                      <div className="card-img-overlay d-flex align-items-center justify-content-center bg-primary bg-opacity-75 opacity-0 hover-opacity-100 transition-opacity">
-                        <i className={`${service.icon} text-white fs-1`}></i>
+            {/* Clean Segmented Filter Control */}
+            <div className="mt-4">
+              <div className="segmented-control" role="tablist" aria-label="Filter capabilities">
+                <button
+                  type="button"
+                  onClick={() => setFilter('all')}
+                  className={`segmented-tab ${filter === 'all' ? 'active' : ''}`}
+                >
+                  All Capabilities ({services.length})
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setFilter('engineering')}
+                  className={`segmented-tab ${filter === 'engineering' ? 'active' : ''}`}
+                >
+                  Web Development
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setFilter('design')}
+                  className={`segmented-tab ${filter === 'design' ? 'active' : ''}`}
+                >
+                  Graphic Design
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setFilter('courses')}
+                  className={`segmented-tab ${filter === 'courses' ? 'active' : ''}`}
+                >
+                  Training
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Asymmetric Bento Grid Layout */}
+        <div className="row g-4 mt-2 align-items-stretch">
+          {filteredServices.map((service, index) => {
+            const originalIndex = services.findIndex(s => s.name === service.name)
+            const deliverables = serviceCategories[originalIndex] || []
+            const isMarquee = filter === 'all' && originalIndex === 0
+
+            return (
+              <div
+                className={isMarquee ? 'col-12' : filter === 'all' ? 'col-12 col-md-6' : 'col-12 col-lg-8 mx-auto'}
+                key={service.name}
+              >
+                <motion.div
+                  className="card surface-card h-100 overflow-hidden"
+                  style={{
+                    backgroundColor: 'var(--bg-surface)',
+                    border: '1px solid var(--border-subtle)',
+                    borderRadius: '18px'
+                  }}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.45, delay: index * 0.08 }}
+                >
+                  <div className={`row g-0 h-100 ${isMarquee ? 'align-items-stretch' : 'flex-column'}`}>
+                    {/* Image Column */}
+                    <div className={isMarquee ? 'col-lg-5' : 'w-100'}>
+                      <div className="position-relative h-100" style={{ minHeight: isMarquee ? '260px' : '210px', maxHeight: isMarquee ? '100%' : '220px', overflow: 'hidden' }}>
+                        <img
+                          src={service.image}
+                          className="w-100 h-100"
+                          alt={service.name}
+                          referrerPolicy="no-referrer"
+                          style={{ objectFit: 'cover' }}
+                          loading="lazy"
+                        />
                       </div>
                     </div>
-                    <div className="card-body d-flex flex-column">
-                      <h5 className="card-title text-dark fw-bold mb-3">{service.name}</h5>
-                      <p className="card-text text-muted tech-text border-primary">{service.description}</p>
-                      <div className="mt-auto">
-                        <div className="w-100 d-flex  align-items-center">
-                          <span className="badge bg-light text-dark t fw-bold px-1 py-2">
-                            {service.priceRange}/{service.unit}
+
+                    {/* Content Column */}
+                    <div className={`${isMarquee ? 'col-lg-7' : 'flex-grow-1'} d-flex flex-column justify-content-between`}>
+                      <div className="p-4 p-md-4">
+                        <div className="d-flex align-items-center justify-content-between mb-2">
+                          <span
+                            style={{
+                              fontFamily: 'Manrope, sans-serif',
+                              fontWeight: 700,
+                              fontSize: '0.82rem',
+                              color: 'var(--color-primary)'
+                            }}
+                          >
+                            0{originalIndex + 1}. Capability
                           </span>
-                          <button className="d-none btn my-1 mx-1 btn-primary btn-sm">
-                            {service.unit}
-                          </button>
+                          <i className={`${service.icon}`} style={{ color: 'var(--color-accent)', fontSize: '1.15rem' }}></i>
                         </div>
+
+                        <h3 style={{ fontWeight: 800, fontSize: isMarquee ? '1.5rem' : '1.25rem', marginBottom: '0.6rem', color: 'var(--text-main)' }}>
+                          {service.name}
+                        </h3>
+                        <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem', lineHeight: 1.6, marginBottom: '1.25rem' }}>
+                          {service.description}
+                        </p>
+
+                        <div className="row g-2 mb-3">
+                          {deliverables.map((item, dIdx) => (
+                            <div key={dIdx} className="col-sm-6">
+                              <div className="d-flex align-items-center gap-2" style={{ fontSize: '0.86rem', color: 'var(--text-main)' }}>
+                                <i className="bi bi-check2" style={{ color: 'var(--color-accent)', fontWeight: 700, fontSize: '1rem' }}></i>
+                                <span>{item}</span>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Hairline Pricing Footer */}
+                      <div
+                        className="px-4 py-3 d-flex align-items-center justify-content-between gap-3 flex-wrap"
+                        style={{
+                          borderTop: '1px solid var(--border-subtle)',
+                          backgroundColor: 'var(--bg-surface-soft)'
+                        }}
+                      >
+                        <div>
+                          <span style={{ fontSize: '0.76rem', color: 'var(--text-subtle)', display: 'block' }}>
+                            Estimated Investment · per {service.unit.toLowerCase()}
+                          </span>
+                          <span className="price-number" style={{ fontWeight: 800, color: 'var(--color-primary)', fontSize: '1rem' }}>
+                            {service.priceRange}
+                          </span>
+                        </div>
+
+                        <a href="#contact" className="btn btn-brand-primary btn-sm">
+                          <span>Discuss Project</span>
+                          <i className="bi bi-arrow-right"></i>
+                        </a>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
-            <div className="alert alert-warning text-secondary  mt-3">
-              <strong>Note:</strong> the prices of our services depend on the complexity of your project, but we do not exceed the ranges shown. We agree on costs before starting so you can avoid hidden fees.
-            </div>
-            <div className="text-center mt-5">
-              <div className="card border-0 bg-transparent">
-                <div className="card-body py-4">
-                  <h4 className="card-title text-dark mb-3">Are you Interested?</h4>
-                  <p className="card-text text-muted mb-4">
-                    Contact us today to discuss your project requirements.
-                  </p>
-                  <a href="#contact" className="btn btn-warning text-primary btn-lg px-4">
-                    <i className="bi bi-envelope me-2 bg-transparent"></i>
-                    Contact Us
-                  </a>
-                </div>
+                </motion.div>
               </div>
-            </div>
-          </div>
+            )
+          })}
+        </div>
+
+        {/* Clean Unboxed Transparency Strip */}
+        <div
+          className="mt-4 pt-3 d-flex align-items-center justify-content-center gap-2 text-center"
+          style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}
+        >
+          <i className="bi bi-shield-check" style={{ color: 'var(--color-accent)', fontSize: '1rem' }}></i>
+          <span>
+            <strong style={{ color: 'var(--text-main)' }}>Transparent Estimates:</strong> Agreed milestones and fixed project boundaries before kickoff—zero surprise fees.
+          </span>
         </div>
       </div>
     </section>

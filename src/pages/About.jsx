@@ -1,217 +1,376 @@
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 import { Helmet } from 'react-helmet-async'
-import anime from 'animejs/lib/anime.es.js'
+import { motion, useReducedMotion } from 'framer-motion'
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
-import AboutUs from '../components/AboutUs'
-import TeamImg from '../assets/Polish_20260407_171501920.png'
 import Contact from "../components/Contact"
 import Services from '../components/Services.jsx'
-import sampleImg from "../images/undraw_in-the-office_e7pg.svg"
 import ProfileProjects from '../components/ProfileProjects.jsx'
 import webDevImg from "../assets/Web Development.png"
 import FounderImg from "../assets/Polish_20250527_105337925.png"
 import Experience from "../components/Experience"
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.1,
+      duration: 0.6,
+      ease: [0.16, 1, 0.3, 1]
+    }
+  })
+}
+
 function About() {
   const pageName = "about"
-  const pageRef = useRef(null)
-
-  useEffect(() => {
-    if (!pageRef.current) return
-
-    anime.timeline({ easing: 'easeOutExpo', duration: 700 })
-      .add({
-        targets: pageRef.current.querySelectorAll('.about-animate'),
-        translateY: [30, 0],
-        opacity: [0, 1],
-        delay: anime.stagger(80),
-      })
-  }, [])
+  const shouldReduceMotion = useReducedMotion()
 
   return (
     <>
       <Helmet>
-        <title>About Softkhlome - Our Story and Team</title>
-        <meta name="description" content="Learn about Softkhlome's origin, mission, and dedicated team. Discover how we provide innovative web design and development services in Malawi." />
-        <meta name="keywords" content="about Softkhlome, web development company Malawi, team, mission, services" />
+        <title>About Softkhlome – Web Agency in Lilongwe, Malawi</title>
+        <meta name="description" content="Discover Softkhlome's story, engineering principles, and founder Brian Kamwera. Custom web development and UI design in Lilongwe, Malawi." />
         <link rel="canonical" href="https://softkhlome.web.app/about" />
-        <meta property="og:title" content="About Softkhlome - Our Story and Team" />
-        <meta property="og:description" content="Learn about Softkhlome's origin, mission, and dedicated team. Discover how we provide innovative web design and development services in Malawi." />
-        <meta property="og:image" content="https://softkhlome.web.app/logo(2).png" />
-        <meta property="og:url" content="https://softkhlome.web.app/about" />
-        <meta name="robots" content="index, follow" />
-        <meta name="twitter:url" content="https://softkhlome.web.app/about" />
-        <meta name="twitter:image" content="https://softkhlome.web.app/logo(2).png" />
+        <link rel="alternate" hrefLang="en-MW" href="https://softkhlome.web.app/about" />
+        <link rel="alternate" hrefLang="en" href="https://softkhlome.web.app/about" />
+        <link rel="alternate" hrefLang="x-default" href="https://softkhlome.web.app/about" />
+        <meta property="og:site_name" content="Softkhlome – Lilongwe, Malawi" />
+        <meta property="og:locale" content="en_GB" />
+        <meta property="og:locale:alternate" content="en_US" />
         <meta property="og:type" content="website" />
+        <meta property="og:title" content="About Softkhlome – Web Agency in Lilongwe, Malawi" />
+        <meta property="og:description" content="Discover Softkhlome's story, engineering principles, and founder Brian Kamwera. Custom web development and UI design in Lilongwe, Malawi." />
+        <meta property="og:image" content="https://softkhlome.web.app/logo(2).png" />
+        <meta property="og:image:secure_url" content="https://softkhlome.web.app/logo(2).png" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="720" />
+        <meta property="og:image:height" content="696" />
+        <meta property="og:image:alt" content="Softkhlome Web Agency Logo" />
+        <meta property="og:url" content="https://softkhlome.web.app/about" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="About Softkhlome - Our Story and Team" />
-        <meta name="twitter:description" content="Learn about Softkhlome's origin, mission, and dedicated team. Discover how we provide innovative web design and development services in Malawi." />
+        <meta name="twitter:domain" content="softkhlome.web.app" />
+        <meta name="twitter:url" content="https://softkhlome.web.app/about" />
+        <meta name="twitter:title" content="About Softkhlome – Web Agency in Lilongwe, Malawi" />
+        <meta name="twitter:description" content="Discover Softkhlome's story, engineering principles, and founder Brian Kamwera. Custom web development and UI design in Lilongwe, Malawi." />
+        <meta name="twitter:image" content="https://softkhlome.web.app/logo(2).png" />
+        <meta name="twitter:image:alt" content="Softkhlome Web Agency" />
+        <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "AboutPage",
+              "@id": "https://softkhlome.web.app/about#webpage",
+              "name": "About Softkhlome – Web Agency in Lilongwe, Malawi",
+              "url": "https://softkhlome.web.app/about",
+              "description": "Discover Softkhlome's story, engineering principles, and founder Brian Kamwera. Custom web development and UI design in Lilongwe, Malawi.",
+              "inLanguage": "en-MW",
+              "isPartOf": { "@id": "https://softkhlome.web.app/#website" },
+              "mainEntity": { "@id": "https://softkhlome.web.app/#localbusiness" }
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://softkhlome.web.app/" },
+                { "@type": "ListItem", "position": 2, "name": "About", "item": "https://softkhlome.web.app/about" }
+              ]
+            }
+          ]
+        })}
+        </script>
       </Helmet>
+      
       <NavBar pageName={pageName} />
-      <div ref={pageRef}>
+      
+      <div style={{ background: 'var(--bg-canvas)' }}>
         {/* Hero Section */}
-        <section className="container-fluid bg-primary text-white children-bg-transparent py-5 pb-lg-0">
-        <div className="container">
-          <div className="row align-items-center g-4">
-            <div className="col-lg-6">
-              <div className="card bg-transparent border-0 text-white">
-                <div className="card-body d-flex flex-column align-items-center p-0">
-                  <h1 className="display-3 fw-bold mb-3 text-center about-animate">Learn More About Us</h1>
-                  <p className="lead text-light text-center mb-4 about-animate">
-                    Get to know more about our Organization's Origin, Mission, and Team.
-                  </p>
-                  <a href="#contact" className="btn btn-warning text-primary fw-bold px-4 py-2 about-animate">
-                    <i className="bi bi-arrow-right me-2"></i>
-                    contact us
+        <section
+          className="pt-5 pb-0 overflow-hidden"
+          style={{
+            background: 'linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-canvas) 100%)',
+            borderBottom: '1px solid var(--border-subtle)'
+          }}
+        >
+          <div className="container pt-4" style={{ maxWidth: '1120px' }}>
+            <div className="row align-items-end g-4 g-lg-5">
+              <div className="col-lg-6 pb-4 pb-lg-5 mb-lg-3">
+                <motion.div
+                  initial="hidden"
+                  animate="visible"
+                  variants={fadeInUp}
+                  custom={0}
+                >
+                  <span className="section-kicker">About Softkhlome</span>
+                  <h1 className="section-title mb-3" style={{ fontSize: 'clamp(2.35rem, 4vw, 3.4rem)' }}>
+                    Pioneering Modern Web Engineering in Malawi
+                  </h1>
+                </motion.div>
+
+                <motion.p
+                  className="lead mb-4"
+                  style={{ color: 'var(--text-muted)' }}
+                  initial="hidden"
+                  animate="visible"
+                  variants={fadeInUp}
+                  custom={1}
+                >
+                  Discover our founding vision, technical rigor, and commitment to building fast digital products that grow Malawian businesses.
+                </motion.p>
+
+                <motion.div
+                  initial="hidden"
+                  animate="visible"
+                  variants={fadeInUp}
+                  custom={2}
+                >
+                  <a href="#contact" className="btn btn-brand-accent btn-lg">
+                    <span>Collaborate With Us</span>
+                    <i className="bi bi-arrow-right"></i>
                   </a>
-                </div>
+                </motion.div>
               </div>
-            </div>
-            <div className="col-lg-6 d-none d-lg-block">
-              <img
-                src={TeamImg}
-                className="img img-fluid about-animate"
-                alt="About our team"
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* Origin and About Section */}
-      <section className="container-fluid bg-light py-5">
-        <div className="container">
-          <div className="row g-4">
-            <div className="col-lg-6">
-              <div className="card shadow-lg overflow-hidden box-transition border-primary h-100 about-animate">
-                <div className="card-header bg-primary text-light children-bg-transparent py-3">
-                  <h3 className="card-title mb-0 fw-bold text-center about-animate">
-                    <i className="bi bi-star me-2"></i>
-                    Our Origin
-                  </h3>
-                </div>
-                <div className="card-body">
-                  <p className="card-text text-muted text-center about-animate">
-                    Softkhlome was founded in 2024 by its co-founder <strong>Brian Kamwera</strong>. "Softkhlome itself was a project that we invented to showcase my development skills but it turned out to be more than just a project. It became a platform where I could share my passion for web development and connect with like-minded individuals. The name came from my early desire to become a proffessional coding artist, I was always thrilled to look into code base of big software companies and someday i wanted write code as much good as their's". Since its inception, Softkhlome has evolved into a thriving community and a hub for developers, entrepreneurs, and tech enthusiasts to collaborate, learn, and grow together.  
-                  </p>
-                </div>
-              </div>
-            </div>
 
-            <div className="col-lg-6">
-              <div className="card shadow-lg overflow-hidden box-transition border-warning h-100 about-animate">
-                <div className="card-header bg-warning text-primary children-bg-transparent py-3">
-                  <h3 className="card-title mb-0 fw-bold text-center about-animate">
-                    <i className="bi bi-info-circle me-2"></i>
-                    About Us
-                  </h3>
-                </div>
-                <div className="card-body">
-                  <p className="card-text text-muted text-center about-animate">
-                     Softkhlome is a newly established institution providing cutting-edge digital services for modern businesses and creative individuals. Founded on innovation, quality, and customer satisfaction, we're driven by passionate professionals bringing fresh ideas and technical expertise.
-                     Our core services include web design and development, graphic design, and web development courses. We offer customized solutions for startups needing functional websites and individuals seeking captivating visuals. Our team ensures responsive, user-friendly, SEO-optimized websites and visually striking designs.
-                     Operating with a client-centric approach, we prioritize collaboration and communication, treating each project as a partnership to deliver meaningful, sustainable results.
-                     As we grow, we're committed to continuous learning and emerging technologies to keep our offerings relevant and impactful.
-                  </p>
-                </div>
+              {/* Seamless Blended Cutout Portrait with Entrance Transition */}
+              <div className="col-lg-6 d-flex align-items-end justify-content-center">
+                <motion.img
+                  src="/assets/aistudio/IMG-20260820-WA0887_9ed71f28.png"
+                  alt="Happy business user engaging with a responsive web experience on mobile"
+                  initial={
+                    shouldReduceMotion
+                      ? { opacity: 1, x: 0, y: 0, scale: 1 }
+                      : { opacity: 0, x: 96, y: 24, scale: 0.94 }
+                  }
+                  animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
+                  transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+                  className="img-fluid d-block"
+                  style={{
+                    maxHeight: '520px',
+                    width: 'auto',
+                    objectFit: 'contain',
+                    objectPosition: 'bottom center'
+                  }}
+                />
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Mission Section */}
-      <section className="container-fluid bg-Transparent py-5">
-        <div className="container">
-          <div className="text-center mb-5">
-            <h2 className="display-5 fw-bold text-primary mb-3 about-animate">Our Mission</h2>
-            <p className="lead text-muted about-animate">What drives us to succeed every day</p>
-          </div>
-
-          <div className="row g-4 align-items-center">
-            <div className="col-lg-6">
-              <div className="card  grass border-0 h-100 about-animate">
-                <div className="card-body p-4">
-                  <div className="mb-3 d-flex justify-content-center">
-                    <i className="bi bi-bullseye text-primary fs-1"></i>
+        {/* Origin and About Section */}
+        <section className="py-5" style={{ background: 'var(--bg-canvas)' }}>
+          <div className="container py-3">
+            <div className="row g-4 justify-content-center">
+              <div className="col-lg-6">
+                <motion.div 
+                  className="card surface-card h-100 overflow-hidden"
+                  style={{
+                    backgroundColor: 'var(--bg-surface)',
+                    border: '1px solid var(--border-subtle)',
+                    borderRadius: '18px'
+                  }}
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                  whileHover={{ y: -4 }}
+                >
+                  <div 
+                    className="p-3 px-4 d-flex align-items-center gap-2"
+                    style={{ backgroundColor: 'var(--bg-surface-elevated)', borderBottom: '1px solid var(--border-subtle)' }}
+                  >
+                    <i className="bi bi-lightbulb" style={{ color: 'var(--color-primary)', fontSize: '1.2rem' }}></i>
+                    <h4 style={{ margin: 0, fontWeight: 700, fontSize: '1.1rem', color: 'var(--text-main)' }}>
+                      Our Origin
+                    </h4>
                   </div>
-                  <p className="card-text text-muted mb-3 about-animate">
-                    Our mission is to empower businesses and individuals through innovative web solutions that drive growth, enhance user experiences, and foster digital transformation. We are committed to delivering high-quality, scalable, and user-centric applications that meet the evolving needs of our clients and contribute to their success in the digital landscape.
-                  </p>
-                  <p className="card-text text-muted about-animate">
-                   Our core values of integrity, innovation, and customer-centricity guide everything we do, ensuring that we not only meet but exceed our clients' expectations while fostering a collaborative and inclusive work environment for our team.
-                  </p>
-                </div>
+                  <div className="card-body p-4">
+                    <p style={{ color: 'var(--text-muted)', lineHeight: 1.7, fontSize: '0.92rem', margin: 0 }}>
+                      Softkhlome was founded in 2024 by <strong>Brian Kamwera</strong>. What began as a personal showcase of web engineering capabilities quickly evolved into a full-scale digital studio. Passionate about software architecture and modern UI standards, Brian created Softkhlome to bring world-class responsive development to businesses and individuals throughout Malawi.
+                    </p>
+                  </div>
+                </motion.div>
+              </div>
+
+              <div className="col-lg-6">
+                <motion.div 
+                  className="card surface-card h-100 overflow-hidden"
+                  style={{
+                    backgroundColor: 'var(--bg-surface)',
+                    border: '1px solid var(--border-subtle)',
+                    borderRadius: '18px'
+                  }}
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                  whileHover={{ y: -4 }}
+                >
+                  <div 
+                    className="p-3 px-4 d-flex align-items-center gap-2"
+                    style={{ backgroundColor: 'var(--bg-surface-elevated)', borderBottom: '1px solid var(--border-subtle)' }}
+                  >
+                    <i className="bi bi-shield-check" style={{ color: 'var(--color-accent)', fontSize: '1.2rem' }}></i>
+                    <h4 style={{ margin: 0, fontWeight: 700, fontSize: '1.1rem', color: 'var(--text-main)' }}>
+                      What We Stand For
+                    </h4>
+                  </div>
+                  <div className="card-body p-4">
+                    <p style={{ color: 'var(--text-muted)', lineHeight: 1.7, fontSize: '0.92rem', margin: 0 }}>
+                      Operating with a client-first philosophy, we view every project as a strategic partnership. Our core pillars—innovation, quality, and transparent communication—ensure that every web application, UI design, and technical consultation produces tangible, long-term business value.
+                    </p>
+                  </div>
+                </motion.div>
               </div>
             </div>
-            <div className="col-lg-6">
-              <img src={webDevImg} alt="Our mission" className="box-transition img-fluid rounded shadow-lg about-animate" loading="lazy" />
+          </div>
+        </section>
+
+        {/* Mission Section */}
+        <section className="py-5" style={{ background: 'var(--bg-surface)' }}>
+          <div className="container py-3">
+            <div className="row justify-content-center text-center mb-5">
+              <div className="col-12 col-lg-8">
+                <span className="section-kicker">Guiding Purpose</span>
+                <h2 className="section-title">Our Mission & Principles</h2>
+                <p className="section-subtitle">What guides our engineering and client collaboration every single day.</p>
+              </div>
+            </div>
+
+            <div className="row g-4 align-items-center justify-content-center">
+              <div className="col-lg-6">
+                <motion.div 
+                  className="card surface-card p-4 p-md-5 h-100"
+                  style={{
+                    backgroundColor: 'var(--bg-canvas)',
+                    border: '1px solid var(--border-subtle)',
+                    borderRadius: '18px'
+                  }}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <div className="mb-3 d-flex align-items-center justify-content-center" style={{ width: '48px', height: '48px', borderRadius: '12px', backgroundColor: 'rgba(var(--color-primary-rgb), 0.12)', color: 'var(--color-primary)' }}>
+                    <i className="bi bi-bullseye fs-3"></i>
+                  </div>
+                  <h4 style={{ fontWeight: 700, color: 'var(--text-main)', marginBottom: '0.75rem' }}>
+                    Empowering African Brands
+                  </h4>
+                  <p style={{ color: 'var(--text-muted)', lineHeight: 1.7, fontSize: '0.92rem', marginBottom: '1rem' }}>
+                    Our mission is to empower businesses and individuals through innovative web solutions that drive growth, enhance user experiences, and foster digital transformation. We are committed to delivering high-quality, scalable applications.
+                  </p>
+                  <p style={{ color: 'var(--text-muted)', lineHeight: 1.7, fontSize: '0.92rem', margin: 0 }}>
+                    Our core values of integrity, innovation, and client partnership guide every milestone.
+                  </p>
+                </motion.div>
+              </div>
+              <div className="col-lg-6">
+                <motion.img 
+                  src={webDevImg} 
+                  alt="Web Development Mission" 
+                  className="img-fluid rounded-4 shadow-lg" 
+                  loading="lazy" 
+                  style={{ width: '100%', maxHeight: '360px', objectFit: 'cover' }}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Team Section */}
-      <section className="container-fluid bg-transparent py-5">
-        <div className="container">
-          <div className="text-center mb-5">
-            <h2 className="display-5 fw-bold text-primary mb-3 about-animate">Our Team</h2>
-            <p className="lead text-muted about-animate">Who are the people behind Softkhlome</p>
-          </div>
+        {/* Team Section */}
+        <section className="py-5" style={{ background: 'var(--bg-canvas)' }}>
+          <div className="container py-3">
+            <div className="row justify-content-center text-center mb-5">
+              <div className="col-12 col-lg-8">
+                <span className="section-kicker">Leadership</span>
+                <h2 className="section-title">The Face Behind Softkhlome</h2>
+                <p className="section-subtitle">Meet the founder dedicated to your digital success.</p>
+              </div>
+            </div>
 
-          <div className="row g-4 align-items-center">
-            <div className="col-lg-6">
-              <div className="card card-transition grass shadow-lg border-0 about-animate">
-                <div className="card-body p-0">
+            <div className="row g-4 align-items-center justify-content-center">
+              <div className="col-lg-5">
+                <motion.div 
+                  className="card surface-card overflow-hidden"
+                  style={{
+                    backgroundColor: 'var(--bg-surface)',
+                    border: '1px solid var(--border-subtle)',
+                    borderRadius: '18px'
+                  }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                >
                   <img
                     src={FounderImg}
-                    alt="Our dedicated team"
-                    className="img-fluid  rounded w-100 about-animate"
-                    style={{ height: '100%', objectFit: 'cover' }}
+                    alt="Brian Kamwera - Founder"
+                    className="img-fluid w-100"
+                    style={{ height: '380px', objectFit: 'cover', objectPosition: 'center top' }}
                     loading="lazy"
                   />
-                </div>
+                  <div className="p-3 text-center" style={{ backgroundColor: 'var(--bg-surface-elevated)' }}>
+                    <h5 style={{ margin: 0, fontWeight: 700, color: 'var(--text-main)' }}>Brian Kamwera</h5>
+                    <p style={{ margin: '4px 0 0', fontSize: '0.85rem', color: 'var(--color-primary)' }}>Founder & Lead Developer</p>
+                  </div>
+                </motion.div>
               </div>
-            </div>
-            <div className="col-lg-6">
-              <div className="card grass border-0 h-100 about-animate">
-                <div className="card-body p-4">
-                  <h4 className="card-title text-primary fw-bold mb-3 about-animate">A Dedicated Team</h4>
-                  <p className="card-text text-muted mb-3 about-animate">
-                    Right now Softkhlome is at its early stages and we are company dedicated to delivering exceptional web development services. Right now softkhlome has one talented developer <strong>(Brian Kamwera)</strong> we are looking foward to hiring talented teams members to our cause once we start getting big projects. We are committed to fostering a positive and inclusive work environment where creativity and innovation thrive, allowing us to deliver high-quality solutions that exceed our clients' expectations.
+
+              <div className="col-lg-7">
+                <motion.div 
+                  className="card surface-card p-4 p-md-5 h-100"
+                  style={{
+                    backgroundColor: 'var(--bg-surface)',
+                    border: '1px solid var(--border-subtle)',
+                    borderRadius: '18px'
+                  }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                >
+                  <h4 style={{ fontWeight: 700, color: 'var(--text-main)', marginBottom: '1rem' }}>
+                    A Dedicated Independent Practice
+                  </h4>
+                  <p style={{ color: 'var(--text-muted)', lineHeight: 1.7, fontSize: '0.92rem', marginBottom: '1.5rem' }}>
+                    Softkhlome operates with agile focus. When you work with us, you communicate directly with the engineer building your product—no lost requirements in account manager layers. As we expand, we are bringing on top regional talent to scale enterprise engagements.
                   </p>
-                  <div className="row g-3 about-animate">
+
+                  <div className="row g-0 pt-3" style={{ borderTop: '1px solid var(--border-subtle)' }}>
                     <div className="col-6">
-                      <div className="card border-0 bg-primary text-white">
-                        <div className="card-body text-center">
-                          <h5 className="card-title fw-bold">50+</h5>
-                          <p className="card-text small">Projects Completed</p>
-                        </div>
-                      </div>
+                      <span className="stat-number d-block" style={{ margin: 0, fontWeight: 800, fontSize: '1.75rem', color: 'var(--color-primary)', fontFamily: 'Manrope, sans-serif' }}>
+                        50+
+                      </span>
+                      <p style={{ margin: '2px 0 0', fontSize: '0.84rem', color: 'var(--text-muted)' }}>Projects Completed</p>
                     </div>
                     <div className="col-6">
-                      <div className="card border-0 bg-success text-white">
-                        <div className="card-body text-center">
-                          <h5 className="card-title fw-bold">100+</h5>
-                          <p className="card-text small">Happy Clients</p>
-                        </div>
-                      </div>
+                      <span className="stat-number d-block" style={{ margin: 0, fontWeight: 800, fontSize: '1.75rem', color: 'var(--color-accent)', fontFamily: 'Manrope, sans-serif' }}>
+                        100%
+                      </span>
+                      <p style={{ margin: '2px 0 0', fontSize: '0.84rem', color: 'var(--text-muted)' }}>Client Satisfaction</p>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <Experience pageName={pageName}/>
-      {/* Additional Components */}
-      <section className="bg-transparent py-5">
-        <ProfileProjects />
-      </section>
-      <Services />
-      <Contact />
-      <Footer />
+        </section>
+
+        <Experience pageName={pageName} />
+        
+        <section className="py-5" style={{ background: 'var(--bg-surface)' }}>
+          <ProfileProjects />
+        </section>
+        
+        <Services />
+        <Contact />
+        <Footer />
       </div>
     </>
   )

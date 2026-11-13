@@ -1,151 +1,181 @@
-import React, { useEffect, useRef } from 'react'
-import { Link } from 'react-router-dom'
-import brand from '../assets/brand.png'
-import anime from 'animejs/lib/anime.es.js'
+import React from 'react'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
+import logo from '../assets/logo(2).png'
 import Map from './Map'
+
 function Footer() {
-  const footerRef = useRef(null)
+  const navigate = useNavigate()
+  const location = useLocation()
 
-  useEffect(() => {
-    if (!footerRef.current) return
-
-    anime.timeline({ easing: 'easeOutExpo', duration: 650 })
-      .add({
-        targets: footerRef.current.querySelectorAll('.footer-item'),
-        translateY: [24, 0],
-        opacity: [0, 1],
-        delay: anime.stagger(90),
-      })
-  }, [])
+  const handleSectionLink = (e, sectionId) => {
+    e.preventDefault()
+    const localTarget = document.getElementById(sectionId)
+    if (localTarget) {
+      localTarget.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      return
+    }
+    if (location.pathname !== '/') {
+      navigate(`/#${sectionId}`)
+    }
+  }
 
   return (
-    <footer className="bg-primary text-light children-bg-transparent py-5 mt-5" ref={footerRef}>
-      <div className="container">
-        <div className="row g-4">
-          <div className="col-lg-3">
-            <div className="card bg-transparent border-0 text-light h-100 footer-item">
-              <div className="card-body text-center">
-                <div className="mb-3  d-flex justify-content-center">
-                  <img
-                    src={brand}
-                    loading="lazy"
-                    className="img-fluid"
-                    alt="SoftKhlome Brand"
-                    style={{ maxHeight: '80px' }}
-                  />
-                </div>
-                <h4 className="card-title fw-bold mb-3">SoftKhlome</h4>
-                <p className="card-text text-light">
-                  Softkhlome is a newly established private institution dedicated to providing cutting-edge digital services tailored to meet the growing needs of modern businesses and creative individuals.
-                </p>
+    <footer className="footer">
+      <div className="container position-relative" style={{ zIndex: 1, maxWidth: '1160px' }}>
+        <div className="row g-4 g-lg-5 align-items-start">
+          {/* Column 1: Brand Identity & Social Channels */}
+          <div className="col-lg-4 col-md-6">
+            <Link to="/" className="d-inline-flex align-items-center gap-2 mb-3 text-decoration-none">
+              <img
+                src={logo}
+                loading="lazy"
+                alt="Softkhlome logo"
+                style={{ height: '34px', width: 'auto' }}
+              />
+              <span style={{ fontWeight: 800, fontSize: '1.35rem', color: '#ffffff', letterSpacing: '-0.03em' }}>
+                Softkhlome<span style={{ color: 'var(--color-accent)' }}>.</span>
+              </span>
+            </Link>
+
+            <p style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.78)', lineHeight: 1.65, marginBottom: '1.25rem', maxWidth: '34ch' }}>
+              Web design and software engineering studio in Lilongwe, Malawi—building fast websites, React apps, and visual brand identities.
+            </p>
+
+            {/* Social Links */}
+            <div className="d-flex align-items-center gap-2">
+              <a
+                href="https://web.facebook.com/profile.php?id=61576749383886&__tn__=-UC*F"
+                className="social-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                title="Facebook"
+              >
+                <i className="bi bi-facebook"></i>
+              </a>
+              <a
+                href="https://whatsapp.com/channel/0029VbBjQ0CCsU9IEWqCrG37"
+                className="social-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp Channel"
+                title="WhatsApp"
+              >
+                <i className="bi bi-whatsapp"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/softkhlome/"
+                className="social-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                title="Instagram"
+              >
+                <i className="bi bi-instagram"></i>
+              </a>
+              <a
+                href="https://youtube.com/@softkhlome?si=pVx2sPoax3L6yq8t"
+                className="social-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+                title="YouTube"
+              >
+                <i className="bi bi-youtube"></i>
+              </a>
+              <a
+                href="https://github.com/As244-350-df"
+                className="social-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                title="GitHub"
+              >
+                <i className="bi bi-github"></i>
+              </a>
+            </div>
+          </div>
+
+          {/* Column 2: Quick Links */}
+          <div className="col-lg-2 col-md-6 col-6">
+            <h6 style={{ fontWeight: 700, color: '#ffffff', marginBottom: '1rem', fontSize: '0.88rem' }}>
+              Explore
+            </h6>
+            <nav aria-label="Footer navigation" className="d-flex flex-column gap-2" style={{ fontSize: '0.9rem' }}>
+              <Link to="/">Home</Link>
+              <a href="/#services" onClick={(e) => handleSectionLink(e, 'services')}>
+                Services
+              </a>
+              <a href="/#projects" onClick={(e) => handleSectionLink(e, 'projects')}>
+                Projects
+              </a>
+              <Link to="/about">About Us</Link>
+              <Link to="/developer">Developer</Link>
+              <a href="/#contact" onClick={(e) => handleSectionLink(e, 'contact')}>
+                Contact
+              </a>
+            </nav>
+          </div>
+
+          {/* Column 3: Contact Details */}
+          <div className="col-lg-3 col-md-6 col-6">
+            <h6 style={{ fontWeight: 700, color: '#ffffff', marginBottom: '1rem', fontSize: '0.88rem' }}>
+              Contact Studio
+            </h6>
+            <div className="d-flex flex-column gap-3" style={{ fontSize: '0.88rem', color: 'rgba(255, 255, 255, 0.82)' }}>
+              <div className="d-flex align-items-start gap-2">
+                <i className="bi bi-geo-alt" style={{ color: '#ff9233', marginTop: '3px', fontSize: '1rem', flexShrink: 0 }}></i>
+                <span>26 Bunda Mitundu, Lilongwe, Malawi</span>
+              </div>
+              <div className="d-flex align-items-center gap-2">
+                <i className="bi bi-envelope" style={{ color: '#ff9233', fontSize: '1rem', flexShrink: 0 }}></i>
+                <a href="mailto:softkhlome@gmail.com" className="footer-contact-link text-break">
+                  softkhlome@gmail.com
+                </a>
+              </div>
+              <div className="d-flex align-items-center gap-2">
+                <i className="bi bi-telephone" style={{ color: '#ff9233', fontSize: '1rem', flexShrink: 0 }}></i>
+                <a href="tel:+265886522243" className="footer-contact-link tabular-nums">
+                  +265 886 522 243
+                </a>
+              </div>
+              <div className="pt-1">
+                <Link
+                  to="/developer"
+                  className="d-inline-flex align-items-center gap-1"
+                  style={{ color: '#ff9233', fontWeight: 600, fontSize: '0.86rem' }}
+                >
+                  <span>Meet Lead Developer</span>
+                  <i className="bi bi-arrow-right"></i>
+                </Link>
               </div>
             </div>
           </div>
 
+          {/* Column 4: Location Map */}
           <div className="col-lg-3 col-md-6">
-            <div className="card bg-transparent border-0 text-light h-100 footer-item">
-              <div className="card-body">
-                <h4 className="card-title fw-bold mb-4">Navigate</h4>
-                <div className="d-flex flex-column  gap-2">
-                  <Link to="/#" className="btn text-light text-start">
-                    <i className="bi bi-house me-2"></i>
-                    Home
-                  </Link>
-                  <a href="/#services" className="btn text-light text-start">
-                    <i className="bi bi-gear me-2"></i>
-                    Services
-                  </a>
-                  <Link to="/About" className="btn text-light text-start">
-                    <i className="bi bi-info-circle me-2"></i>
-                    About
-                  </Link>
-                  <Link to="/profile" className="btn text-light text-start">
-                    <i className="bi bi-shield-check me-2"></i>
-                    developer
-                  </Link>
-                  <a href="/#contact" className="btn text-light text-start">
-                    <i className="bi bi-envelope me-2"></i>
-                    Contact
-                  </a>
-                </div>
-              </div>
-            </div>
+            <h6 style={{ fontWeight: 700, color: '#ffffff', marginBottom: '1rem', fontSize: '0.88rem' }}>
+              Location
+            </h6>
+            <Map lat={-13.9833} lon={33.7833} zoom={12} />
           </div>
-
-          <div className="col-lg-3 col-md-6">
-            <div className="card bg-transparent border-0 text-light h-100 footer-item">
-              <div className="card-body">
-                <div className="mb-4">
-                  <h5 className="card-title fw-bold mb-3">Our Contact Info</h5>
-                  <div className="d-flex flex-column gap-2">
-                    <div className="d-flex align-items-center">
-                      <i className="bi bi-geo-alt me-3 text-warning"></i>
-                      <span>123 Bunda Mitundu, Lilongwe, Malawi</span>
-                    </div>
-                    <div className="d-flex align-items-center">
-                      <i className="bi bi-envelope me-3 text-warning"></i>
-                      <span>softkhlome@gmail.com</span>
-                    </div>
-                    <div className="d-flex align-items-center">
-                      <i className="bi bi-telephone me-3 text-warning"></i>
-                      <span>+265 886 522 243</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <div>
-                  <h5 className="card-title fw-bold mb-3">Follow Us</h5>
-                  <div className="d-flex justify-content-start gap-3">
-                    <a
-                      href="https://web.facebook.com/profile.php?id=61576749383886&__tn__=-UC*F"
-                      className="btn text-light btn-lg rounded-circle footer-item"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i className="bi bi-facebook"></i>
-                    </a>
-                    <a
-                      href="https://whatsapp.com/channel/0029VbBjQ0CCsU9IEWqCrG37"
-                      className="btn text-light btn-lg rounded-circle footer-item"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i className="bi bi-whatsapp"></i>
-                    </a>
-                    <a
-                      href="https://www.instagram.com/softkhlome/#"
-                      className="btn text-light btn-lg rounded-circle footer-item"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i className="bi bi-instagram"></i>
-                    </a>
-                    <a
-                      href="https://youtube.com/@softkhlome?si=pVx2sPoax3L6yq8t"
-                      className="btn text-light btn-lg rounded-circle footer-item"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i className="bi bi-youtube"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <Map lat={-13.9833} lon={33.7833} zoom={12} />
         </div>
-        <div className="row mt-4">
-          <div className="col-12">
-            <div className="card bg-transparent border-0 footer-item">
-              <div className="card-body text-center text-light">
-                <p className="mb-0 text-light">
-                  SoftKhlome 2025. All rights reserved © |
-                  <Link to="/Terms" className="text-light text-decoration-none ms-1">
-                    Terms & Conditions
-                  </Link>
-                </p>
-              </div>
+
+        {/* Bottom Legal Bar */}
+        <div
+          className="row mt-5 pt-4 align-items-center"
+          style={{ borderTop: '1px solid rgba(255, 255, 255, 0.14)' }}
+        >
+          <div className="col-md-6 text-center text-md-start mb-2 mb-md-0" style={{ fontSize: '0.84rem', color: 'rgba(255, 255, 255, 0.72)' }}>
+            <p className="mb-0" style={{ color: 'rgba(255, 255, 255, 0.72)' }}>
+              © {new Date().getFullYear()} Softkhlome. All rights reserved.
+            </p>
+          </div>
+          <div className="col-md-6 text-center text-md-end" style={{ fontSize: '0.84rem' }}>
+            <div className="d-flex justify-content-center justify-content-md-end gap-4">
+              <Link to="/developer">Developer</Link>
+              <Link to="/policy">Privacy Policy</Link>
+              <Link to="/terms">Terms of Service</Link>
             </div>
           </div>
         </div>

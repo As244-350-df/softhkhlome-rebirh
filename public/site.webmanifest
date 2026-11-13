@@ -1,6 +1,6 @@
 {
-  "name": "softkhlome",
-  "short_name": "softkhlome",
+  "name": "Softkhlome – Web Design & Development",
+  "short_name": "Softkhlome",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#ffffff",
+  "theme_color": "#0d6efd",
   "background_color": "#ffffff",
   "display": "standalone"
 }

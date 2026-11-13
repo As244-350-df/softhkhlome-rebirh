@@ -11,84 +11,118 @@ function ProfileProjects() {
     anime.timeline({ easing: 'easeOutExpo', duration: 650 })
       .add({
         targets: projectsRef.current.querySelectorAll('.project-card'),
-        translateY: [40, 0],
+        translateY: [35, 0],
         opacity: [0, 1],
         delay: anime.stagger(90),
       })
   }, [])
 
   return (
-    <section className="container-fluid bg-transparent children-bg-transparent py-5" ref={projectsRef}>
-      <div className="container bg-transparent">
-        <div className="row justify-content-center">
-          <div className="col-12 col-lg-10 col-xl-8">
-            {/* Header */}
-            <div className="text-center mb-5">
-              <h2 className="display-5 fw-bold text-primary mb-3">Featured Projects</h2>
-              <p className="lead text-muted">
-                A showcase of my recent work and creative solutions.
-              </p>
-            </div>
+    <div className="container py-4" ref={projectsRef}>
+      <div className="row justify-content-center">
+        <div className="col-12 col-lg-10 col-xl-9">
+          {/* Header */}
+          <div className="text-center mb-5 project-card">
+            <span className="section-kicker">Portfolio Grid</span>
+            <h2 className="section-title">Selected Client Work</h2>
+            <p className="section-subtitle">
+              A curated selection of responsive websites and web applications built by Softkhlome.
+            </p>
+          </div>
 
-            {/* Projects Grid */}
-            <div className="row g-4">
-              {projects.map((project, index) => (
-                <div className="col-lg-4 col-md-4" key={index}>
-                  <div className="card shadow-sm overflow-hidden card-transition h-100 bg-light border border-warning children-bg-transparent border-0 hover-lift project-card">
-                    <div className="card-img-top overflow-hidden d-flex justify-content-center py-2 pt-0">
-                      <img
-                        src={project.image}
-                        alt={project.name}
-                        className="img img-fluid"
-                        style={{ height: '10rem',width:"100%", objectFit: 'cover' }}
-                        loading="lazy"
-                      />
+          {/* Projects Grid */}
+          <div className="row g-4">
+            {projects.map((project, index) => (
+              <div className="col-lg-4 col-md-6" key={index}>
+                <div 
+                  className="card surface-card h-100 overflow-hidden project-card d-flex flex-column"
+                  style={{
+                    backgroundColor: 'var(--bg-surface)',
+                    border: '1px solid var(--border-subtle)',
+                    borderRadius: '16px'
+                  }}
+                >
+                  <div className="overflow-hidden" style={{ height: '180px' }}>
+                    <img
+                      src={project.image}
+                      alt={project.name}
+                      className="img-fluid w-100 h-100"
+                      style={{ objectFit: 'cover', transition: 'transform 0.3s ease' }}
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="card-body p-4 d-flex flex-column justify-content-between flex-grow-1">
+                    <div>
+                      <h5 style={{ fontWeight: 700, color: 'var(--text-main)', marginBottom: '0.6rem' }}>
+                        {project.name}
+                      </h5>
+                      <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: 1.6, marginBottom: '1.25rem' }}>
+                        {project.description}
+                      </p>
                     </div>
-                    <div className="card-body d-flex flex-column">
-                      <h5 className="card-title text-darks fw-bold  mb-3">{project.name}</h5>
-                      <p className="card-text text-secondary small flex-grow-1 tech-text">{project.description}</p>
-                      <div className="mt-auto">
+                    <div>
+                      {project.link && project.link.startsWith('http') ? (
                         <a
                           href={project.link}
-                          className="btn w-100 text-primary text-start"
+                          className="btn btn-brand-outline btn-sm w-100 justify-content-center"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <i className="bi bi-eye me-2 bg-transparent"></i>
-                          View Project
+                          <i className="bi bi-box-arrow-up-right me-1"></i>
+                          <span>Explore Project</span>
                         </a>
-                      </div>
+                      ) : (
+                        <a
+                          href={project.link || '#contact'}
+                          className="btn btn-brand-outline btn-sm w-100 justify-content-center"
+                        >
+                          <i className="bi bi-arrow-right me-1"></i>
+                          <span>Request Case Study</span>
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
+          </div>
 
-            {/* Call to Action */}
-            <div className="text-center mt-5 project-card">
-              <div className="card shadow-sm">
-                <div className="card-body p-4">
-                  <h4 className="card-title text-primary mb-3">Want to see more?</h4>
-                  <p className="card-text text-muted mb-4">
-                    Explore my complete portfolio and discover more projects that showcase my skills and creativity.
-                  </p>
-                  <div className="d-flex justify-content-center gap-3">
-                    <a href="#contact" className="btn btn-primary text-warning">
-                      <i className="bi bi-envelope me-2 bg-transparent"></i>
-                      Get In Touch
-                    </a>
-                    <a href="https://github.com/As244-350-df" className="btn btn-outline-primary" target="_blank" rel="noopener noreferrer">
-                      <i className="bi bi-github bg-transparent me-2"></i>
-                      View on GitHub
-                    </a>
-                  </div>
-                </div>
+          {/* Call to Action */}
+          <div className="text-center mt-5 project-card">
+            <div 
+              className="card surface-card p-4 p-md-5"
+              style={{
+                backgroundColor: 'var(--bg-surface-elevated)',
+                border: '1px solid var(--border-subtle)',
+                borderRadius: '18px'
+              }}
+            >
+              <h4 style={{ fontWeight: 700, color: 'var(--text-main)', marginBottom: '0.5rem' }}>
+                Need a Custom Solution Built?
+              </h4>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem', maxWidth: '580px', margin: '0 auto 1.5rem' }}>
+                Whether you need an e-commerce platform, a corporate website, or an interactive web app, we provide end-to-end implementation.
+              </p>
+              <div className="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="#contact" className="btn btn-brand-primary">
+                  <i className="bi bi-envelope me-1"></i>
+                  <span>Inquire About Your Project</span>
+                </a>
+                <a 
+                  href="https://github.com/As244-350-df" 
+                  className="btn btn-brand-outline" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  <i className="bi bi-github me-1"></i>
+                  <span>GitHub Repositories</span>
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 

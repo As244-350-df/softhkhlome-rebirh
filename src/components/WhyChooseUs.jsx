@@ -1,118 +1,158 @@
-import React, { useEffect, useRef } from 'react'
-import anime from 'animejs/lib/anime.es.js'
+import React from 'react'
+import { motion } from 'framer-motion'
 
 function WhyChooseUs() {
-  const sectionRef = useRef(null)
-
-  useEffect(() => {
-    if (!sectionRef.current) return
-
-    anime.timeline({ easing: 'easeOutExpo', duration: 700 })
-      .add({
-        targets: sectionRef.current.querySelectorAll('.why-card'),
-        opacity: [0, 1],
-        translateY: [35, 0],
-        delay: anime.stagger(110),
-      })
-  }, [])
+  const pillars = [
+    {
+      icon: 'bi-speedometer2',
+      title: 'Speed-First Frontend Engineering',
+      description: 'Clean React codebases optimized for fast loads on mobile networks across Malawi.'
+    },
+    {
+      icon: 'bi-gem',
+      title: 'Tailored Visual Architecture',
+      description: 'Every interface is designed around your business identity and conversion funnel—never generic clones.'
+    },
+    {
+      icon: 'bi-shield-check',
+      title: 'Long-Term Technical Support',
+      description: 'Reliable deployment, domain administration, security updates, and continuous improvements post-launch.'
+    }
+  ]
 
   return (
-    <section className="container-fluid bg-primary children-bg-transparent py-5" ref={sectionRef}>
-      <div className="container">
+    <section
+      className="py-5"
+      style={{
+        backgroundColor: 'var(--bg-surface-alt)',
+        borderTop: '1px solid var(--border-subtle)',
+        borderBottom: '1px solid var(--border-subtle)'
+      }}
+    >
+      <div className="container py-4" style={{ maxWidth: '1120px' }}>
+        {/* Section Header */}
         <div className="row justify-content-center">
-          <div className="col-12 col-lg-10 col-xl-8">
-            <div className="text-center mb-5">
-              <h2 className="display-4 fw-bold text-warning d-flex flex-column align-items-center mb-3">Why Choose Us</h2>
-              <p className="lead text-light">
-                Find out what sets us apart from other digital companies.
-              </p>
-            </div>
+          <motion.div
+            className="col-12 col-lg-8 text-center mb-5"
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5 }}
+          >
+            <span className="section-kicker">02. Why Softkhlome</span>
+            <h2 className="section-title">Engineering Built for Trust</h2>
+            <p className="section-subtitle">
+              We pair disciplined visual clarity with reliable engineering so your platform performs from day one.
+            </p>
+          </motion.div>
+        </div>
 
-            <div className="row g-4">
-              <div className="col-lg-6 col-md-6">
-                <div className="card card-transition shadow-sm h-100 border-0 bg-primary text-white why-card">
-                  <div className="card-body text-center p-4">
-                    <div className="mb-4">
-                      <i className="bi bi-star-fill fs-1 text-warning"></i>
-                    </div>
-                    <h5 className="card-title text-warning fw-bold mb-3">Expertise</h5>
-                    <p className="card-text">
-                      Our team consists of highly skilled professionals with extensive experience in web design and development.
-                    </p>
-                  </div>
-                </div>
-              </div>
+        {/* 2-Column Balanced Split */}
+        <div className="row g-4 align-items-stretch">
+          {/* Left Column: Direct Engineering Card */}
+          <div className="col-lg-5">
+            <motion.div
+              className="card surface-card h-100 p-4 p-md-5 d-flex flex-column justify-content-between"
+              style={{
+                backgroundColor: 'var(--bg-surface)',
+                border: '1px solid var(--border-subtle)',
+                borderRadius: '18px'
+              }}
+              initial={{ opacity: 0, x: -18 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div>
+                <span className="section-kicker-orange">The Softkhlome Standard</span>
+                <h3 style={{ fontWeight: 800, fontSize: '1.55rem', color: 'var(--text-main)', marginBottom: '0.9rem', lineHeight: 1.25 }}>
+                  Direct Developer Collaboration Without Agency Friction
+                </h3>
 
-              <div className="col-lg-6 col-md-6">
-                <div className="card card-transition shadow-sm h-100 border-0 bg-primary text-white why-card">
-                  <div className="card-body text-center p-4">
-                    <div className="mb-4">
-                      <i className="bi bi-heart-fill fs-1 text-warning"></i>
-                    </div>
-                    <h5 className="card-title text-warning fw-bold mb-3">Customer-Centric Approach</h5>
-                    <p className="card-text">
-                      We prioritize our clients' needs and work closely with them to ensure their vision is brought to life.
-                    </p>
-                  </div>
-                </div>
-              </div>
+                <p style={{ color: 'var(--text-muted)', fontSize: '0.94rem', lineHeight: 1.65, marginBottom: '1.75rem' }}>
+                  You communicate directly with the engineer architecting your product—ensuring transparent sprints, fast revisions, and clean code.
+                </p>
 
-              <div className="col-lg-6 col-md-6">
-                <div className="card card-transition shadow-sm h-100 border-0 bg-primary text-white why-card">
-                  <div className="card-body text-center p-4">
-                    <div className="mb-4">
-                      <i className="bi bi-lightbulb-fill fs-1 text-warning"></i>
-                    </div>
-                    <h5 className="card-title text-warning fw-bold mb-3">Innovative Solutions</h5>
-                    <p className="card-text">
-                      We stay up-to-date with the latest industry trends and technologies to provide innovative solutions that drive results.
-                    </p>
+                {/* Tabular Metrics Row */}
+                <div
+                  className="row g-0 pt-3 mb-4"
+                  style={{ borderTop: '1px solid var(--border-subtle)' }}
+                >
+                  <div className="col-4">
+                    <span className="stat-number d-block" style={{ fontWeight: 800, fontSize: '1.35rem', color: 'var(--color-primary)' }}>
+                      3+ Yrs
+                    </span>
+                    <span style={{ fontSize: '0.78rem', color: 'var(--text-subtle)' }}>Experience</span>
                   </div>
-                </div>
-              </div>
-              <div className="col-lg-6 col-md-6">
-                <div className="card card-transition shadow-sm h-100 border-0 bg-primary text-white why-card">
-                  <div className="card-body text-center p-4">
-                    <div className="mb-4">
-                      <i className="bi bi-headset fs-1 text-warning"></i>
-                    </div>
-                    <h5 className="card-title text-warning fw-bold mb-3">Post Service Support</h5>
-                    <p className="card-text">
-                      We are always available to help throughout your journey, even after project delivery.
-                    </p>
+                  <div className="col-4">
+                    <span className="stat-number d-block" style={{ fontWeight: 800, fontSize: '1.35rem', color: 'var(--color-accent)' }}>
+                      &lt; 24h
+                    </span>
+                    <span style={{ fontSize: '0.78rem', color: 'var(--text-subtle)' }}>Response</span>
                   </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="row mt-5 g-4">
-              <div className="col-md-6">
-                <div className="card card-transition shadow-sm h-100 why-card">
-                  <div className="card-body">
-                    <div className="d-flex align-items-center mb-3">
-                      <i className="bi bi-clock-history text-primary fs-3 me-3"></i>
-                      <h5 className="card-title mb-0 text-primary">Timely Delivery</h5>
-                    </div>
-                    <p className="card-text text-primary">
-                      We respect your time and deliver projects on schedule without compromising quality.
-                    </p>
+                  <div className="col-4">
+                    <span className="stat-number d-block" style={{ fontWeight: 800, fontSize: '1.35rem', color: 'var(--text-main)' }}>
+                      100%
+                    </span>
+                    <span style={{ fontSize: '0.78rem', color: 'var(--text-subtle)' }}>Custom Code</span>
                   </div>
                 </div>
               </div>
 
-              <div className="col-md-6">
-                <div className="card card-transition shadow-sm h-100 why-card">
-                  <div className="card-body">
-                    <div className="d-flex align-items-center mb-3">
-                      <i className="bi bi-headset text-primary fs-3 me-3"></i>
-                      <h5 className="card-title mb-0 text-primary">24/7 Support</h5>
-                    </div>
-                    <p className="card-text text-primary">
-                      Our dedicated support team is always ready to help you with any questions or concerns.
+              <div>
+                <a href="#contact" className="btn btn-brand-primary w-100">
+                  <span>Schedule Consultation</span>
+                  <i className="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Right Column: Clean Hairline Pillars */}
+          <div className="col-lg-7">
+            <div
+              className="card surface-card h-100 p-4 p-md-5 d-flex flex-column justify-content-between"
+              style={{
+                backgroundColor: 'var(--bg-surface)',
+                border: '1px solid var(--border-subtle)',
+                borderRadius: '18px'
+              }}
+            >
+              {pillars.map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  className="d-flex align-items-start gap-3 py-3"
+                  style={{
+                    borderBottom: idx < pillars.length - 1 ? '1px solid var(--border-subtle)' : 'none'
+                  }}
+                  initial={{ opacity: 0, x: 16 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.45, delay: idx * 0.08 }}
+                >
+                  <div
+                    className="d-flex align-items-center justify-content-center flex-shrink-0"
+                    style={{
+                      width: '44px',
+                      height: '44px',
+                      borderRadius: '12px',
+                      backgroundColor: idx === 1 ? 'rgba(var(--color-accent-rgb), 0.12)' : 'rgba(var(--color-primary-rgb), 0.1)',
+                      color: idx === 1 ? 'var(--color-accent)' : 'var(--color-primary)',
+                      fontSize: '1.25rem'
+                    }}
+                  >
+                    <i className={`bi ${item.icon}`}></i>
+                  </div>
+                  <div>
+                    <h4 style={{ fontWeight: 700, fontSize: '1.1rem', color: 'var(--text-main)', marginBottom: '0.35rem' }}>
+                      {item.title}
+                    </h4>
+                    <p style={{ margin: 0, fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
+                      {item.description}
                     </p>
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>

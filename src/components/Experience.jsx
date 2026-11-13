@@ -1,105 +1,132 @@
 import React from 'react'
 import OfficeImg from "../images/undraw_in-the-office_e7pg.svg"
 
-function Experience({pageName}) {
+function Experience({ pageName }) {
+  const highlights = [
+    {
+      icon: 'bi-lightbulb',
+      title: 'Technical Innovation',
+      desc: 'Adopting modern React and front-end architectures tuned for real-world speed.'
+    },
+    {
+      icon: 'bi-check2-circle',
+      title: 'Engineering Rigor',
+      desc: 'Clean component structure, cross-browser reliability, and WCAG AA accessibility.'
+    },
+    {
+      icon: 'bi-people',
+      title: 'Collaborative Execution',
+      desc: 'Working directly with founders to ship production systems from initial wireframes.'
+    }
+  ]
+
   return (
-    <section className="container-fluid children-bg-transparent bg-primary py-5">
-      <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-12 col-lg-10 col-xl-8">
-            {/* Header */}
-            <div className="text-center mb-5">
-              <h2 className="display-4 fw-bold text-warning mb-3 d-flex flex-column align-items-center">Experience</h2>
-              <p className="lead text-light">
-                Years of dedication to delivering exceptional results and innovative solutions.
-              </p>
-            </div>
+    <section
+      className="py-5"
+      style={{
+        backgroundColor: 'var(--bg-canvas)',
+        borderTop: '1px solid var(--border-subtle)',
+        borderBottom: '1px solid var(--border-subtle)'
+      }}
+    >
+      <div className="container py-4" style={{ maxWidth: '1120px' }}>
+        {/* Header */}
+        <div className="text-center mb-5">
+          <span className="section-kicker">Track Record</span>
+          <h2 className="section-title">Professional Experience</h2>
+          <p className="section-subtitle">
+            Dedicated years of full-stack development and responsive interface craft.
+          </p>
+        </div>
 
-            {/* Main Experience Card */}
-            <div className="row g-4 align-items-center">
-              <div className="col-lg-6">
-                <div className="card shadow-lg border-0 bg-transparent h-100">
-                  <div className="card-body p-4">
-                    <div className="text-center mb-4">
-                      <div className="mb-3">
-                        <i className="bi bi-briefcase-fill text-warning fs-1"></i>
-                      </div>
-                      <h3 className="card-title text-warning fw-bold">Professional Journey</h3>
-                    </div>
-                    <p className="card-text text-light text-center mb-4">
-                      With over three years of hands-on experience in web development and software engineering,
-                      {pageName=="Profile"?'I ve':"we have"} had the privilege of working on diverse projects that have shaped my expertise and
-                      passion for creating impactful digital solutions.
-                    </p>
-                    <div className="text-center">
-                      <div className="bg-primary text-white rounded-pill py-3 px-4 d-inline-block">
-                        <h2 className="display-6 fw-bold mb-0 text-warning">3+ Years</h2>
-                        <p className="mb-0 ">of Experience</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+        {/* Main Experience Split */}
+        <div className="row g-4 align-items-stretch mb-5">
+          <div className="col-lg-6">
+            <div
+              className="card surface-card h-100 p-4 p-md-5 d-flex flex-column justify-content-between"
+              style={{
+                backgroundColor: 'var(--bg-surface)',
+                border: '1px solid var(--border-subtle)',
+                borderRadius: '18px'
+              }}
+            >
+              <div>
+                <span className="section-kicker-orange">Milestone Journey</span>
+                <h3 style={{ fontWeight: 800, color: 'var(--text-main)', marginBottom: '0.9rem', fontSize: '1.45rem' }}>
+                  Hands-On Full-Stack & UI Development
+                </h3>
+
+                <p style={{ color: 'var(--text-muted)', lineHeight: 1.7, fontSize: '0.94rem', marginBottom: '1.75rem' }}>
+                  With over three years of intensive hands-on experience in web engineering, {pageName === "Profile" ? "I have" : "we have"} developed, deployed, and scaled custom applications that solve real operational challenges.
+                </p>
               </div>
 
-              <div className="col-lg-6">
-                <div className="card shadow-lg border-0 bg-transparent">
-                  <div className="card-body p-0">
-                    <img
-                      src={OfficeImg}
-                      alt="Professional workspace illustration"
-                      className="img-fluid rounded"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Experience Highlights */}
-            <div className="row mt-5 g-4">
-              <div className="col-md-4">
-                <div className="card shadow-sm border-warning h-100 bg-transparent text-center">
-                  <div className="card-body p-4">
-                    <div className="mb-3">
-                      <i className="bi bi-lightbulb-fill text-warning fs-1"></i>
-                    </div>
-                    <h5 className="card-title text-warning fw-bold">Innovation</h5>
-                    <p className="card-text text-light">
-                      Constantly exploring new technologies and methodologies to deliver cutting-edge solutions.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-md-4">
-                <div className="card shadow-sm border-warning bg-transparent h-100 text-center">
-                  <div className="card-body p-4">
-                    <div className="mb-3">
-                      <i className="bi bi-check-circle-fill text-warning fs-1"></i>
-                    </div>
-                    <h5 className="card-title text-warning fw-bold">Quality</h5>
-                    <p className="card-text text-light">
-                      Committed to delivering high-quality code and exceptional user experiences.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-md-4">
-                <div className="card shadow-sm border-warning bg-transparent h-100 text-center">
-                  <div className="card-body p-4">
-                    <div className="mb-3">
-                      <i className="bi bi-people-fill text-warning fs-1"></i>
-                    </div>
-                    <h5 className="card-title text-warning fw-bold">Collaboration</h5>
-                    <p className="card-text text-light">
-                      Working effectively with teams and clients to achieve shared goals and success.
-                    </p>
-                  </div>
-                </div>
+              <div className="pt-3" style={{ borderTop: '1px solid var(--border-subtle)' }}>
+                <span className="stat-number d-block" style={{ fontWeight: 800, fontSize: '1.75rem', color: 'var(--color-primary)', fontFamily: 'Manrope, sans-serif' }}>
+                  3+ Years
+                </span>
+                <span style={{ fontSize: '0.84rem', color: 'var(--text-muted)' }}>
+                  Commercial Web & Software Delivery
+                </span>
               </div>
             </div>
           </div>
+
+          <div className="col-lg-6">
+            <div
+              className="card surface-card h-100 p-4 d-flex align-items-center justify-content-center overflow-hidden"
+              style={{
+                backgroundColor: 'var(--bg-surface)',
+                border: '1px solid var(--border-subtle)',
+                borderRadius: '18px'
+              }}
+            >
+              <img
+                src={OfficeImg}
+                alt="Professional workspace illustration"
+                referrerPolicy="no-referrer"
+                className="img-fluid mx-auto"
+                style={{ maxHeight: '260px', width: 'auto' }}
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Three Highlights */}
+        <div className="row g-4 align-items-stretch">
+          {highlights.map((item, idx) => (
+            <div className="col-md-4" key={idx}>
+              <div
+                className="card surface-card h-100 p-4"
+                style={{
+                  backgroundColor: 'var(--bg-surface)',
+                  border: '1px solid var(--border-subtle)',
+                  borderRadius: '16px'
+                }}
+              >
+                <div
+                  className="mb-3 d-flex align-items-center justify-content-center"
+                  style={{
+                    width: '42px',
+                    height: '42px',
+                    borderRadius: '10px',
+                    backgroundColor: idx === 1 ? 'rgba(var(--color-accent-rgb), 0.12)' : 'rgba(var(--color-primary-rgb), 0.1)',
+                    color: idx === 1 ? 'var(--color-accent)' : 'var(--color-primary)',
+                    fontSize: '1.25rem'
+                  }}
+                >
+                  <i className={`bi ${item.icon}`}></i>
+                </div>
+                <h5 style={{ fontWeight: 700, fontSize: '1.08rem', color: 'var(--text-main)', marginBottom: '0.45rem' }}>
+                  {item.title}
+                </h5>
+                <p style={{ margin: 0, fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
+                  {item.desc}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

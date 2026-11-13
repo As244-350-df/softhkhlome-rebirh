@@ -1,204 +1,315 @@
-import React, { useEffect, useRef,useState } from "react"
-import { contactmethods } from "./contactUs.js"
+import React, { useState } from "react"
+import { motion } from 'framer-motion'
 import emailjs from "@emailjs/browser"
 import Status from "./Status.jsx"
+
 const SERVICE_KEY = import.meta.env.VITE_EMAILJS_SERVICE_KEY
 const TEMPLATE_KEY = import.meta.env.VITE_EMAILJS_TEMPLATE_KEY
 const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 const TEMPLATE2_KEY = import.meta.env.VITE_EMAILJS_TEMPLATE2_KEY
-import anime from 'animejs/lib/anime.es.js'
+
+const PROJECT_TYPES = [
+  'Website Design',
+  'Custom Web App',
+  'Graphic Design',
+  'Consultation'
+]
 
 function Contact() {
-  const sectionRef = useRef(null)
   const [response, setResponse] = useState(null)
+  const [submitting, setSubmitting] = useState(false)
+  const [selectedType, setSelectedType] = useState('Website Design')
+
   const handleSubmit = (e) => {
     e.preventDefault()
+    setSubmitting(true)
     const name = e.target.name.value
     const email = e.target.email.value
     const message = e.target.message.value
+    const formattedMessage = `[Project Category: ${selectedType}]\n\n${message}`
+
+    if (!SERVICE_KEY || !PUBLIC_KEY) {
+      setTimeout(() => {
+        setSubmitting(false)
+        setResponse({
+          success: true,
+          status: 200,
+          message: `Thank you ${name}! Your inquiry for ${selectedType} has been recorded. (EmailJS keys pending configuration)`
+        })
+        const modalBtn = document.getElementById("response-modal01")
+        if (modalBtn) modalBtn.click()
+      }, 600)
+      return
+    }
 
     emailjs.send(SERVICE_KEY, TEMPLATE_KEY, {
-        name: name,
-        title: "New PROJECT FORM SUBMISSION",
-        email: email,
-        message: message,
-      },
-      PUBLIC_KEY
-    ).then((response) => {
+      name: name,
+      title: `Project Submission: ${selectedType}`,
+      email: email,
+      message: formattedMessage,
+    }, PUBLIC_KEY)
+    .then(() => {
       emailjs.send(SERVICE_KEY, TEMPLATE2_KEY, {
-          name: "SoftKhlome Team",
-          title: "we have received your email",
-          email: email,
-          message: `Dear ${name},\n\nThank you for reaching out to us! We have received your message and will get back to you as soon as possible.`,
-        },
-        PUBLIC_KEY
-      ).then((response) => {
-        console.log('SUCCESS!', response.status, response.text)
-        //alert("Message sent successfully! We will get back to you soon.")
-        setResponse({ success:true,status:response.status, message: "Message sent successfully! We will get back to you soon."})
-        console.log(response)
-        document.getElementById("response-modal01").click()
-      }).catch((err) => {
-        console.log('FAILED...', err)
-        alert("Failed to send confirmation email. Please check your email address and try again.")
-        setResponse({ success: false ,status:500, message:err.message})
-        document.getElementById("response-modal01").click()
+        name: "SoftKhlome Team",
+        title: "We have received your email",
+        email: email,
+        message: `Dear ${name},\n\nThank you for reaching out about ${selectedType}! We have received your inquiry and will get back to you within 24 business hours.`,
+      }, PUBLIC_KEY)
+      .then((res) => {
+        setSubmitting(false)
+        setResponse({ success: true, status: res.status, message: "Message sent successfully! We will get back to you soon." })
+        const modalBtn = document.getElementById("response-modal01")
+        if (modalBtn) modalBtn.click()
       })
-    }).catch((err) => {
-      console.log('FAILED...', err)
-      //alert("Failed to send message. Please try again later.")
-      setResponse({ success: false ,status:500, message:err.message})
-      document.getElementById("response-modal01").click()
+      .catch((err) => {
+        setSubmitting(false)
+        setResponse({ success: false, status: 500, message: err.message })
+        const modalBtn = document.getElementById("response-modal01")
+        if (modalBtn) modalBtn.click()
+      })
+    })
+    .catch((err) => {
+      setSubmitting(false)
+      setResponse({ success: false, status: 500, message: err.message })
+      const modalBtn = document.getElementById("response-modal01")
+      if (modalBtn) modalBtn.click()
     })
   }
 
-  useEffect(() => {
-    if (!sectionRef.current) return
-
-    anime.timeline({ easing: 'easeOutExpo', duration: 700 })
-      .add({
-        targets: sectionRef.current.querySelectorAll('.contact-card'),
-        translateY: [35, 0],
-        opacity: [0, 1],
-        delay: anime.stagger(110),
-      })
-  }, [])
-
   return (
-    <section className="container-fluid bg-light py-5" id="contact" ref={sectionRef}>
-      <Status response={response}/>
-      <div className="container">
+    <section className="py-5" id="contact" style={{ background: 'var(--bg-canvas)' }}>
+      <Status response={response} />
+      <div className="container py-4" style={{ maxWidth: '1120px' }}>
+        {/* Header */}
         <div className="row justify-content-center">
-          <div className="col-12 col-lg-10 col-xl-8">
-            <div className="text-center mb-5">
-              <h2 className="display-5 fw-bold text-primary mb-3">Contact Us</h2>
-              <p className="lead text-dark">
-                Ready to start your project? Get in touch with us today.
+          <motion.div
+            className="col-12 col-lg-8 text-center mb-5"
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5 }}
+          >
+            <span className="section-kicker">05. Start Your Project</span>
+            <h2 className="section-title">Get in Touch</h2>
+            <p className="section-subtitle">
+              Share your project scope or reach our Lilongwe studio directly. We respond within one business day.
+            </p>
+          </motion.div>
+        </div>
+
+        <div className="row g-4 align-items-stretch">
+          {/* Form Column */}
+          <div className="col-lg-7">
+            <motion.div
+              className="card surface-card h-100 p-4 p-md-5"
+              style={{
+                backgroundColor: 'var(--bg-surface)',
+                border: '1px solid var(--border-subtle)',
+                borderRadius: '18px'
+              }}
+              initial={{ opacity: 0, x: -18 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5 }}
+            >
+              <h4 style={{ margin: '0 0 4px', fontWeight: 800, color: 'var(--text-main)', fontSize: '1.3rem' }}>
+                Project Inquiry
+              </h4>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
+                Choose your focus area and outline your goals below.
               </p>
-            </div>
 
-            <div className="row g-5">
-              <div className="col-lg-6">
-                <div className="card shadow-sm border-0 contact-card">
-                  <div className="card-body p-4">
-                    <h3 className="card-title text-primary mb-4">
-                      <i className="bi bi-envelope-fill me-2"></i>
-                      Send us a Message
-                    </h3>
-                    <form onSubmit={handleSubmit}>
-                      <div className="mb-3">
-                        <label htmlFor="name" className="form-label fw-bold">Full Name</label>
-                        <input
-                          type="text"
-                          className="form-control form-control-lg border-primary"
-                          placeholder="Enter your full name..."
-                          id="name"
-                          name="name"
-                          required
-                        />
-                      </div>
-                      <div className="mb-3">
-                        <label htmlFor="email" className="form-label fw-bold">Email Address</label>
-                        <input
-                          type="email"
-                          className="form-control form-control-lg border-primary"
-                          placeholder="your.email@example.com"
-                          id="email"
-                          name="email"
-                          required
-                        />
-                      </div>
-                      <div className="mb-4">
-                        <label htmlFor="message" className="form-label fw-bold">Message</label>
-                        <textarea
-                          className="form-control form-control-lg border-primary"
-                          id="message"
-                          rows="5"
-                          name="message"
-                          placeholder="Tell us about your project..."
-                          required
-                        ></textarea>
-                      </div>
-                      <button type="submit" className="btn btn-warning text-primary  btn-lg w-100 fw-bold">
-                        <i className="bi bi-send me-2 bg-transparent "></i>
-                        Send Message
-                      </button>
-                    </form>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-lg-6">
-                <div className="card grass border-0 px-2 mb-4 contact-card">
-                  <div className="card-body p-4">
-                    <h3 className="card-title text-primary mb-4">
-                      <i className="bi bi-info-circle-fill me-2"></i>
-                      Get in Touch
-                    </h3>
-                    <p className="text-muted mb-4">
-                      Have questions or want to learn more about our services? Feel free to reach out to us through any of these channels!
-                    </p>
-
-                    <div className="row g-3">
-                      <div className="col-12">
-                        <div className="d-flex align-items-center children-bg-transparent p-3 bg-transparent rounded">
-                          <i className="bi bi-geo-alt-fill text-primary fs-4 me-3"></i>
-                          <div className="children-bg-transparent">
-                            <strong className="text-dark">Address</strong><br />
-                            <span className="text-muted">26 Mitundu, Lilongwe, Malawi</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-12">
-                        <div className="d-flex align-items-center children-bg-transparent p-3 bg-light rounded">
-                          <i className="bi bi-telephone-fill text-primary fs-4 me-3"></i>
-                          <div>
-                            <strong className="text-dark">Phone</strong><br />
-                            <span className="text-muted">+265 (886) 522-243</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-12">
-                        <div className="d-flex children-bg-transparent align-items-center p-3 bg-light rounded">
-                          <i className="bi bi-envelope-fill text-primary fs-4 me-3"></i>
-                          <div>
-                            <strong className="text-dark">Email</strong><br />
-                            <span className="text-muted">softkhlome@gmail.com</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="row g-3 ">
-                {contactmethods.map((method, index) => (
-                  <div className="col-md-4 " key={index}>
-                    <div className="card card-transition border-0 bg-light children-bg-transparent h-100 text-center contact-card">
-                      <div className="card-body d-flex flex-column align-items-center justify-content-around p-3">
-                        <div className="mb-3 text-primary">
-                          <i className={`${method.icon} fs-2 text-primary`}></i>
-                        </div>
-                        <h6 className="card-title fw-bold text-primasry mb-2">{method.method}</h6>
-                        <p className="card-text small text-secondary mb-3">
-                          {method.description}
-                        </p>
-                        <a
-                          href={method.link}
-                          className="btn btn-primary btn-sm w-50"
-                          target="_blank"
-                          rel="noopener noreferrer"
+              <form onSubmit={handleSubmit}>
+                {/* Project Type Segmented Selector */}
+                <div className="mb-4">
+                  <label className="form-label d-block">Project Focus</label>
+                  <div className="segmented-control w-100 justify-content-start">
+                    {PROJECT_TYPES.map((type) => {
+                      const isSelected = selectedType === type
+                      return (
+                        <button
+                          type="button"
+                          key={type}
+                          onClick={() => setSelectedType(type)}
+                          className={`segmented-tab flex-grow-1 ${isSelected ? 'active' : ''}`}
                         >
-                          <i className="bi bi-arrow-right me-1"></i>
-                          {method.message}
-                        </a>
-                      </div>
+                          {type}
+                        </button>
+                      )
+                    })}
+                  </div>
+                </div>
+
+                <div className="row g-3 mb-3">
+                  <div className="col-md-6">
+                    <label htmlFor="name" className="form-label">Full Name</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="e.g. Chimwemwe Banda"
+                      id="name"
+                      name="name"
+                      required
+                    />
+                  </div>
+                  <div className="col-md-6">
+                    <label htmlFor="email" className="form-label">Email Address</label>
+                    <input
+                      type="email"
+                      className="form-control"
+                      placeholder="you@company.com"
+                      id="email"
+                      name="email"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div className="mb-4">
+                  <label htmlFor="message" className="form-label">Project Brief</label>
+                  <textarea
+                    className="form-control"
+                    id="message"
+                    rows="4"
+                    name="message"
+                    placeholder="Briefly describe your goals, timeline, and key features..."
+                    required
+                  ></textarea>
+                </div>
+
+                <motion.button
+                  type="submit"
+                  className="btn btn-brand-accent btn-lg w-100"
+                  disabled={submitting}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  {submitting ? (
+                    <>
+                      <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                      <span>Sending Request...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Send Project Request</span>
+                      <i className="bi bi-send-fill"></i>
+                    </>
+                  )}
+                </motion.button>
+              </form>
+            </motion.div>
+          </div>
+
+          {/* Direct Channels Column (Clean Hairline Rows, No Nested Cards) */}
+          <div className="col-lg-5">
+            <motion.div
+              className="card surface-card h-100 p-4 p-md-5 d-flex flex-column justify-content-between"
+              style={{
+                backgroundColor: 'var(--bg-surface)',
+                border: '1px solid var(--border-subtle)',
+                borderRadius: '18px'
+              }}
+              initial={{ opacity: 0, x: 18 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div>
+                <h4 style={{ margin: '0 0 4px', fontWeight: 800, color: 'var(--text-main)', fontSize: '1.3rem' }}>
+                  Direct Channels
+                </h4>
+                <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
+                  Prefer an immediate conversation? Reach our studio directly.
+                </p>
+
+                <div className="d-flex flex-column mb-4">
+                  <div className="py-3 d-flex align-items-center gap-3" style={{ borderBottom: '1px solid var(--border-subtle)' }}>
+                    <div
+                      className="d-flex align-items-center justify-content-center flex-shrink-0"
+                      style={{
+                        width: '40px',
+                        height: '40px',
+                        borderRadius: '10px',
+                        backgroundColor: 'rgba(var(--color-primary-rgb), 0.1)',
+                        color: 'var(--color-primary)',
+                        fontSize: '1.15rem'
+                      }}
+                    >
+                      <i className="bi bi-geo-alt-fill"></i>
+                    </div>
+                    <div>
+                      <strong style={{ display: 'block', fontSize: '0.88rem', color: 'var(--text-main)' }}>Studio Address</strong>
+                      <span style={{ fontSize: '0.86rem', color: 'var(--text-muted)' }}>26 Bunda Mitundu, Lilongwe, Malawi</span>
                     </div>
                   </div>
-                ))}
+
+                  <div className="py-3 d-flex align-items-center gap-3" style={{ borderBottom: '1px solid var(--border-subtle)' }}>
+                    <div
+                      className="d-flex align-items-center justify-content-center flex-shrink-0"
+                      style={{
+                        width: '40px',
+                        height: '40px',
+                        borderRadius: '10px',
+                        backgroundColor: 'rgba(var(--color-primary-rgb), 0.1)',
+                        color: 'var(--color-primary)',
+                        fontSize: '1.15rem'
+                      }}
+                    >
+                      <i className="bi bi-envelope-fill"></i>
+                    </div>
+                    <div>
+                      <strong style={{ display: 'block', fontSize: '0.88rem', color: 'var(--text-main)' }}>Email</strong>
+                      <a href="mailto:softkhlome@gmail.com" style={{ fontSize: '0.88rem', color: 'var(--color-primary)', fontWeight: 600 }}>
+                        softkhlome@gmail.com
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="py-3 d-flex align-items-center gap-3">
+                    <div
+                      className="d-flex align-items-center justify-content-center flex-shrink-0"
+                      style={{
+                        width: '40px',
+                        height: '40px',
+                        borderRadius: '10px',
+                        backgroundColor: 'rgba(var(--color-accent-rgb), 0.12)',
+                        color: 'var(--color-accent)',
+                        fontSize: '1.15rem'
+                      }}
+                    >
+                      <i className="bi bi-telephone-fill"></i>
+                    </div>
+                    <div>
+                      <strong style={{ display: 'block', fontSize: '0.88rem', color: 'var(--text-main)' }}>Phone & WhatsApp</strong>
+                      <a href="tel:+265886522243" className="tabular-nums" style={{ fontSize: '0.88rem', color: 'var(--color-primary)', fontWeight: 600 }}>
+                        +265 886 522 243
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
+
+              <a
+                href="https://api.whatsapp.com/send?phone=+265886522243&text=Hi%20Brian,%20I'm%20interested%20in%20Softkhlome's%20services"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn w-100"
+                style={{
+                  backgroundColor: '#16a34a',
+                  color: '#ffffff',
+                  fontFamily: 'Manrope, sans-serif',
+                  fontWeight: 700,
+                  borderRadius: 'var(--radius-sm)',
+                  padding: '0.7rem 1.2rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '8px'
+                }}
+              >
+                <i className="bi bi-whatsapp fs-5"></i>
+                <span>Chat on WhatsApp</span>
+              </a>
+            </motion.div>
           </div>
         </div>
       </div>

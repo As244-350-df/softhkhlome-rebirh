@@ -1,5 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+/* ========================================================
+   Softkhlome Design System
+   UI/UX Pro Max & Kawasaki Clarity Principles
+   Palette: 60% Crisp Light Canvas (#f8fafc), 30% Pure White / Ice-Blue Surfaces,
+            10% Primary Royal Blue (#0d6efd) & Accent Orange (#ff6b00)
+   Typography: Manrope (Display) + DM Sans (Body)
+   ======================================================== */
 
+:root {
+  /* Primary: Vibrant Royal Blues */
+  --color-primary: #0d6efd;
+  --color-primary-hover: #0b5ed7;
+  --color-primary-dark: #091e47;
+  --color-primary-rgb: 13, 110, 253;
+  --color-primary-text: #ffffff;
+
+  /* Accent: Energetic Vibrant Orange (Strict 10% Action Budget) */
+  --color-accent: #ff6b00;
+  --color-accent-hover: #ea580c;
+  --color-accent-rgb: 255, 107, 0;
+  --color-accent-text: #ffffff;
+  --color-accent-light: #fff7ed;
+
+  /* Dominant Neutral Canvas & Structural Surfaces */
+  --bg-canvas: #f8fafc;
+  --bg-canvas-rgb: 248, 250, 252;
+  --bg-surface: #ffffff;
+  --bg-surface-rgb: 255, 255, 255;
+  --bg-surface-soft: #f1f5f9;
+  --bg-surface-elevated: #ffffff;
+  --bg-surface-alt: #f0f6ff;
+  --bg-surface-glass: rgba(255, 255, 255, 0.94);
+  --bg-input: #ffffff;
+
+  /* Hairline Borders (Single-Level Depth Discipline) */
+  --border-subtle: #e2e8f0;
+  --border-accent: rgba(13, 110, 253, 0.25);
+  --border-orange: rgba(255, 107, 0, 0.28);
+  --border-strong: #cbd5e1;
+
+  /* High-Contrast Typography */
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-subtle: #64748b;
+  --text-light: #f8fafc;
+  --text-inverse: #ffffff;
+
+  /* Elevation & Shadows */
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 12px 32px -8px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 20px 44px -12px rgba(13, 110, 253, 0.14);
+  --shadow-orange: 0 10px 24px -6px rgba(255, 107, 0, 0.32);
+
+  /* Radii Scale */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* Motion Timing */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Global Reset & Base */
 html {
   scroll-behavior: smooth;
 }
@@ -8,74 +70,435 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden !important;
-  font-family: 'Inter', system-ui, sans-serif;
-  background:#eef5ff ;
-  color: #eef5ff;
+  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-canvas);
+  color: var(--text-main);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
   box-sizing: border-box;
 }
-.grass{
-  background-color: transparent !important;
-  backdrop-filter: blur(10px);
-  color:#eef5ff;
+
+/* Accessible Focus Rings */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
-.overflow-hidden {
-  overflow: hidden !important;
-}
-.small{
-  font-size:.66rem !important;
-}
-.btn-hidden{
-  display: none;
-}
-.h-auto{
-   height: auto !important;
-}
-.img-start-cont{
-  width: 100% !important;
-  border:0px solid blue;
-}
-.bg-transparent{
-  background-color: transparent !important;
-}
-.img-top{
-  width:100% !important;
-}
-.contact-card{
-  margin: 0 !important;
-  margin-right: 0 !important;
-  margin-left: 0rem !important;
-}
-  .img-start{
-    width: 100% !important;
-    border: 0;
-    height:190px !important;
-    max-height:200px;
-    border-radius: 0 !important;
+
+/* Reduced Motion Compliance */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
-@media (min-width:992px) {
-  .service-card{
-    display: flex;
-    flex-direction: row;
-    justify-content:space-around;
-    height:100% !important;
-  }
-  .img-start-cont{
-    border-radius: 0 !important;
-    max-width: 30% !important;
-    border:0px solid blue;
-    height:100%;
-  }
-  .img-start{
-    width: 100% !important;
-    border: 0;
-    height:200px !important;
-    max-height:200px !important;
-    border-radius: 0 !important;
-  }
-  .h-lg-auto{
-    height: auto !important;
-  }  
 }
+
+/* ========================================================
+   Kawasaki & Pro Max Typography Hierarchy
+   ======================================================== */
+h1, h2, h3, h4, h5, h6,
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6,
+.navbar-brand, .font-display {
+  font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+  letter-spacing: -0.028em;
+  color: var(--text-main);
+  text-wrap: balance;
+  margin-top: 0;
+}
+
+/* Clean Editorial Kicker (Unboxed, No Pill Clutter) */
+.section-kicker {
+  display: inline-block;
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.section-kicker-orange {
+  display: inline-block;
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 3.6vw, 2.85rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-main);
+  margin-bottom: 0.85rem;
+  text-wrap: balance;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+  text-wrap: balance;
+}
+
+/* Tabular Numerals for Stats & Pricing */
+.tabular-nums, .stat-number, .price-number {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* Paragraphs */
+p, .font-body {
+  font-size: 0.96rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+.lead, .font-lead {
+  font-size: clamp(1.06rem, 1.35vw, 1.22rem);
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+/* Semantic Color Utilities */
+.text-accent, .text-orange {
+  color: var(--color-accent) !important;
+}
+
+.text-primary-blue {
+  color: var(--color-primary) !important;
+}
+
+/* ========================================================
+   Single-Elevation Surfaces (Hairline Boundary Discipline)
+   ======================================================== */
+.surface-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--text-main);
+  transition: transform 180ms var(--ease-out-expo), border-color 180ms var(--ease-out-expo), box-shadow 180ms var(--ease-out-expo);
+}
+
+.surface-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-md);
+}
+
+.surface-card-alt {
+  background-color: var(--bg-surface-alt);
+  border: 1px solid rgba(13, 110, 253, 0.14);
+  border-radius: var(--radius-md);
+}
+
+.hairline-divider {
+  border-top: 1px solid var(--border-subtle);
+}
+
+.glass, .grass {
+  background: var(--bg-surface-glass) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle) !important;
+  color: var(--text-main) !important;
+}
+
+/* ========================================================
+   Single-Line Action Buttons (2x Horizontal Padding Ratio)
+   ======================================================== */
+.btn-brand-primary,
+.btn-brand-accent,
+.btn-brand-outline,
+.btn-brand-outline-light {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 1.35rem;
+  min-height: 42px;
+  transition: transform 160ms var(--ease-out-expo), background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.btn-brand-primary {
+  background-color: var(--color-primary) !important;
+  border: 1px solid var(--color-primary) !important;
+  color: var(--color-primary-text) !important;
+  box-shadow: 0 4px 12px rgba(var(--color-primary-rgb), 0.22);
+}
+
+.btn-brand-primary:hover, .btn-brand-primary:focus {
+  background-color: var(--color-primary-hover) !important;
+  border-color: var(--color-primary-hover) !important;
+  color: var(--color-primary-text) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(var(--color-primary-rgb), 0.34);
+}
+
+.btn-brand-accent {
+  background-color: var(--color-accent) !important;
+  border: 1px solid var(--color-accent) !important;
+  color: var(--color-accent-text) !important;
+  box-shadow: 0 4px 14px rgba(var(--color-accent-rgb), 0.28);
+}
+
+.btn-brand-accent:hover, .btn-brand-accent:focus {
+  background-color: var(--color-accent-hover) !important;
+  border-color: var(--color-accent-hover) !important;
+  color: var(--color-accent-text) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(var(--color-accent-rgb), 0.4);
+}
+
+.btn-brand-outline {
+  background-color: var(--bg-surface) !important;
+  border: 1px solid var(--border-strong) !important;
+  color: var(--text-main) !important;
+}
+
+.btn-brand-outline:hover {
+  background-color: var(--bg-surface-soft) !important;
+  border-color: var(--color-primary) !important;
+  color: var(--color-primary) !important;
+  transform: translateY(-2px);
+}
+
+.btn-brand-outline-light {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.38) !important;
+  color: #ffffff !important;
+}
+
+.btn-brand-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.16) !important;
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+/* Segmented Filter Controls */
+.segmented-control {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  background-color: var(--bg-surface-soft);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+}
+
+.segmented-tab {
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background-color 150ms ease, color 150ms ease, box-shadow 150ms ease;
+  cursor: pointer;
+}
+
+.segmented-tab:hover {
+  color: var(--text-main);
+}
+
+.segmented-tab.active {
+  background-color: var(--bg-surface);
+  color: var(--color-primary);
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.08);
+}
+
+/* Form Controls */
+.form-control, .form-select {
+  background-color: var(--bg-input) !important;
+  border: 1px solid var(--border-strong) !important;
+  color: var(--text-main) !important;
+  border-radius: var(--radius-sm);
+  padding: 0.72rem 0.95rem;
+  font-size: 0.94rem;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.18) !important;
+  color: var(--text-main) !important;
+  background-color: var(--bg-input) !important;
+}
+
+.form-control::placeholder {
+  color: var(--text-subtle) !important;
+}
+
+.form-label {
+  font-family: 'Manrope', system-ui, sans-serif;
+  color: var(--text-main);
+  font-weight: 700;
+  font-size: 0.86rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Bootstrap Defaults Alignment */
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+.text-primary {
+  color: var(--color-primary) !important;
+}
+
+.text-warning {
+  color: var(--color-accent) !important;
+}
+
+.bg-primary {
+  background-color: var(--color-primary) !important;
+}
+
+.bg-light {
+  background-color: var(--bg-surface-soft) !important;
+}
+
+.small {
+  font-size: 0.84rem !important;
+}
+
+/* ========================================================
+   Deep Slate & Navy Dark Theme (body.dark)
+   ======================================================== */
+body.dark {
+  color-scheme: dark;
+
+  /* Electric Blue Primary & Warm Orange Accent Tuned for Dark Surfaces */
+  --color-primary: #3b82f6;
+  --color-primary-hover: #60a5fa;
+  --color-primary-dark: #060d1f;
+  --color-primary-rgb: 59, 130, 246;
+  --color-primary-text: #ffffff;
+
+  --color-accent: #ff7a1a;
+  --color-accent-hover: #fb923c;
+  --color-accent-rgb: 255, 122, 26;
+  --color-accent-text: #ffffff;
+  --color-accent-light: rgba(255, 122, 26, 0.14);
+
+  /* Deep Navy & Slate Structural Layers */
+  --bg-canvas: #070d1a;
+  --bg-canvas-rgb: 7, 13, 26;
+  --bg-surface: #0f172a;
+  --bg-surface-rgb: 15, 23, 42;
+  --bg-surface-soft: #131f38;
+  --bg-surface-elevated: #162340;
+  --bg-surface-alt: #0b1426;
+  --bg-surface-glass: rgba(7, 13, 26, 0.88);
+  --bg-input: #0b1324;
+
+  /* Subtle Slate Borders */
+  --border-subtle: #1e293b;
+  --border-accent: rgba(59, 130, 246, 0.42);
+  --border-orange: rgba(255, 122, 26, 0.36);
+  --border-strong: #334155;
+
+  /* Crisp High-Contrast Typography */
+  --text-main: #f1f5f9;
+  --text-muted: #cbd5e1;
+  --text-subtle: #94a3b8;
+  --text-light: #f8fafc;
+  --text-inverse: #070d1a;
+
+  /* Deep Slate Elevation Shadows */
+  --shadow-sm: 0 2px 6px rgba(2, 6, 23, 0.45);
+  --shadow-md: 0 14px 36px -8px rgba(2, 6, 23, 0.65);
+  --shadow-lg: 0 24px 52px -12px rgba(2, 6, 23, 0.8);
+  --shadow-orange: 0 10px 26px -6px rgba(255, 122, 26, 0.35);
+}
+
+body {
+  transition: background-color 220ms ease, color 220ms ease;
+}
+
+body.dark .surface-card,
+body.dark .card {
+  box-shadow: var(--shadow-sm);
+}
+
+body.dark .surface-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+body.dark .segmented-tab.active {
+  background-color: var(--bg-surface-elevated);
+  color: var(--color-primary-hover);
+  box-shadow: 0 1px 6px rgba(2, 6, 23, 0.6);
+}
+
+body.dark .list-group-item {
+  background-color: var(--bg-surface);
+  color: var(--text-muted);
+  border-color: var(--border-subtle);
+}
+
+body.dark .table {
+  --bs-table-bg: var(--bg-surface);
+  --bs-table-color: var(--text-muted);
+  --bs-table-striped-bg: var(--bg-surface-soft);
+  --bs-table-striped-color: var(--text-main);
+  --bs-table-border-color: var(--border-subtle);
+  color: var(--text-muted);
+}
+
+body.dark .modal-content {
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+  border-color: var(--border-subtle);
+}
+
+body.dark .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+body.dark .alert-info {
+  background-color: rgba(59, 130, 246, 0.14);
+  border-color: rgba(59, 130, 246, 0.32);
+  color: var(--text-muted) !important;
+}
+
+body.dark .alert-warning {
+  background-color: rgba(255, 122, 26, 0.14);
+  border-color: rgba(255, 122, 26, 0.32);
+  color: var(--text-muted) !important;
+}
+
+body.dark .form-check-input {
+  background-color: var(--bg-input);
+  border-color: var(--border-strong);
+}
+
+body.dark .form-check-input:checked {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+

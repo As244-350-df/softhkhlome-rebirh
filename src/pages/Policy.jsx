@@ -22,46 +22,92 @@ function Policy() {
   return (
     <>
       <Helmet>
-        <title>Privacy Policy - Softkhlome</title>
-        <meta name="description" content="Read Softkhlome's Privacy Policy to understand how we collect, use, and protect your personal information. Your privacy is our priority." />
-        <meta name="keywords" content="privacy policy, Softkhlome, data protection, personal information" />
-        <link rel="canonical" href="https://softkhlome.web.app/Policy" />
-        <meta property="og:title" content="Privacy Policy - Softkhlome" />
-        <meta property="og:description" content="Read Softkhlome's Privacy Policy to understand how we collect, use, and protect your personal information." />
-        <meta property="og:image" content="https://softkhlome.web.app/logo(2).png" />
-        <meta property="og:url" content="https://softkhlome.web.app/Policy" />
-        <meta name="robots" content="index, follow" />
-        <meta name="twitter:url" content="https://softkhlome.web.app/Policy" />
-        <meta name="twitter:image" content="https://softkhlome.web.app/logo(2).png" />
+        <title>Privacy Policy – Softkhlome Web Studio Malawi</title>
+        <meta name="description" content="Read Softkhlome's Privacy Policy to learn how we collect, safeguard, and manage your personal data and cookie preferences in Malawi." />
+        <link rel="canonical" href="https://softkhlome.web.app/policy" />
+        <link rel="alternate" hrefLang="en-MW" href="https://softkhlome.web.app/policy" />
+        <link rel="alternate" hrefLang="en" href="https://softkhlome.web.app/policy" />
+        <link rel="alternate" hrefLang="x-default" href="https://softkhlome.web.app/policy" />
+        <meta property="og:site_name" content="Softkhlome – Lilongwe, Malawi" />
+        <meta property="og:locale" content="en_GB" />
+        <meta property="og:locale:alternate" content="en_US" />
         <meta property="og:type" content="website" />
+        <meta property="og:title" content="Privacy Policy – Softkhlome Web Studio Malawi" />
+        <meta property="og:description" content="Read Softkhlome's Privacy Policy to learn how we collect, safeguard, and manage your personal data and cookie preferences in Malawi." />
+        <meta property="og:image" content="https://softkhlome.web.app/logo(2).png" />
+        <meta property="og:image:secure_url" content="https://softkhlome.web.app/logo(2).png" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="720" />
+        <meta property="og:image:height" content="696" />
+        <meta property="og:image:alt" content="Softkhlome – Web Design &amp; Software Development Studio Logo" />
+        <meta property="og:url" content="https://softkhlome.web.app/policy" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Privacy Policy - Softkhlome" />
-        <meta name="twitter:description" content="Read Softkhlome's Privacy Policy to understand how we collect, use, and protect your personal information." />
+        <meta name="twitter:domain" content="softkhlome.web.app" />
+        <meta name="twitter:url" content="https://softkhlome.web.app/policy" />
+        <meta name="twitter:title" content="Privacy Policy – Softkhlome Web Studio Malawi" />
+        <meta name="twitter:description" content="Read Softkhlome's Privacy Policy to learn how we collect, safeguard, and manage your personal data and cookie preferences in Malawi." />
+        <meta name="twitter:image" content="https://softkhlome.web.app/logo(2).png" />
+        <meta name="twitter:image:alt" content="Softkhlome – Privacy Policy" />
+        <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebPage",
+              "@id": "https://softkhlome.web.app/policy#webpage",
+              "name": "Privacy Policy – Softkhlome Web Studio Malawi",
+              "url": "https://softkhlome.web.app/policy",
+              "description": "Read Softkhlome's Privacy Policy to learn how we collect, safeguard, and manage your personal data and cookie preferences in Malawi.",
+              "inLanguage": "en-MW",
+              "isPartOf": { "@id": "https://softkhlome.web.app/#website" },
+              "publisher": { "@id": "https://softkhlome.web.app/#localbusiness" }
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://softkhlome.web.app/" },
+                { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://softkhlome.web.app/policy" }
+              ]
+            }
+          ]
+        })}
+        </script>
       </Helmet>
       <NavBar />
-      <div className="container-fluid bg-light py-5" ref={pageRef}>
+      <div className="py-5" style={{ backgroundColor: 'var(--bg-canvas)', minHeight: '80vh' }} ref={pageRef}>
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10 col-xl-8">
               {/* Header Section */}
               <div className="text-center mb-5 policy-animate">
-                <h1 className="display-4 fw-bold text-primary d-flex flex-column align-items-center mb-3">Privacy Policy</h1>
-                <p className="lead text-muted">
-                  Your privacy is important to us. This policy explains how Softkhlome collects, uses, and protects your information.
+                <span className="section-kicker">Compliance & Trust</span>
+                <h1 className="section-title">Privacy Policy</h1>
+                <p className="section-subtitle">
+                  Your privacy is important to us. This policy outlines how Softkhlome collects, uses, and safeguards your data.
                 </p>
-                <small className="text-muted">Last Updated: April 14, 2026</small>
+                <small style={{ color: 'var(--text-subtle)', fontWeight: 500 }}>Last Updated: April 14, 2026</small>
               </div>
 
               {/* Introduction Card */}
-              <div className="card shadow-sm mb-4 policy-animate">
-                <div className="card-body">
-                  <h2 className="h4 card-title text-primary mb-3">Introduction</h2>
-                  <p className="card-text">
+              <div 
+                className="card surface-card mb-4 policy-animate p-4"
+                style={{
+                  backgroundColor: 'var(--bg-surface)',
+                  border: '1px solid var(--border-subtle)',
+                  borderRadius: '16px'
+                }}
+              >
+                <div>
+                  <h2 style={{ fontWeight: 700, fontSize: '1.25rem', color: 'var(--color-primary)', marginBottom: '0.75rem' }}>
+                    Introduction
+                  </h2>
+                  <p style={{ color: 'var(--text-muted)', lineHeight: 1.7, marginBottom: '1rem' }}>
                     Welcome to Softkhlome! We are committed to protecting your privacy and ensuring the security of your personal information.
                     This Privacy Policy outlines how we collect, use, disclose, and safeguard your information when you visit our website,
                     use our services, or interact with us.
                   </p>
-                  <p className="card-text">
+                  <p style={{ color: 'var(--text-muted)', lineHeight: 1.7, margin: 0 }}>
                     By using our services, you agree to the collection and use of information in accordance with this policy.
                     If you do not agree with our policies and practices, please do not use our services.
                   </p>
@@ -393,18 +439,21 @@ function Policy() {
                       </p>
 
                       <h6 className="text-secondary">Phone</h6>
-                      <p className="mb-2">+265 (888) 652-2243</p>
+                      <p className="mb-2">
+                        <a href="tel:+265886522243" style={{ color: 'var(--color-primary)' }}>
+                          +265 886 522 243
+                        </a>
+                      </p>
 
                       <h6 className="text-secondary">Business Hours</h6>
-                      <p className="mb-0">Monday - Friday: 9:00 AM - 6:00 PM EST</p>
+                      <p className="mb-0">Monday - Friday: 8:00 AM - 5:00 PM CAT</p>
                     </div>
                     <div className="col-md-6">
                       <h6 className="text-secondary">Address</h6>
-                      <address className="mb-0">
+                      <address className="mb-0" style={{ color: 'var(--text-muted)' }}>
                         Softkhlome<br />
-                        *** Technology Drive<br />
-                        Lilongwe City, Mitundu<br />
-                        Malawi
+                        26 Bunda Mitundu<br />
+                        Lilongwe, Malawi
                       </address>
                     </div>
                   </div>
