@@ -30,10 +30,10 @@ function Services() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5 }}
           >
-            <span className="section-kicker">01. Capabilities & Pricing</span>
-            <h2 className="section-title">Focused Digital Services</h2>
+            <span className="section-kicker">01. Capabilities &amp; Solutions</span>
+            <h2 className="section-title">Web Development &amp; Digital Services in Malawi</h2>
             <p className="section-subtitle">
-              Practical web engineering, visual branding, and developer training built for measurable growth.
+              Practical web engineering, custom software, visual branding, and developer training built for measurable business growth.
             </p>
 
             {/* Clean Segmented Filter Control */}

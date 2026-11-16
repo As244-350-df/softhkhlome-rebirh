@@ -126,15 +126,15 @@ function Introduction() {
                       letterSpacing: '0.06em'
                     }}
                   >
-                    Lilongwe, Malawi · {HERO_SLIDES[currentSlide].caption}
+                    Web Development Company · Lilongwe, Malawi · {HERO_SLIDES[currentSlide].caption}
                   </motion.p>
 
                   <motion.h1 variants={itemVariants} className="mb-4 text-white mx-auto" style={{ maxWidth: '18ch' }}>
-                    We build <span className="highlight-orange">fast websites</span> that turn visitors into <span className="highlight-white">clients</span>.
+                    Custom <span className="highlight-orange">Web Development</span> &amp; Design in <span className="highlight-white">Malawi</span>.
                   </motion.h1>
 
                   <motion.p variants={itemVariants} className="lead mb-4">
-                    Responsive web platforms, custom React apps, and clean visual branding engineered for growing businesses in Malawi.
+                    Softkhlome is a Lilongwe software and website development company building fast React web apps and responsive sites across Malawi.
                   </motion.p>
 
                   <motion.div

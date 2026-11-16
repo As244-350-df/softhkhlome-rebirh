@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { motion } from 'framer-motion'
 import emailjs from "@emailjs/browser"
-import Status from "./Status.jsx"
+import { useToast } from "../context/toastContext"
 
 const SERVICE_KEY = import.meta.env.VITE_EMAILJS_SERVICE_KEY
 const TEMPLATE_KEY = import.meta.env.VITE_EMAILJS_TEMPLATE_KEY
@@ -16,28 +16,28 @@ const PROJECT_TYPES = [
 ]
 
 function Contact() {
-  const [response, setResponse] = useState(null)
+  const { showToast } = useToast()
   const [submitting, setSubmitting] = useState(false)
   const [selectedType, setSelectedType] = useState('Website Design')
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    const form = e.target
     setSubmitting(true)
-    const name = e.target.name.value
-    const email = e.target.email.value
-    const message = e.target.message.value
+    const name = form.name.value
+    const email = form.email.value
+    const message = form.message.value
     const formattedMessage = `[Project Category: ${selectedType}]\n\n${message}`
 
     if (!SERVICE_KEY || !PUBLIC_KEY) {
       setTimeout(() => {
         setSubmitting(false)
-        setResponse({
-          success: true,
-          status: 200,
-          message: `Thank you ${name}! Your inquiry for ${selectedType} has been recorded. (EmailJS keys pending configuration)`
+        form.reset()
+        showToast({
+          type: 'success',
+          title: 'Inquiry Recorded',
+          message: `Thank you ${name}! Your ${selectedType} request has been recorded.`
         })
-        const modalBtn = document.getElementById("response-modal01")
-        if (modalBtn) modalBtn.click()
       }, 600)
       return
     }
@@ -55,30 +55,36 @@ function Contact() {
         email: email,
         message: `Dear ${name},\n\nThank you for reaching out about ${selectedType}! We have received your inquiry and will get back to you within 24 business hours.`,
       }, PUBLIC_KEY)
-      .then((res) => {
+      .then(() => {
         setSubmitting(false)
-        setResponse({ success: true, status: res.status, message: "Message sent successfully! We will get back to you soon." })
-        const modalBtn = document.getElementById("response-modal01")
-        if (modalBtn) modalBtn.click()
+        form.reset()
+        showToast({
+          type: 'success',
+          title: 'Message Sent',
+          message: `Thank you ${name}! Your ${selectedType} inquiry was sent successfully. We'll respond within 24 business hours.`
+        })
       })
       .catch((err) => {
         setSubmitting(false)
-        setResponse({ success: false, status: 500, message: err.message })
-        const modalBtn = document.getElementById("response-modal01")
-        if (modalBtn) modalBtn.click()
+        showToast({
+          type: 'error',
+          title: 'Confirmation Email Issue',
+          message: err?.message || 'Your message was received, though the confirmation email could not be delivered.'
+        })
       })
     })
     .catch((err) => {
       setSubmitting(false)
-      setResponse({ success: false, status: 500, message: err.message })
-      const modalBtn = document.getElementById("response-modal01")
-      if (modalBtn) modalBtn.click()
+      showToast({
+        type: 'error',
+        title: 'Submission Failed',
+        message: err?.message || 'Unable to send your inquiry right now. Please try WhatsApp or email directly.'
+      })
     })
   }
 
   return (
     <section className="py-5" id="contact" style={{ background: 'var(--bg-canvas)' }}>
-      <Status response={response} />
       <div className="container py-4" style={{ maxWidth: '1120px' }}>
         {/* Header */}
         <div className="row justify-content-center">

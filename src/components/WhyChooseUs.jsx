@@ -42,7 +42,7 @@ function WhyChooseUs() {
             <span className="section-kicker">02. Why Softkhlome</span>
             <h2 className="section-title">Engineering Built for Trust</h2>
             <p className="section-subtitle">
-              We pair disciplined visual clarity with reliable engineering so your platform performs from day one.
+              We pair disciplined visual clarity with reliable engineering for companies in Lilongwe, Blantyre, Mzuzu, and across Malawi.
             </p>
           </motion.div>
         </div>

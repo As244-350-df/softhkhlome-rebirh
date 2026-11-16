@@ -26,7 +26,7 @@ function AboutUs() {
             <span className="section-kicker">03. Who We Are</span>
             <h2 className="section-title">About Softkhlome</h2>
             <p className="section-subtitle">
-              Based in Lilongwe, Malawi, we bridge clean visual craft and modern web software engineering.
+              A web development and software engineering company in Lilongwe, Malawi bridging clean visual craft and modern web systems.
             </p>
           </motion.div>
         </div>

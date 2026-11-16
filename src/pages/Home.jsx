@@ -18,8 +18,8 @@ function Home() {
   return (
     <>
       <Helmet>
-        <title>Softkhlome – Web Design &amp; Software Development in Malawi</title>
-        <meta name="description" content="Softkhlome builds fast responsive websites, custom React web apps, and brand design for growing businesses in Lilongwe and across Malawi." />
+        <title>Softkhlome – Web Development Company in Lilongwe, Malawi</title>
+        <meta name="description" content="Softkhlome is a web development and design company in Lilongwe, Malawi building fast websites, React apps, and custom software. Request a quote today." />
         <link rel="canonical" href="https://softkhlome.web.app/" />
         <link rel="alternate" hrefLang="en-MW" href="https://softkhlome.web.app/" />
         <link rel="alternate" hrefLang="en" href="https://softkhlome.web.app/" />
@@ -28,23 +28,23 @@ function Home() {
         <meta property="og:site_name" content="Softkhlome – Lilongwe, Malawi" />
         <meta property="og:locale" content="en_GB" />
         <meta property="og:locale:alternate" content="en_US" />
-        <meta property="og:title" content="Softkhlome – Custom Web Design &amp; React Apps in Malawi" />
-        <meta property="og:description" content="Partner with Softkhlome in Lilongwe for high-speed business websites, custom React web apps, and brand identity design tailored for growth across Malawi." />
+        <meta property="og:title" content="Softkhlome – Web Development Company in Lilongwe, Malawi" />
+        <meta property="og:description" content="Softkhlome is a web development and design company in Lilongwe, Malawi building fast websites, React apps, and custom software. Request a quote today." />
         <meta property="og:image" content="https://softkhlome.web.app/logo(2).png" />
         <meta property="og:image:secure_url" content="https://softkhlome.web.app/logo(2).png" />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="720" />
         <meta property="og:image:height" content="696" />
-        <meta property="og:image:alt" content="Softkhlome – Web Design &amp; Software Development Studio in Lilongwe, Malawi" />
+        <meta property="og:image:alt" content="Softkhlome – Web Development &amp; Software Company in Lilongwe, Malawi" />
         <meta property="og:url" content="https://softkhlome.web.app/" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:domain" content="softkhlome.web.app" />
         <meta name="twitter:url" content="https://softkhlome.web.app/" />
-        <meta name="twitter:title" content="Softkhlome – Custom Web Design &amp; React Apps in Malawi" />
-        <meta name="twitter:description" content="Partner with Softkhlome in Lilongwe for high-speed business websites, custom React web apps, and brand identity design tailored for growth across Malawi." />
+        <meta name="twitter:title" content="Softkhlome – Web Development Company in Lilongwe, Malawi" />
+        <meta name="twitter:description" content="Softkhlome is a web development and design company in Lilongwe, Malawi building fast websites, React apps, and custom software. Request a quote today." />
         <meta name="twitter:image" content="https://softkhlome.web.app/logo(2).png" />
-        <meta name="twitter:image:alt" content="Softkhlome – Web Design &amp; Software Development Studio in Lilongwe, Malawi" />
+        <meta name="twitter:image:alt" content="Softkhlome – Web Development &amp; Software Company in Lilongwe, Malawi" />
         <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
@@ -53,8 +53,8 @@ function Home() {
               "@type": "WebPage",
               "@id": "https://softkhlome.web.app/#webpage",
               "url": "https://softkhlome.web.app/",
-              "name": "Softkhlome – Web Design & Software Development in Malawi",
-              "description": "Softkhlome builds fast responsive websites, custom React web apps, and brand design for growing businesses in Lilongwe and across Malawi.",
+              "name": "Softkhlome – Web Development Company in Lilongwe, Malawi",
+              "description": "Softkhlome is a web development and design company in Lilongwe, Malawi building fast websites, React apps, and custom software. Request a quote today.",
               "inLanguage": "en-MW",
               "isPartOf": { "@id": "https://softkhlome.web.app/#website" },
               "about": { "@id": "https://softkhlome.web.app/#localbusiness" },

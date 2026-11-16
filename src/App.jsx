@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom"
+import { BrowserRouter, Routes, Route, Link, Navigate, useLocation } from "react-router-dom"
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 import Home from './pages/Home'
 import About from './pages/About'
@@ -8,6 +8,7 @@ import Policy from './pages/Policy'
 import TermsMod from './components/TermsMod'
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
+import { ToastProvider } from './components/GlobalToast'
 import './index.css'
 import './App.css'
 import "bootstrap-icons/font/bootstrap-icons.css"
@@ -72,22 +73,24 @@ function NotFound() {
 function App() {
   return (
     <HelmetProvider>
-      <BrowserRouter>
-        <ScrollManager />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/developer" element={<Profile />} />
-          <Route path="/developers" element={<Profile />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/Profile" element={<Profile />} />
-          <Route path="/policy" element={<Policy />} />
-          <Route path="/Policy" element={<Policy />} />
-          <Route path="/terms" element={<TermsMod />} />
-          <Route path="/Terms" element={<TermsMod />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <ToastProvider>
+        <BrowserRouter>
+          <ScrollManager />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/developer" element={<Profile />} />
+            <Route path="/developers" element={<Navigate to="/developer" replace />} />
+            <Route path="/profile" element={<Navigate to="/developer" replace />} />
+            <Route path="/Profile" element={<Navigate to="/developer" replace />} />
+            <Route path="/policy" element={<Policy />} />
+            <Route path="/Policy" element={<Navigate to="/policy" replace />} />
+            <Route path="/terms" element={<TermsMod />} />
+            <Route path="/Terms" element={<Navigate to="/terms" replace />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </ToastProvider>
     </HelmetProvider>
   )
 }

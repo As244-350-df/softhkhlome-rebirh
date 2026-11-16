@@ -1,8 +1,26 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { techStack } from './TechStack.js';
 import { testimonials } from './testimonials.js';
 import { projects } from './projects.js';
+
+const MORE_SKILLS_OPTION = {
+  name: 'More Skills',
+  isMore: true,
+  description:
+    'Beyond the core matrix above, our engineering workflow spans TypeScript, Tailwind CSS, REST & GraphQL APIs, PostgreSQL, Django/Flask services, Vite bundling, Framer Motion, technical SEO, and cloud deployments.',
+  additionalSkills: [
+    'TypeScript',
+    'Tailwind CSS',
+    'REST APIs',
+    'PostgreSQL',
+    'Django / Flask',
+    'Vite',
+    'Framer Motion',
+    'Technical SEO'
+  ]
+};
 
 function ProjStackTest() {
   const [selectedTech, setSelectedTech] = useState(techStack[0] || null);
@@ -227,13 +245,57 @@ function ProjStackTest() {
                   </div>
                 );
               })}
+
+              {/* + More Skills indicator card */}
+              <div className="col-6 col-sm-4 col-md-3 col-lg-2">
+                <button
+                  type="button"
+                  onClick={() => setSelectedTech(MORE_SKILLS_OPTION)}
+                  className="w-100 p-3 rounded-3 text-center d-flex flex-column align-items-center justify-content-center h-100"
+                  aria-label="View more skills and technologies"
+                  style={{
+                    backgroundColor: 'var(--bg-surface)',
+                    border:
+                      selectedTech?.isMore
+                        ? '2px solid var(--color-accent)'
+                        : '1px dashed var(--border-accent)',
+                    cursor: 'pointer',
+                    transition: 'transform 160ms ease, border-color 160ms ease',
+                    minHeight: '96px'
+                  }}
+                >
+                  <div
+                    className="d-flex align-items-center justify-content-center mb-2"
+                    style={{
+                      width: '32px',
+                      height: '32px',
+                      borderRadius: '50%',
+                      backgroundColor: 'rgba(var(--color-accent-rgb), 0.12)',
+                      color: 'var(--color-accent)',
+                      fontSize: '1.15rem',
+                      fontWeight: 700
+                    }}
+                  >
+                    <i className="bi bi-plus-lg" aria-hidden="true"></i>
+                  </div>
+                  <span
+                    style={{
+                      fontSize: '0.82rem',
+                      fontWeight: 700,
+                      color: selectedTech?.isMore ? 'var(--color-accent)' : 'var(--text-main)'
+                    }}
+                  >
+                    More Skills
+                  </span>
+                </button>
+              </div>
             </div>
 
             <AnimatePresence mode="wait">
               {selectedTech && (
                 <motion.div
                   key={selectedTech.name}
-                  className="mt-3 p-4 rounded-3 d-flex align-items-start gap-3"
+                  className="mt-3 p-4 rounded-3 d-flex flex-column flex-sm-row align-items-start gap-3"
                   style={{
                     backgroundColor: 'var(--bg-surface)',
                     border: '1px solid var(--border-accent)',
@@ -244,19 +306,47 @@ function ProjStackTest() {
                   exit={{ opacity: 0, y: -8 }}
                   transition={{ duration: 0.18 }}
                 >
-                  <img
-                    src={selectedTech.icon}
-                    alt={selectedTech.name}
-                    referrerPolicy="no-referrer"
-                    style={{ height: '36px', width: '36px', flexShrink: 0 }}
-                  />
-                  <div>
+                  {selectedTech.isMore ? (
+                    <div
+                      className="d-flex align-items-center justify-content-center"
+                      style={{
+                        width: '36px',
+                        height: '36px',
+                        borderRadius: '10px',
+                        backgroundColor: 'rgba(var(--color-accent-rgb), 0.12)',
+                        color: 'var(--color-accent)',
+                        fontSize: '1.25rem',
+                        flexShrink: 0
+                      }}
+                    >
+                      <i className="bi bi-plus-lg" aria-hidden="true"></i>
+                    </div>
+                  ) : (
+                    <img
+                      src={selectedTech.icon}
+                      alt={selectedTech.name}
+                      referrerPolicy="no-referrer"
+                      style={{ height: '36px', width: '36px', flexShrink: 0 }}
+                    />
+                  )}
+                  <div className="flex-grow-1">
                     <h6 style={{ fontWeight: 700, margin: '0 0 4px', color: 'var(--text-main)' }}>
-                      {selectedTech.name} in Production
+                      {selectedTech.isMore ? 'More Capabilities & Extended Stack' : `${selectedTech.name} in Production`}
                     </h6>
                     <p style={{ margin: 0, fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
                       {selectedTech.description}
                     </p>
+                    {selectedTech.isMore && (
+                      <div className="mt-3 pt-3 d-flex flex-wrap align-items-center justify-content-between gap-2" style={{ borderTop: '1px solid var(--border-subtle)' }}>
+                        <span style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--color-primary)' }}>
+                          {selectedTech.additionalSkills.join(' · ')}
+                        </span>
+                        <Link to="/developer" className="btn btn-brand-outline btn-sm">
+                          <span>Explore Full Stack</span>
+                          <i className="bi bi-arrow-right"></i>
+                        </Link>
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               )}

@@ -1,10 +1,5 @@
 export const malawiWebFaqs = [
   {
-    question: "How much does website design and development cost in Malawi?",
-    answer:
-      "At Softkhlome, custom web design and development projects typically range from MWK 250,000 to MWK 700,000 per project depending on scope, integrations, and functionality. Graphic design and brand identity packages range from MWK 10,000 to MWK 15,000, with transparent milestones agreed before kickoff."
-  },
-  {
     question: "Where is Softkhlome located, and do you serve clients outside Lilongwe?",
     answer:
       "Softkhlome is based at 26 Bunda Mitundu in Lilongwe, Malawi, and works with businesses across Blantyre, Mzuzu, Zomba, and remote regional clients via direct collaboration and weekly progress updates."

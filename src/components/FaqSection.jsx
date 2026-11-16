@@ -31,7 +31,7 @@ function FaqSection() {
             <span className="section-kicker">04. Common Questions</span>
             <h2 className="section-title">Web Design &amp; Development FAQs</h2>
             <p className="section-subtitle">
-              Clear answers on pricing in MWK, turnaround timelines, and how we partner with businesses across Malawi.
+              Clear answers on turnaround timelines, mobile performance, SEO setup, and how we work with businesses across Malawi.
             </p>
           </motion.div>
         </div>

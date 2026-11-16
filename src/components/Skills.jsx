@@ -3,7 +3,7 @@ import { techStack } from './TechStack'
 
 function Skills() {
   const frontendSkills = ['React 19', 'JavaScript (ES6+)', 'Tailwind CSS', 'Bootstrap 5', 'HTML5 / CSS3', 'Responsive UX']
-  const backendSkills = ['Node.js', 'Express', 'Firebase', 'RESTful APIs', 'PostgreSQL', 'Auth & Security']
+  const backendSkills = ['Node.js', 'Express', 'Python', 'Firebase', 'RESTful APIs', 'PostgreSQL', 'Auth & Security']
   const toolsList = ['Git', 'GitHub', 'VS Code', 'Postman', 'Vite', 'Figma', 'Firebase Hosting']
 
   return (

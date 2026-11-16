@@ -30,6 +30,11 @@ export const techStack = [
         description: "Express.js is a minimal and flexible web application framework for Node.js. It provides a robust set of features for building web and mobile applications, including routing, middleware support, and template engines. Express.js simplifies the development process and allows developers to create APIs and server-side applications with ease."
     },
     {
+        name: "Python",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+        description: "Python is a versatile programming language used for backend APIs, task automation, data processing, and AI-enabled services. Its clean readability and mature library ecosystem make it ideal for scalable server-side engineering."
+    },
+    {
         name:"MySQL",
         icon:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
         description:"MySQL is a popular open-source relational database management system. It is widely used for storing and managing data in web applications. MySQL provides a reliable and scalable solution for handling large volumes of data and supports various programming languages and platforms."
